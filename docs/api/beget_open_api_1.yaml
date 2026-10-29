@@ -1,0 +1,3744 @@
+# Generated with protoc-gen-openapi
+# https://github.com/google/gnostic/tree/master/cmd/protoc-gen-openapi
+
+openapi: 3.0.3
+info:
+    title: API Облачных серверов
+    version: v1.7.10
+servers:
+    - url: https://api.beget.com
+paths:
+    /v1/vps/archive/{id}:
+        delete:
+            tags:
+                - ManageService
+            operationId: ManageService_Unarchive
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_UnarchiveResponse'
+    /v1/vps/backup:
+        get:
+            tags:
+                - BackupService
+            operationId: BackupService_GetAvailableCopies
+            parameters:
+                - name: filter
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Backup_GetAvailableCopiesResponse'
+    /v1/vps/backup/orders:
+        get:
+            tags:
+                - BackupService
+            operationId: BackupService_GetOrders
+            parameters:
+                - name: limit
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+                - name: offset
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Backup_GetOrdersResponse'
+    /v1/vps/configuration:
+        get:
+            tags:
+                - ManageService
+            operationId: ManageService_GetAvailableConfiguration
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_GetAvailableConfigurationResponse'
+    /v1/vps/configurator/calculation:
+        get:
+            tags:
+                - ConfiguratorService
+            operationId: ConfiguratorService_GetCalculation
+            parameters:
+                - name: params.cpu_count
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+                - name: params.disk_size
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+                - name: params.memory
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+                - name: region
+                  in: query
+                  schema:
+                    type: string
+                - name: vps_id
+                  in: query
+                  schema:
+                    type: string
+                - name: software_id
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+                - name: snapshot_id
+                  in: query
+                  schema:
+                    type: string
+                - name: image_id
+                  in: query
+                  schema:
+                    type: string
+                - name: configuration_group
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Configurator_GetCalculationResponse'
+    /v1/vps/configurator/info:
+        get:
+            tags:
+                - ConfiguratorService
+            operationId: ConfiguratorService_GetConfiguratorInfo
+            parameters:
+                - name: region
+                  in: query
+                  schema:
+                    type: string
+                - name: configuration_group
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Configurator_GetConfiguratorInfoResponse'
+    /v1/vps/marketplace/software/list:
+        get:
+            tags:
+                - MarketplaceService
+            operationId: MarketplaceService_GetSoftwareList
+            parameters:
+                - name: category_name
+                  in: query
+                  schema:
+                    type: string
+                - name: display_name
+                  in: query
+                  schema:
+                    type: string
+                - name: is_pinned
+                  in: query
+                  schema:
+                    type: boolean
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Marketplace_GetSoftwareListResponse'
+    /v1/vps/marketplace/software/{name}/{version}:
+        get:
+            tags:
+                - MarketplaceService
+            operationId: MarketplaceService_GetSoftwareInfo
+            parameters:
+                - name: name
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: version
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Marketplace_GetSoftwareInfoResponse'
+    /v1/vps/network:
+        get:
+            tags:
+                - NetworkService
+            operationId: NetworkService_GetNetworkInfo
+            parameters:
+                - name: filter
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Network_GetNetworkInfoResponse'
+        post:
+            tags:
+                - NetworkService
+            operationId: NetworkService_OrderIpAddress
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Network_OrderIpAddressRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Network_OrderIpAddressResponse'
+    /v1/vps/network/detach/{ip_address}:
+        delete:
+            tags:
+                - ManageService
+            operationId: ManageService_DetachIpAddress
+            parameters:
+                - name: ip_address
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_DetachIpAddressResponse'
+    /v1/vps/network/{ip_address}:
+        delete:
+            tags:
+                - NetworkService
+            operationId: NetworkService_RemoveIpAddress
+            parameters:
+                - name: ip_address
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Network_RemoveIpAddressResponse'
+    /v1/vps/private-network:
+        post:
+            tags:
+                - NetworkService
+            operationId: NetworkService_CreatePrivateNetwork
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Network_CreatePrivateNetworkRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Network_CreatePrivateNetworkResponse'
+    /v1/vps/private-network/{network_id}:
+        delete:
+            tags:
+                - NetworkService
+            operationId: NetworkService_RemovePrivateNetwork
+            parameters:
+                - name: network_id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Network_RemovePrivateNetworkResponse'
+    /v1/vps/private-network/{network_id}/suggested-address:
+        post:
+            tags:
+                - NetworkService
+            operationId: NetworkService_SuggestPrivateAddress
+            parameters:
+                - name: network_id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Network_SuggestPrivateAddressRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Network_SuggestPrivateAddressResponse'
+    /v1/vps/region:
+        get:
+            tags:
+                - ManageService
+            operationId: ManageService_GetRegionList
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_GetRegionListResponse'
+    /v1/vps/server:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_CreateVps
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_CreateVpsRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_CreateVpsResponse'
+    /v1/vps/server/list:
+        get:
+            tags:
+                - ManageService
+            operationId: ManageService_GetList
+            parameters:
+                - name: offset
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+                - name: limit
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+                - name: filter
+                  in: query
+                  schema:
+                    type: string
+                - name: sort
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_GetListResponse'
+    /v1/vps/server/statuses:
+        get:
+            tags:
+                - ManageService
+            operationId: ManageService_GetStatuses
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_GetStatusesResponse'
+    /v1/vps/server/{id}:
+        get:
+            tags:
+                - ManageService
+            operationId: ManageService_GetInfo
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_GetInfoResponse'
+    /v1/vps/server/{id}/configuration:
+        put:
+            tags:
+                - ManageService
+            operationId: ManageService_ChangeConfiguration
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_ChangeConfigurationRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_ChangeConfigurationResponse'
+    /v1/vps/server/{id}/info:
+        put:
+            tags:
+                - ManageService
+            operationId: ManageService_UpdateInfo
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_UpdateInfoRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_UpdateInfoResponse'
+    /v1/vps/server/{id}/pin:
+        put:
+            tags:
+                - ManageService
+            operationId: ManageService_ChangePinned
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_ChangePinnedRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_ChangePinnedResponse'
+    /v1/vps/server/{id}/project:
+        put:
+            tags:
+                - ManageService
+            operationId: ManageService_BindProject
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_BindProjectRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_BindProjectResponse'
+    /v1/vps/server/{id}/reboot:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_RebootVps
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_RebootVpsResponse'
+    /v1/vps/server/{id}/reinstall:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_Reinstall
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_ReinstallRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_ReinstallResponse'
+    /v1/vps/server/{id}/remove:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_RemoveVps
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_RemoveVpsResponse'
+    /v1/vps/server/{id}/rescue:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_StartRescue
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_StartRescueResponse'
+        delete:
+            tags:
+                - ManageService
+            operationId: ManageService_StopRescue
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_StopRescueResponse'
+    /v1/vps/server/{id}/reset:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_ResetVps
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_ResetVpsResponse'
+    /v1/vps/server/{id}/start:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_StartVps
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_StartVpsResponse'
+    /v1/vps/server/{id}/stop:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_StopVps
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: force
+                  in: query
+                  schema:
+                    type: boolean
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_StopVpsResponse'
+    /v1/vps/snapshot:
+        get:
+            tags:
+                - SnapshotService
+            operationId: SnapshotService_GetAll
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Snapshot_GetAllResponse'
+        post:
+            tags:
+                - SnapshotService
+            operationId: SnapshotService_Create
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Snapshot_CreateRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Snapshot_CreateResponse'
+    /v1/vps/snapshot/calculator:
+        post:
+            tags:
+                - SnapshotService
+            operationId: SnapshotService_CreateCalculator
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Snapshot_CreateCalculatorRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Snapshot_CreateCalculatorResponse'
+    /v1/vps/snapshot/restore:
+        get:
+            tags:
+                - SnapshotService
+            operationId: SnapshotService_GetAllRestores
+            parameters:
+                - name: id
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Snapshot_GetAllRestoresResponse'
+    /v1/vps/snapshot/{id}:
+        put:
+            tags:
+                - SnapshotService
+            operationId: SnapshotService_Edit
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Snapshot_EditRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Snapshot_EditResponse'
+        delete:
+            tags:
+                - SnapshotService
+            operationId: SnapshotService_Remove
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Snapshot_RemoveResponse'
+    /v1/vps/snapshot/{id}/restore:
+        post:
+            tags:
+                - SnapshotService
+            operationId: SnapshotService_Restore
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Snapshot_RestoreRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Snapshot_RestoreResponse'
+    /v1/vps/software/license:
+        get:
+            tags:
+                - SoftwareLicenseService
+            operationId: SoftwareLicenseService_GetLicenseInfo
+            parameters:
+                - name: license_id
+                  in: query
+                  schema:
+                    type: integer
+                    format: uint32
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SoftwareLicense_GetLicenseInfoResponse'
+    /v1/vps/software/license/{vps_id}:
+        patch:
+            tags:
+                - SoftwareLicenseService
+            operationId: SoftwareLicenseService_ChangeLicensePlan
+            parameters:
+                - name: vps_id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/SoftwareLicense_ChangeLicensePlanRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SoftwareLicense_ChangeLicensePlanResponse'
+    /v1/vps/software/requirements:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_CheckSoftwareRequirements
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_CheckSoftwareRequirementsRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_CheckSoftwareRequirementsResponse'
+    /v1/vps/sshKey:
+        get:
+            tags:
+                - SshKeyService
+            operationId: SshKeyService_GetAll
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SshKey_GetAllResponse'
+        post:
+            tags:
+                - SshKeyService
+            operationId: SshKeyService_Add
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/SshKey_AddRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SshKey_AddResponse'
+    /v1/vps/sshKey/{id}:
+        put:
+            tags:
+                - SshKeyService
+            operationId: SshKeyService_Update
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: integer
+                    format: uint32
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/SshKey_UpdateRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SshKey_UpdateResponse'
+        delete:
+            tags:
+                - SshKeyService
+            operationId: SshKeyService_Remove
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: integer
+                    format: uint32
+                - name: force
+                  in: query
+                  schema:
+                    type: boolean
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SshKey_RemoveResponse'
+    /v1/vps/statistic/cpu-details/{id}:
+        get:
+            tags:
+                - StatisticService
+            operationId: StatisticService_GetCpuDetails
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: period
+                  in: query
+                  schema:
+                    enum:
+                        - UNKNOWN
+                        - HOUR
+                        - DAY
+                        - WEEK
+                        - MONTH
+                    type: string
+                    format: enum
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Statistic_GetCpuDetailsResponse'
+    /v1/vps/statistic/cpu/{id}:
+        get:
+            tags:
+                - StatisticService
+            operationId: StatisticService_GetCpu
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: period
+                  in: query
+                  schema:
+                    enum:
+                        - UNKNOWN
+                        - HOUR
+                        - DAY
+                        - WEEK
+                        - MONTH
+                    type: string
+                    format: enum
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Statistic_GetCpuResponse'
+    /v1/vps/statistic/disk-usage/{id}:
+        get:
+            tags:
+                - StatisticService
+            operationId: StatisticService_GetDiskUsage
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: period
+                  in: query
+                  schema:
+                    enum:
+                        - UNKNOWN
+                        - HOUR
+                        - DAY
+                        - WEEK
+                        - MONTH
+                    type: string
+                    format: enum
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Statistic_GetDiskUsageResponse'
+    /v1/vps/statistic/disk/{id}:
+        get:
+            tags:
+                - StatisticService
+            operationId: StatisticService_GetDisk
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: period
+                  in: query
+                  schema:
+                    enum:
+                        - UNKNOWN
+                        - HOUR
+                        - DAY
+                        - WEEK
+                        - MONTH
+                    type: string
+                    format: enum
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Statistic_GetDiskResponse'
+    /v1/vps/statistic/load-average/{id}:
+        get:
+            tags:
+                - StatisticService
+            operationId: StatisticService_GetLoadAverage
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: period
+                  in: query
+                  schema:
+                    enum:
+                        - UNKNOWN
+                        - HOUR
+                        - DAY
+                        - WEEK
+                        - MONTH
+                    type: string
+                    format: enum
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Statistic_GetLoadAverageResponse'
+    /v1/vps/statistic/memory/{id}:
+        get:
+            tags:
+                - StatisticService
+            operationId: StatisticService_GetMemory
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: period
+                  in: query
+                  schema:
+                    enum:
+                        - UNKNOWN
+                        - HOUR
+                        - DAY
+                        - WEEK
+                        - MONTH
+                    type: string
+                    format: enum
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Statistic_GetMemoryResponse'
+    /v1/vps/statistic/network/{id}:
+        get:
+            tags:
+                - StatisticService
+            operationId: StatisticService_GetNetwork
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: period
+                  in: query
+                  schema:
+                    enum:
+                        - UNKNOWN
+                        - HOUR
+                        - DAY
+                        - WEEK
+                        - MONTH
+                    type: string
+                    format: enum
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Statistic_GetNetworkResponse'
+    /v1/vps/statistic/processes/{id}:
+        get:
+            tags:
+                - StatisticService
+            operationId: StatisticService_GetProcessList
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Statistic_GetProcessListResponse'
+    /v1/vps/subdomain/reserve:
+        get:
+            tags:
+                - ManageService
+            operationId: ManageService_ReserveVpsSubdomain
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_ReserveVpsSubdomainResponse'
+    /v1/vps/{id}/backup/{copy_id}:
+        get:
+            tags:
+                - BackupService
+            operationId: BackupService_GetBackupFileList
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: copy_id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: path
+                  in: query
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Backup_GetBackupFileListResponse'
+    /v1/vps/{id}/backup/{copy_id}/file:
+        post:
+            tags:
+                - BackupService
+            operationId: BackupService_RestoreFile
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: copy_id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Backup_RestoreFileRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Backup_RestoreFileResponse'
+    /v1/vps/{id}/backup/{copy_id}/server:
+        post:
+            tags:
+                - BackupService
+            operationId: BackupService_RestoreServer
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: copy_id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Backup_RestoreServerRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Backup_RestoreServerResponse'
+    /v1/vps/{id}/fm:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_GetFileManagerSettings
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_GetFileManagerSettingsResponse'
+    /v1/vps/{id}/history:
+        get:
+            tags:
+                - ManageService
+            operationId: ManageService_GetHistory
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_GetHistoryResponse'
+    /v1/vps/{id}/network/{ip_address}:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_AttachIpAddress
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: ip_address
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_AttachIpAddressRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_AttachIpAddressResponse'
+    /v1/vps/{id}/password:
+        put:
+            tags:
+                - ManageService
+            operationId: ManageService_ResetPassword
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_ResetPasswordResponse'
+    /v1/vps/{id}/private-network/{network_id}:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_AttachToPrivateNetwork
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: network_id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_AttachToPrivateNetworkRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_AttachToPrivateNetworkResponse'
+        delete:
+            tags:
+                - ManageService
+            operationId: ManageService_DetachFromPrivateNetwork
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: network_id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_DetachFromPrivateNetworkResponse'
+    /v1/vps/{id}/software:
+        get:
+            tags:
+                - ManageService
+            operationId: ManageService_GetInstalledSoftware
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_GetInstalledSoftwareResponse'
+    /v1/vps/{id}/software/post-install-alert:
+        delete:
+            tags:
+                - ManageService
+            operationId: ManageService_DisablePostInstallAlert
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_DisablePostInstallAlertResponse'
+    /v1/vps/{id}/ssh/access:
+        put:
+            tags:
+                - ManageService
+            operationId: ManageService_ChangeSshAccess
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Manage_ChangeSshAccessRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_ChangeSshAccessResponse'
+    /v1/vps/{id}/sshKey/{ssh_key_id}:
+        post:
+            tags:
+                - ManageService
+            operationId: ManageService_AttachSshKey
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: ssh_key_id
+                  in: path
+                  required: true
+                  schema:
+                    type: integer
+                    format: uint32
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_AttachSshKeyResponse'
+        delete:
+            tags:
+                - ManageService
+            operationId: ManageService_DetachSshKey
+            parameters:
+                - name: id
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: ssh_key_id
+                  in: path
+                  required: true
+                  schema:
+                    type: integer
+                    format: uint32
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Manage_DetachSshKeyResponse'
+components:
+    schemas:
+        Backup_GetAvailableCopiesResponse:
+            type: object
+            properties:
+                copy:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_CopyInfo'
+        Backup_GetBackupFileListResponse:
+            type: object
+            properties:
+                file:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_FileInfo'
+        Backup_GetOrdersResponse:
+            type: object
+            properties:
+                order:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_OrderInfo'
+        Backup_RestoreFileRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                copy_id:
+                    type: string
+                path:
+                    type: array
+                    items:
+                        type: string
+                affect_live:
+                    type: boolean
+                target:
+                    type: string
+        Backup_RestoreFileResponse:
+            type: object
+            properties:
+                order:
+                    $ref: '#/components/schemas/Structures_OrderInfo'
+                error:
+                    $ref: '#/components/schemas/Backup_RestoreFileResponse_Error'
+        Backup_RestoreFileResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_MODE
+                        - INVALID_PATH_LIST
+                        - ALREADY_RESTORING
+                        - INVALID_TARGET
+                        - REGION_MISMATCH
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Backup_RestoreServerRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                copy_id:
+                    type: string
+        Backup_RestoreServerResponse:
+            type: object
+            properties:
+                order:
+                    $ref: '#/components/schemas/Structures_OrderInfo'
+                error:
+                    $ref: '#/components/schemas/Backup_RestoreServerResponse_Error'
+        Backup_RestoreServerResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - ALREADY_RESTORING
+                        - CONFIGURATION_NOT_ENOUGH
+                        - REGION_MISMATCH
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Configurator_ConfiguratorSettings:
+            type: object
+            properties:
+                cpu_settings:
+                    $ref: '#/components/schemas/Configurator_CpuSettings'
+                disk_settings:
+                    $ref: '#/components/schemas/Configurator_DiskSettings'
+                memory_settings:
+                    $ref: '#/components/schemas/Configurator_MemorySettings'
+        Configurator_CpuSettings:
+            type: object
+            properties:
+                range:
+                    $ref: '#/components/schemas/Configurator_Range'
+                available_range:
+                    $ref: '#/components/schemas/Configurator_Range'
+                step:
+                    type: integer
+                    format: uint32
+        Configurator_DiskSettings:
+            type: object
+            properties:
+                range:
+                    $ref: '#/components/schemas/Configurator_Range'
+                available_range:
+                    $ref: '#/components/schemas/Configurator_Range'
+                step:
+                    type: integer
+                    format: uint32
+        Configurator_GetCalculationResponse:
+            type: object
+            properties:
+                success:
+                    $ref: '#/components/schemas/Configurator_GetCalculationResponse_Success'
+                error:
+                    $ref: '#/components/schemas/Configurator_GetCalculationResponse_Error'
+        Configurator_GetCalculationResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - TEMPORARILY_UNAVAILABLE
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Configurator_GetCalculationResponse_Success:
+            type: object
+            properties:
+                settings:
+                    $ref: '#/components/schemas/Configurator_ConfiguratorSettings'
+                params:
+                    $ref: '#/components/schemas/Structures_ConfigurationParams'
+                price_day:
+                    type: number
+                    format: double
+                price_month:
+                    type: number
+                    format: double
+        Configurator_GetConfiguratorInfoResponse:
+            type: object
+            properties:
+                settings:
+                    $ref: '#/components/schemas/Configurator_ConfiguratorSettings'
+                is_available:
+                    type: boolean
+        Configurator_MemorySettings:
+            type: object
+            properties:
+                range:
+                    $ref: '#/components/schemas/Configurator_Range'
+                available_range:
+                    $ref: '#/components/schemas/Configurator_Range'
+                step:
+                    type: integer
+                    format: uint32
+        Configurator_Range:
+            type: object
+            properties:
+                min:
+                    type: integer
+                    format: uint32
+                max:
+                    type: integer
+                    format: uint32
+        Manage_AttachIpAddressRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                ip_address:
+                    type: string
+        Manage_AttachIpAddressResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_AttachIpAddressResponse_Error'
+        Manage_AttachIpAddressResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - GUEST_OS_ADD_IP_ADDRESS_FAILED
+                        - REGION_MISMATCH
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_AttachSshKeyResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_AttachSshKeyResponse_Error'
+        Manage_AttachSshKeyResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - SERVICE_DISABLED
+                        - GUEST_OS_KEY_MANAGE_FAILED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_AttachToPrivateNetworkRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                network_id:
+                    type: string
+                address:
+                    type: string
+        Manage_AttachToPrivateNetworkResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_AttachToPrivateNetworkResponse_Error'
+        Manage_AttachToPrivateNetworkResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - GUEST_OS_ERROR
+                        - NO_AVAILABLE_ADDRESSES
+                        - INVALID_ADDRESS
+                        - ADDRESS_SUBNET_MISMATCH
+                        - ADDRESS_ALREADY_RESERVED
+                        - ADDRESS_UNAVAILABLE
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_BindProjectRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                project_id:
+                    type: string
+        Manage_BindProjectResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_BindProjectResponse_Error'
+        Manage_BindProjectResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - SERVICE_DISABLED
+                        - PROJECT_NOT_FOUND
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_ChangeConfigurationRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                configuration_id:
+                    type: string
+                configuration_params:
+                    $ref: '#/components/schemas/Structures_ConfigurationParams'
+        Manage_ChangeConfigurationResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_ChangeConfigurationResponse_Error'
+        Manage_ChangeConfigurationResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                        - INSUFFICIENT_FUNDS
+                        - INVALID_CONFIGURATION
+                        - TEMPORARILY_UNAVAILABLE
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_ChangePinnedRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                ui_pinned:
+                    type: boolean
+        Manage_ChangePinnedResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_ChangePinnedResponse_Error'
+        Manage_ChangePinnedResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_ChangeSshAccessRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                beget_ssh_access_allowed:
+                    type: boolean
+        Manage_ChangeSshAccessResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_ChangeSshAccessResponse_Error'
+        Manage_ChangeSshAccessResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - GUEST_OS_ERROR
+                    type: string
+                    format: enum
+                message:
+                    type: string
+                extra:
+                    type: string
+        Manage_CheckSoftwareRequirementsRequest:
+            type: object
+            properties:
+                info:
+                    $ref: '#/components/schemas/Manage_SoftwareInstallInfo'
+        Manage_CheckSoftwareRequirementsResponse:
+            type: object
+            properties:
+                error:
+                    $ref: '#/components/schemas/Manage_CheckSoftwareRequirementsResponse_Error'
+        Manage_CheckSoftwareRequirementsResponse_Error:
+            type: object
+            properties:
+                domain_error:
+                    enum:
+                        - _
+                        - DOMAIN_NOT_REGISTERED
+                        - WRONG_NS_RECORD
+                        - DOMAIN_NOT_DELEGATED
+                        - INVALID_DOMAIN
+                        - DOMAIN_IS_NEW
+                    type: string
+                    format: enum
+        Manage_ConfigurationGroup:
+            type: object
+            properties:
+                name:
+                    type: string
+                group:
+                    type: string
+        Manage_CreateVpsRequest:
+            type: object
+            properties:
+                display_name:
+                    type: string
+                hostname:
+                    type: string
+                description:
+                    type: string
+                configuration_id:
+                    type: string
+                configuration_params:
+                    $ref: '#/components/schemas/Structures_ConfigurationParams'
+                software:
+                    $ref: '#/components/schemas/Manage_SoftwareInstallInfo'
+                snapshot_id:
+                    type: string
+                image_id:
+                    type: string
+                ssh_keys:
+                    type: array
+                    items:
+                        type: integer
+                        format: uint32
+                password:
+                    type: string
+                beget_ssh_access_allowed:
+                    type: boolean
+                private_networks:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Manage_PrivateNetworkInfo'
+                link_slug:
+                    type: string
+                license_id:
+                    type: integer
+                    format: uint32
+                region:
+                    type: string
+                configuration_group:
+                    type: string
+                ui_pinned:
+                    type: boolean
+                project_id:
+                    type: string
+        Manage_CreateVpsResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_CreateVpsResponse_Error'
+        Manage_CreateVpsResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_DISPLAY_NAME
+                        - INVALID_HOSTNAME
+                        - INVALID_PARAMS
+                        - INSUFFICIENT_FUNDS
+                        - SERVICE_DISABLED
+                        - INVALID_SECURITY_CONFIGURATION
+                        - INVALID_PASSWORD
+                        - TEMPORARILY_UNAVAILABLE
+                        - SOFTWARE_INVALID_TYPE
+                        - SOFTWARE_NOT_ENOUGH_RESOURCES
+                        - SOFTWARE_VARIABLE_REQUIRED
+                        - SOFTWARE_VARIABLE_INVALID
+                        - SNAPSHOT_NOT_DONE
+                        - SNAPSHOT_NOT_ENOUGH_CONFIGURATION
+                        - INVALID_PRIVATE_NETWORK_CONFIGURATION
+                        - INVALID_ADDRESS
+                        - ADDRESS_SUBNET_MISMATCH
+                        - ADDRESS_ALREADY_RESERVED
+                        - ADDRESS_UNAVAILABLE
+                        - BLACKLISTED_PASSWORD
+                        - INVALID_LINK_SLUG
+                        - NOT_ENOUGH_SPACE
+                        - SOFTWARE_TEMPORARY_UNAVAILABLE
+                        - IMAGE_REGION_MISMATCH
+                    type: string
+                    format: enum
+                message:
+                    type: string
+                variable_error:
+                    $ref: '#/components/schemas/Manage_CreateVpsResponse_Error_SoftwareVariableError'
+                insufficient_funds_error:
+                    $ref: '#/components/schemas/Manage_CreateVpsResponse_Error_InsufficientFundsError'
+        Manage_CreateVpsResponse_Error_InsufficientFundsError:
+            type: object
+            properties:
+                current_balance:
+                    type: number
+                    format: double
+                needed_balance:
+                    type: number
+                    format: double
+                charge_on_add:
+                    type: boolean
+        Manage_CreateVpsResponse_Error_SoftwareVariableError:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: uint32
+                error:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Manage_CreateVpsResponse_Error_SoftwareVariableError_ValueError'
+        Manage_CreateVpsResponse_Error_SoftwareVariableError_ValueError:
+            type: object
+            properties:
+                variable:
+                    type: string
+                error_text_ru:
+                    type: string
+                error_text_en:
+                    type: string
+        Manage_DetachFromPrivateNetworkResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_DetachFromPrivateNetworkResponse_Error'
+        Manage_DetachFromPrivateNetworkResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - GUEST_OS_ERROR
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_DetachIpAddressResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_DetachIpAddressResponse_Error'
+        Manage_DetachIpAddressResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - GUEST_OS_REMOVE_IP_ADDRESS_FAILED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_DetachSshKeyResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_DetachSshKeyResponse_Error'
+        Manage_DetachSshKeyResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - SERVICE_DISABLED
+                        - GUEST_OS_KEY_MANAGE_FAILED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_DisablePostInstallAlertResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+        Manage_GetAvailableConfigurationResponse:
+            type: object
+            properties:
+                configurations:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Manage_VpsConfiguration'
+                configuration_groups:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Manage_ConfigurationGroup'
+        Manage_GetFileManagerSettingsResponse:
+            type: object
+            properties:
+                credentials:
+                    $ref: '#/components/schemas/Manage_GetFileManagerSettingsResponse_Credentials'
+                error:
+                    $ref: '#/components/schemas/Manage_GetFileManagerSettingsResponse_Error'
+        Manage_GetFileManagerSettingsResponse_Credentials:
+            type: object
+            properties:
+                type:
+                    type: string
+                user:
+                    type: string
+                host:
+                    type: string
+                connection_id:
+                    type: integer
+                    format: uint32
+                path:
+                    type: string
+        Manage_GetFileManagerSettingsResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - SSH_ACCESS_NOT_ALLOWED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_GetHistoryResponse:
+            type: object
+            properties:
+                history:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Manage_HistoryItem'
+        Manage_GetInfoResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+        Manage_GetInstalledSoftwareResponse:
+            type: object
+            properties:
+                software:
+                    $ref: '#/components/schemas/Structures_InstalledSoftwareInfo'
+        Manage_GetListResponse:
+            type: object
+            properties:
+                vps:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Manage_VpsInfo'
+                total_count:
+                    type: integer
+                    format: uint32
+        Manage_GetRegionListResponse:
+            type: object
+            properties:
+                regions:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_RegionInfo'
+        Manage_GetStatusesResponse:
+            type: object
+            properties:
+                statuses:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Manage_GetStatusesResponse_StatusInfo'
+        Manage_GetStatusesResponse_StatusInfo:
+            type: object
+            properties:
+                id:
+                    type: string
+                status:
+                    enum:
+                        - UNKNOWN
+                        - CREATING
+                        - RUNNING
+                        - STOPPING
+                        - RESTARTING
+                        - REMOVING
+                        - REMOVED
+                        - STOPPED
+                        - STARTING
+                        - RECONFIGURING
+                        - REINSTALLING
+                    type: string
+                    format: enum
+                rescue_mode:
+                    type: boolean
+                migrating:
+                    type: boolean
+                manage_enabled:
+                    type: boolean
+                restoring:
+                    type: boolean
+                archived:
+                    type: boolean
+                unblocking:
+                    type: boolean
+                unarchiving:
+                    type: boolean
+        Manage_HistoryItem:
+            type: object
+            properties:
+                date:
+                    type: string
+                type:
+                    enum:
+                        - UNKNOWN
+                        - CREATE
+                        - START
+                        - STOP
+                        - RESTART
+                        - REINSTALL
+                        - RECONFIGURE
+                        - REMOVE
+                    type: string
+                    format: enum
+                has_error:
+                    type: boolean
+        Manage_PrivateNetworkInfo:
+            type: object
+            properties:
+                id:
+                    type: string
+                address:
+                    type: string
+        Manage_RebootVpsResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_RebootVpsResponse_Error'
+        Manage_RebootVpsResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_ReinstallRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                ssh_keys:
+                    type: array
+                    items:
+                        type: integer
+                        format: uint32
+                password:
+                    type: string
+                software:
+                    $ref: '#/components/schemas/Manage_SoftwareInstallInfo'
+                license_id:
+                    type: integer
+                    format: uint32
+        Manage_ReinstallResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_ReinstallResponse_Error'
+        Manage_ReinstallResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                        - INVALID_CONFIGURATION
+                        - INVALID_SECURITY_CONFIGURATION
+                        - INVALID_PASSWORD
+                        - SOFTWARE_INVALID_TYPE
+                        - SOFTWARE_NOT_ENOUGH_RESOURCES
+                        - INVALID_PARAMS
+                        - SOFTWARE_VARIABLE_REQUIRED
+                        - SOFTWARE_VARIABLE_INVALID
+                        - BLACKLISTED_PASSWORD
+                        - INSUFFICIENT_FUNDS
+                        - NOT_ENOUGH_SPACE
+                    type: string
+                    format: enum
+                message:
+                    type: string
+                variable_error:
+                    $ref: '#/components/schemas/Manage_ReinstallResponse_Error_SoftwareVariableError'
+                insufficient_funds_error:
+                    $ref: '#/components/schemas/Manage_ReinstallResponse_Error_InsufficientFundsError'
+        Manage_ReinstallResponse_Error_InsufficientFundsError:
+            type: object
+            properties:
+                current_balance:
+                    type: number
+                    format: double
+                needed_balance:
+                    type: number
+                    format: double
+                charge_on_add:
+                    type: boolean
+        Manage_ReinstallResponse_Error_SoftwareVariableError:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: uint32
+                error:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Manage_ReinstallResponse_Error_SoftwareVariableError_ValueError'
+        Manage_ReinstallResponse_Error_SoftwareVariableError_ValueError:
+            type: object
+            properties:
+                variable:
+                    type: string
+                error_text_ru:
+                    type: string
+                error_text_en:
+                    type: string
+        Manage_RemoveVpsResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_RemoveVpsResponse_Error'
+        Manage_RemoveVpsResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                        - ALREADY_REMOVING
+                        - IMAGE_EXPORT_IN_PROGRESS
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_ReserveVpsSubdomainResponse:
+            type: object
+            properties:
+                vps_subdomain:
+                    type: string
+                error:
+                    $ref: '#/components/schemas/Manage_ReserveVpsSubdomainResponse_Error'
+        Manage_ReserveVpsSubdomainResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - SUBDOMAIN_RESERVED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_ResetPasswordResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_ResetPasswordResponse_Error'
+        Manage_ResetPasswordResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - SERVICE_DISABLED
+                        - GUEST_OS_RESET_PASSWORD_FAILED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_ResetVpsResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_ResetVpsResponse_Error'
+        Manage_ResetVpsResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_SoftwareInstallInfo:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: uint32
+                variable:
+                    type: object
+                    additionalProperties:
+                        type: string
+        Manage_StartRescueResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_StartRescueResponse_Error'
+        Manage_StartRescueResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_StartVpsResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_StartVpsResponse_Error'
+        Manage_StartVpsResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_StopRescueResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_StopRescueResponse_Error'
+        Manage_StopRescueResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_StopVpsResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_StopVpsResponse_Error'
+        Manage_StopVpsResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_STATE
+                        - SERVICE_DISABLED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_UnarchiveResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+        Manage_UpdateInfoRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                display_name:
+                    type: string
+                hostname:
+                    type: string
+                description:
+                    type: string
+        Manage_UpdateInfoResponse:
+            type: object
+            properties:
+                vps:
+                    $ref: '#/components/schemas/Manage_VpsInfo'
+                error:
+                    $ref: '#/components/schemas/Manage_UpdateInfoResponse_Error'
+        Manage_UpdateInfoResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_DISPLAY_NAME
+                        - INVALID_HOSTNAME
+                        - SERVICE_DISABLED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Manage_VpsConfiguration:
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                cpu_count:
+                    type: integer
+                    format: uint32
+                disk_size:
+                    type: integer
+                    format: uint32
+                memory:
+                    type: integer
+                    format: uint32
+                bandwidth_public:
+                    type: integer
+                    format: uint32
+                price_day:
+                    type: number
+                    format: double
+                price_month:
+                    type: number
+                    format: double
+                available:
+                    type: boolean
+                custom:
+                    type: boolean
+                configurable:
+                    type: boolean
+                region:
+                    type: string
+                group:
+                    type: string
+        Manage_VpsInfo:
+            type: object
+            properties:
+                id:
+                    type: string
+                slug:
+                    type: string
+                display_name:
+                    type: string
+                hostname:
+                    type: string
+                configuration:
+                    $ref: '#/components/schemas/Manage_VpsConfiguration'
+                status:
+                    enum:
+                        - UNKNOWN
+                        - CREATING
+                        - RUNNING
+                        - STOPPING
+                        - RESTARTING
+                        - REMOVING
+                        - REMOVED
+                        - STOPPED
+                        - STARTING
+                        - RECONFIGURING
+                        - REINSTALLING
+                    type: string
+                    format: enum
+                ssh_keys:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_SshKeyInfo'
+                has_password:
+                    type: boolean
+                manage_enabled:
+                    type: boolean
+                description:
+                    type: string
+                date_create:
+                    type: string
+                ip_address:
+                    type: string
+                rescue_mode:
+                    type: boolean
+                migrating:
+                    type: boolean
+                host_unavailable:
+                    type: boolean
+                unblocking:
+                    type: boolean
+                restoring:
+                    type: boolean
+                disk_used:
+                    type: string
+                disk_left:
+                    type: string
+                additional_ip_address:
+                    type: array
+                    items:
+                        type: string
+                beget_ssh_access_allowed:
+                    type: boolean
+                archived:
+                    type: boolean
+                unarchiving:
+                    type: boolean
+                private_network:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_AttachedPrivateNetwork'
+                technical_domain:
+                    type: string
+                software_domain:
+                    type: string
+                software:
+                    $ref: '#/components/schemas/Structures_InstalledSoftwareInfo'
+                link_slug:
+                    type: string
+                region:
+                    type: string
+                ui_pinned:
+                    type: boolean
+                ui_pin_changed_at:
+                    type: string
+                project_id:
+                    type: string
+                software_id:
+                    type: string
+                snapshot_id:
+                    type: string
+                image_id:
+                    type: string
+        Marketplace_DomainField:
+            type: object
+            properties:
+                common:
+                    $ref: '#/components/schemas/Marketplace_FieldCommon'
+                allow_tech_domain:
+                    type: boolean
+        Marketplace_EmailField:
+            type: object
+            properties:
+                common:
+                    $ref: '#/components/schemas/Marketplace_FieldCommon'
+        Marketplace_FieldCommon:
+            type: object
+            properties:
+                variable:
+                    type: string
+                label:
+                    type: string
+                label_en:
+                    type: string
+                description:
+                    type: string
+                description_en:
+                    type: string
+                default_value:
+                    type: string
+                is_additional:
+                    type: boolean
+                is_required:
+                    type: boolean
+                is_custom:
+                    type: boolean
+                validation_regex:
+                    type: string
+                validation_error_text:
+                    type: string
+                validation_error_text_en:
+                    type: string
+        Marketplace_FieldDesc:
+            type: object
+            properties:
+                password_field:
+                    $ref: '#/components/schemas/Marketplace_PasswordField'
+                domain_field:
+                    $ref: '#/components/schemas/Marketplace_DomainField'
+                text_field:
+                    $ref: '#/components/schemas/Marketplace_TextField'
+                email_field:
+                    $ref: '#/components/schemas/Marketplace_EmailField'
+        Marketplace_GetSoftwareInfoResponse:
+            type: object
+            properties:
+                software:
+                    $ref: '#/components/schemas/Marketplace_SoftwareInfo'
+        Marketplace_GetSoftwareListResponse:
+            type: object
+            properties:
+                software:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Marketplace_SoftwareInfo'
+        Marketplace_PasswordField:
+            type: object
+            properties:
+                common:
+                    $ref: '#/components/schemas/Marketplace_FieldCommon'
+                auto_generated:
+                    type: boolean
+        Marketplace_SoftwareInfo:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: uint32
+                name:
+                    type: string
+                display_name:
+                    type: string
+                version:
+                    type: string
+                description:
+                    type: string
+                description_en:
+                    type: string
+                metadata:
+                    $ref: '#/components/schemas/Structures_SoftwareMetadata'
+                field_data:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Marketplace_FieldDesc'
+                requirements:
+                    $ref: '#/components/schemas/Marketplace_SoftwareInfo_Requirements'
+                category:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_SoftwareCategory'
+                slug:
+                    type: string
+                documentation_slug:
+                    type: string
+                unattended_install_available:
+                    type: boolean
+                license:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_SoftwareLicense'
+                is_available:
+                    type: boolean
+        Marketplace_SoftwareInfo_Requirements:
+            type: object
+            properties:
+                cpu_count:
+                    type: integer
+                    format: uint32
+                disk_size:
+                    type: integer
+                    format: uint32
+                memory:
+                    type: integer
+                    format: uint32
+        Marketplace_TextField:
+            type: object
+            properties:
+                common:
+                    $ref: '#/components/schemas/Marketplace_FieldCommon'
+                is_editable:
+                    type: boolean
+        Network_CreatePrivateNetworkRequest:
+            type: object
+            properties:
+                region:
+                    type: string
+        Network_CreatePrivateNetworkResponse:
+            type: object
+            properties:
+                network:
+                    $ref: '#/components/schemas/Structures_PrivateNetwork'
+                error:
+                    $ref: '#/components/schemas/Network_CreatePrivateNetworkResponse_Error'
+        Network_CreatePrivateNetworkResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - LIMIT_REACHED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Network_GetNetworkInfoResponse:
+            type: object
+            properties:
+                ip:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_IpInfo'
+                additional_ip:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_AdditionalIpInfo'
+                private_network:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_PrivateNetwork'
+        Network_OrderIpAddressRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                region:
+                    type: string
+        Network_OrderIpAddressResponse:
+            type: object
+            properties:
+                ip_address:
+                    type: string
+                error:
+                    $ref: '#/components/schemas/Network_OrderIpAddressResponse_Error'
+                additional_ip:
+                    $ref: '#/components/schemas/Structures_AdditionalIpInfo'
+                error_v2:
+                    $ref: '#/components/schemas/Network_OrderIpAddressResponse_Error'
+        Network_OrderIpAddressResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INSUFFICIENT_FUNDS
+                        - CUSTOMER_IP_LIMIT_REACHED
+                        - GUEST_OS_ADD_IP_ADDRESS_FAILED
+                        - REGION_MISMATCH
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Network_RemoveIpAddressResponse:
+            type: object
+            properties:
+                ip_address:
+                    type: string
+                error:
+                    $ref: '#/components/schemas/Network_RemoveIpAddressResponse_Error'
+        Network_RemoveIpAddressResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - GUEST_OS_REMOVE_IP_ADDRESS_FAILED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Network_RemovePrivateNetworkResponse:
+            type: object
+            properties:
+                network:
+                    $ref: '#/components/schemas/Structures_PrivateNetwork'
+                error:
+                    $ref: '#/components/schemas/Network_RemovePrivateNetworkResponse_Error'
+        Network_RemovePrivateNetworkResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - NETWORK_IN_USE
+                    type: string
+                    format: enum
+                message:
+                    type: string
+                vps_network_use:
+                    $ref: '#/components/schemas/Network_RemovePrivateNetworkResponse_Error_VpsNetworkUseError'
+        Network_RemovePrivateNetworkResponse_Error_VpsNetworkUseError:
+            type: object
+            properties:
+                vps_id:
+                    type: array
+                    items:
+                        type: string
+        Network_SuggestPrivateAddressRequest:
+            type: object
+            properties:
+                network_id:
+                    type: string
+                vps_id:
+                    type: string
+        Network_SuggestPrivateAddressResponse:
+            type: object
+            properties:
+                ip:
+                    type: string
+        Snapshot_CreateCalculatorRequest:
+            type: object
+            properties:
+                vps_id:
+                    type: string
+        Snapshot_CreateCalculatorResponse:
+            type: object
+            properties:
+                price_day:
+                    type: number
+                    format: double
+                price_day_gb:
+                    type: number
+                    format: double
+                size:
+                    type: integer
+                    format: uint32
+        Snapshot_CreateRequest:
+            type: object
+            properties:
+                vps_id:
+                    type: string
+                description:
+                    type: string
+                consistent:
+                    type: boolean
+        Snapshot_CreateResponse:
+            type: object
+            properties:
+                snapshot:
+                    $ref: '#/components/schemas/Snapshot_Snapshot'
+                error:
+                    $ref: '#/components/schemas/Snapshot_CreateResponse_Error'
+        Snapshot_CreateResponse_Error:
+            type: object
+            properties:
+                message:
+                    type: string
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - ALREADY_CREATING
+                        - INSUFFICIENT_FUNDS
+                        - UNSUITABLE_VPS_STATUS
+                    type: string
+                    format: enum
+        Snapshot_EditRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                description:
+                    type: string
+        Snapshot_EditResponse:
+            type: object
+            properties:
+                snapshot:
+                    $ref: '#/components/schemas/Snapshot_Snapshot'
+        Snapshot_GetAllResponse:
+            type: object
+            properties:
+                snapshot:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Snapshot_Snapshot'
+        Snapshot_GetAllRestoresResponse:
+            type: object
+            properties:
+                restore:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Snapshot_Restore'
+        Snapshot_RemoveResponse:
+            type: object
+            properties:
+                snapshot:
+                    $ref: '#/components/schemas/Snapshot_Snapshot'
+                error:
+                    $ref: '#/components/schemas/Snapshot_RemoveResponse_Error'
+        Snapshot_RemoveResponse_Error:
+            type: object
+            properties:
+                message:
+                    type: string
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - SNAPSHOT_NOT_DONE
+                        - SNAPSHOT_IS_RESTORING
+                    type: string
+                    format: enum
+        Snapshot_RequiredConfiguration:
+            type: object
+            properties:
+                cpu_count:
+                    type: integer
+                    format: uint32
+                disk_size:
+                    type: integer
+                    format: uint32
+                memory:
+                    type: integer
+                    format: uint32
+        Snapshot_Restore:
+            type: object
+            properties:
+                id:
+                    type: string
+                snapshot:
+                    $ref: '#/components/schemas/Snapshot_Snapshot'
+                vps_id:
+                    type: string
+                vps_name:
+                    type: string
+                target_type:
+                    enum:
+                        - EXISTING_VPS
+                        - NEW_VPS
+                    type: string
+                    format: enum
+                date_create:
+                    type: string
+                date_complete:
+                    type: string
+                status:
+                    enum:
+                        - PROCESSING
+                        - COMPLETED
+                    type: string
+                    format: enum
+        Snapshot_RestoreRequest:
+            type: object
+            properties:
+                id:
+                    type: string
+                vps_id:
+                    type: string
+        Snapshot_RestoreResponse:
+            type: object
+            properties:
+                restore:
+                    $ref: '#/components/schemas/Snapshot_Restore'
+                error:
+                    $ref: '#/components/schemas/Snapshot_RestoreResponse_Error'
+        Snapshot_RestoreResponse_Error:
+            type: object
+            properties:
+                message:
+                    type: string
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - SNAPSHOT_NOT_DONE
+                        - CONFIGURATION_NOT_ENOUGH
+                        - UNSUITABLE_VPS_STATUS
+                        - REGION_MISMATCH
+                    type: string
+                    format: enum
+        Snapshot_Snapshot:
+            type: object
+            properties:
+                id:
+                    type: string
+                vps_id:
+                    type: string
+                vps_name:
+                    type: string
+                vps_exists:
+                    type: boolean
+                date_create:
+                    type: string
+                size:
+                    type: string
+                status:
+                    enum:
+                        - CREATING
+                        - DONE
+                        - RESTORING
+                        - DELETED
+                    type: string
+                    format: enum
+                description:
+                    type: string
+                configuration:
+                    $ref: '#/components/schemas/Snapshot_RequiredConfiguration'
+                price_day:
+                    type: number
+                    format: double
+                region:
+                    type: string
+                installed_software:
+                    $ref: '#/components/schemas/Structures_InstalledSoftwareInfo'
+        SoftwareLicense_ChangeLicensePlanRequest:
+            type: object
+            properties:
+                vps_id:
+                    type: string
+                license_id:
+                    type: integer
+                    format: uint32
+                new_license_id:
+                    type: integer
+                    format: uint32
+        SoftwareLicense_ChangeLicensePlanResponse:
+            type: object
+            properties:
+                license:
+                    $ref: '#/components/schemas/Structures_IssuedSoftwareLicense'
+                error:
+                    $ref: '#/components/schemas/SoftwareLicense_ChangeLicensePlanResponse_Error'
+        SoftwareLicense_ChangeLicensePlanResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INSUFFICIENT_FUNDS
+                        - SERVICE_DISABLED
+                    type: string
+                    format: enum
+                message:
+                    type: string
+                insufficient_funds_error:
+                    $ref: '#/components/schemas/SoftwareLicense_ChangeLicensePlanResponse_Error_InsufficientFundsError'
+        SoftwareLicense_ChangeLicensePlanResponse_Error_InsufficientFundsError:
+            type: object
+            properties:
+                current_balance:
+                    type: number
+                    format: double
+                needed_balance:
+                    type: number
+                    format: double
+                charge_on_add:
+                    type: boolean
+        SoftwareLicense_GetLicenseInfoResponse:
+            type: object
+            properties:
+                license:
+                    $ref: '#/components/schemas/Structures_SoftwareLicense'
+        SshKey_AddRequest:
+            type: object
+            properties:
+                name:
+                    type: string
+                public_key:
+                    type: string
+        SshKey_AddResponse:
+            type: object
+            properties:
+                key:
+                    $ref: '#/components/schemas/Structures_SshKeyInfo'
+                error:
+                    $ref: '#/components/schemas/SshKey_AddResponse_Error'
+        SshKey_AddResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_NAME
+                        - KEY_EXISTS
+                        - INVALID_PUBLIC_KEY
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        SshKey_GetAllResponse:
+            type: object
+            properties:
+                keys:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_SshKeyInfo'
+        SshKey_RemoveResponse:
+            type: object
+            properties:
+                key:
+                    $ref: '#/components/schemas/Structures_SshKeyInfo'
+                error:
+                    $ref: '#/components/schemas/SshKey_RemoveResponse_Error'
+        SshKey_RemoveResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - KEY_IN_USE
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        SshKey_UpdateRequest:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: uint32
+                name:
+                    type: string
+        SshKey_UpdateResponse:
+            type: object
+            properties:
+                key:
+                    $ref: '#/components/schemas/Structures_SshKeyInfo'
+                error:
+                    $ref: '#/components/schemas/SshKey_UpdateResponse_Error'
+        SshKey_UpdateResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - INTERNAL_ERROR
+                        - INVALID_NAME
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Statistic_GetCpuDetailsResponse:
+            type: object
+            properties:
+                date:
+                    type: array
+                    items:
+                        type: string
+                user:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+                nice:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+                system:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+                idle:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+                iowait:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+                irq:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+                softirq:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+        Statistic_GetCpuResponse:
+            type: object
+            properties:
+                cpu:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+        Statistic_GetDiskResponse:
+            type: object
+            properties:
+                data_read:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+                data_write:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+        Statistic_GetDiskUsageResponse:
+            type: object
+            properties:
+                disk_usage:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+        Statistic_GetLoadAverageResponse:
+            type: object
+            properties:
+                date:
+                    type: array
+                    items:
+                        type: string
+                la1:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+                la5:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+                la15:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+        Statistic_GetMemoryResponse:
+            type: object
+            properties:
+                memory:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+        Statistic_GetNetworkResponse:
+            type: object
+            properties:
+                data_rx:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+                data_tx:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+                data_rx_private:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+                data_tx_private:
+                    $ref: '#/components/schemas/Statistic_SeriesData'
+        Statistic_GetProcessListResponse:
+            type: object
+            properties:
+                processes:
+                    $ref: '#/components/schemas/Statistic_GetProcessListResponse_ProcessList'
+                error:
+                    $ref: '#/components/schemas/Statistic_GetProcessListResponse_Error'
+        Statistic_GetProcessListResponse_Error:
+            type: object
+            properties:
+                code:
+                    enum:
+                        - _
+                        - GUEST_AGENT_UNAVAILABLE
+                    type: string
+                    format: enum
+                message:
+                    type: string
+        Statistic_GetProcessListResponse_ProcessList:
+            type: object
+            properties:
+                process:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Statistic_GetProcessListResponse_ProcessList_ProcessInfo'
+        Statistic_GetProcessListResponse_ProcessList_ProcessInfo:
+            type: object
+            properties:
+                pid:
+                    type: integer
+                    format: uint32
+                nice:
+                    type: integer
+                    format: int32
+                virt:
+                    type: string
+                rss:
+                    type: string
+                state:
+                    type: string
+                cpu_percent:
+                    type: number
+                    format: float
+                mem_percent:
+                    type: number
+                    format: float
+                time_running:
+                    type: number
+                    format: float
+                name:
+                    type: string
+                user:
+                    type: string
+        Statistic_SeriesData:
+            type: object
+            properties:
+                date:
+                    type: array
+                    items:
+                        type: string
+                value:
+                    type: array
+                    items:
+                        type: number
+                        format: double
+        Structures_AdditionalIpInfo:
+            type: object
+            properties:
+                ip:
+                    type: string
+                vps_id:
+                    type: string
+                region:
+                    type: string
+        Structures_AttachedPrivateNetwork:
+            type: object
+            properties:
+                network:
+                    $ref: '#/components/schemas/Structures_PrivateNetwork'
+                ip:
+                    type: array
+                    items:
+                        type: string
+        Structures_ConfigurationParams:
+            type: object
+            properties:
+                cpu_count:
+                    type: integer
+                    format: uint32
+                disk_size:
+                    type: integer
+                    format: uint32
+                memory:
+                    type: integer
+                    format: uint32
+        Structures_CopyInfo:
+            type: object
+            properties:
+                id:
+                    type: string
+                vps_id:
+                    type: string
+                vps_name:
+                    type: string
+                date:
+                    type: string
+                size:
+                    type: string
+                region:
+                    type: string
+                configuration:
+                    $ref: '#/components/schemas/Structures_CopyInfo_Configuration'
+                installed_software:
+                    $ref: '#/components/schemas/Structures_InstalledSoftwareInfo'
+        Structures_CopyInfo_Configuration:
+            type: object
+            properties:
+                cpu_count:
+                    type: integer
+                    format: uint32
+                disk_size:
+                    type: integer
+                    format: uint32
+                memory:
+                    type: integer
+                    format: uint32
+        Structures_FileInfo:
+            type: object
+            properties:
+                is_link:
+                    type: boolean
+                is_dir:
+                    type: boolean
+                name:
+                    type: string
+                    format: bytes
+                ext:
+                    type: string
+                    format: bytes
+                path:
+                    type: string
+                    format: bytes
+                owner:
+                    type: string
+                group:
+                    type: string
+                size:
+                    type: string
+                mtime:
+                    type: number
+                    format: double
+                mtime_str:
+                    type: string
+                mode:
+                    type: string
+        Structures_InstalledSoftwareInfo:
+            type: object
+            properties:
+                name:
+                    type: string
+                display_name:
+                    type: string
+                version:
+                    type: string
+                address:
+                    type: string
+                status:
+                    enum:
+                        - PENDING
+                        - INSTALLING
+                        - INSTALLED
+                        - ERROR
+                        - CANCEL
+                    type: string
+                    format: enum
+                field_value:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_InstalledSoftwareInfo_FieldValue'
+                metadata:
+                    $ref: '#/components/schemas/Structures_SoftwareMetadata'
+                description:
+                    type: string
+                description_en:
+                    type: string
+                category:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_SoftwareCategory'
+                slug:
+                    type: string
+                post_install_alert:
+                    type: boolean
+                license:
+                    type: array
+                    items:
+                        $ref: '#/components/schemas/Structures_IssuedSoftwareLicense'
+        Structures_InstalledSoftwareInfo_FieldValue:
+            type: object
+            properties:
+                label_ru:
+                    type: string
+                label_en:
+                    type: string
+                value:
+                    type: string
+                type:
+                    enum:
+                        - UNKNOWN
+                        - DOMAIN
+                        - TEXT
+                        - EMAIL
+                        - PASSWORD
+                    type: string
+                    format: enum
+                variable:
+                    type: string
+        Structures_IpInfo:
+            type: object
+            properties:
+                ip:
+                    type: string
+                mac:
+                    type: string
+                vps_id:
+                    type: string
+        Structures_IssuedSoftwareLicense:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: uint32
+                type:
+                    type: string
+                display_name:
+                    type: string
+                plan:
+                    type: string
+                additional_info:
+                    type: string
+                additional_info_en:
+                    type: string
+                primary:
+                    type: boolean
+                billing:
+                    $ref: '#/components/schemas/Structures_SoftwareLicenseBillingType'
+        Structures_OrderInfo:
+            type: object
+            properties:
+                id:
+                    type: string
+                vps_id:
+                    type: string
+                vps_name:
+                    type: string
+                type:
+                    enum:
+                        - DOWNLOAD
+                        - RESTORE
+                    type: string
+                    format: enum
+                date_create:
+                    type: string
+                date_complete:
+                    type: string
+                path:
+                    type: array
+                    items:
+                        type: string
+                status:
+                    enum:
+                        - PROCESSING
+                        - COMPLETED
+                        - ERROR
+                        - COMPLETED_PARTIALLY
+                    type: string
+                    format: enum
+                copy_info:
+                    $ref: '#/components/schemas/Structures_CopyInfo'
+                affect_live:
+                    type: boolean
+                target:
+                    type: string
+                error_details:
+                    $ref: '#/components/schemas/Structures_OrderInfo_ErrorDetails'
+        Structures_OrderInfo_ErrorDetails:
+            type: object
+            properties:
+                file_error:
+                    $ref: '#/components/schemas/Structures_OrderInfo_ErrorDetails_FileError'
+        Structures_OrderInfo_ErrorDetails_FileError:
+            type: object
+            properties:
+                error:
+                    type: object
+                    additionalProperties:
+                        enum:
+                            - INTERNAL_ERROR
+                            - PERMISSION_DENIED
+                            - FILE_EXISTS
+                            - DISK_QUOTA_EXCEEDED
+                        type: string
+                        format: enum
+        Structures_PrivateNetwork:
+            type: object
+            properties:
+                id:
+                    type: string
+                subnet:
+                    type: string
+                mask:
+                    type: integer
+                    format: uint32
+                region:
+                    type: string
+        Structures_RegionInfo:
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                name_en:
+                    type: string
+                country:
+                    type: string
+                available:
+                    type: boolean
+                priority:
+                    type: integer
+                    format: uint32
+                short_name:
+                    type: string
+        Structures_SoftwareCategory:
+            type: object
+            properties:
+                sys_name:
+                    type: string
+                name:
+                    type: string
+                name_en:
+                    type: string
+                is_main:
+                    type: boolean
+                icon_svg:
+                    type: string
+        Structures_SoftwareLicense:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: uint32
+                type:
+                    type: string
+                display_name:
+                    type: string
+                plan:
+                    type: string
+                additional_info:
+                    type: string
+                additional_info_en:
+                    type: string
+                primary:
+                    type: boolean
+                billing:
+                    $ref: '#/components/schemas/Structures_SoftwareLicenseBillingType'
+        Structures_SoftwareLicenseBillingType:
+            type: object
+            properties:
+                daily:
+                    $ref: '#/components/schemas/Structures_SoftwareLicenseBillingType_Daily'
+                monthly:
+                    $ref: '#/components/schemas/Structures_SoftwareLicenseBillingType_Monthly'
+        Structures_SoftwareLicenseBillingType_Daily:
+            type: object
+            properties:
+                price_day:
+                    type: number
+                    format: double
+                price_month:
+                    type: integer
+                    format: uint32
+        Structures_SoftwareLicenseBillingType_Monthly:
+            type: object
+            properties:
+                price_month:
+                    type: integer
+                    format: uint32
+        Structures_SoftwareMetadata:
+            type: object
+            properties:
+                is_new:
+                    type: boolean
+                is_pinned:
+                    type: boolean
+                icon:
+                    type: string
+                icon2x:
+                    type: string
+                logo:
+                    type: string
+                logo2x:
+                    type: string
+                primary_color:
+                    type: string
+                secondary_color:
+                    type: string
+                weight:
+                    type: number
+                    format: float
+        Structures_SshKeyInfo:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: uint32
+                name:
+                    type: string
+                fingerprint:
+                    type: string
+                vps_id:
+                    type: array
+                    items:
+                        type: string
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+security:
+    - bearerAuth: []
+tags:
+    - name: BackupService
+    - name: ConfiguratorService
+    - name: ManageService
+    - name: MarketplaceService
+    - name: NetworkService
+    - name: SnapshotService
+    - name: SoftwareLicenseService
+    - name: SshKeyService
+    - name: StatisticService

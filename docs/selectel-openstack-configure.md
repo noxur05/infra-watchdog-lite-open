@@ -1,0 +1,695 @@
+- generic [ref=e2]:
+  - region "Перейти к основному содержимому":
+    - link "Перейти к основному содержимому" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img "Selectel" [ref=e9]
+        - generic [ref=e11]:
+          - link "Документация" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - link "API" [ref=e13] [cursor=pointer]:
+            - /url: /api/
+          - link "Terraform" [ref=e14] [cursor=pointer]:
+            - /url: /terraform/
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - link "В панель" [ref=e19] [cursor=pointer]:
+            - /url: https://my.selectel.ru/
+          - button [ref=e21]:
+            - img [ref=e22]
+        - button "Поиск..." [ref=e28]:
+          - generic [ref=e29]: Поиск...
+          - img [ref=e31]
+  - main [ref=e35]:
+    - text: ∕ ∕ ∕ ∕ ∕
+    - generic [ref=e37]:
+      - navigation "Навигационная цепочка текущей страницы" [ref=e39]:
+        - list [ref=e40]:
+          - listitem [ref=e41]:
+            - link "Документация" [ref=e42] [cursor=pointer]:
+              - /url: /
+            - text: ∕
+          - listitem [ref=e43]:
+            - generic [ref=e44]: Вычисления
+            - text: ∕
+          - listitem [ref=e45]:
+            - link "Облачные серверы" [ref=e46] [cursor=pointer]:
+              - /url: /cloud-servers/
+            - text: ∕
+          - listitem [ref=e47]:
+            - link "Инструменты для автоматизации" [ref=e48] [cursor=pointer]:
+              - /url: /cloud-servers/tools/
+            - text: ∕
+          - listitem [ref=e49]:
+            - link "OpenStack CLI" [ref=e50] [cursor=pointer]:
+              - /url: /cloud-servers/tools/openstack-cli/
+            - text: ∕
+          - listitem [ref=e51]:
+            - generic [ref=e52]: Настроить OpenStack CLI
+      - generic [ref=e55]:
+        - article [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - heading "Настроить OpenStack CLI" [level=1] [ref=e59]
+              - generic [ref=e63]:
+                - text: "Последнее изменение:"
+                - time [ref=e64]: 10 апреля 2026
+            - paragraph [ref=e65]: "Настроить консольный клиент CLI можно:"
+            - list [ref=e66]:
+              - listitem [ref=e67]:
+                - link "средствами операционной системы" [ref=e68] [cursor=pointer]:
+                  - /url: "#configure-openstack-in-os"
+                - text: ;
+              - listitem [ref=e69]:
+                - text: в
+                - link "Docker-контейнере" [ref=e70] [cursor=pointer]:
+                  - /url: "#configure-openstack-in-docker-container"
+                - text: .
+            - heading "Настроить OpenStack CLI средствами ОС" [level=2] [ref=e71] [cursor=pointer]:
+              - text: Настроить OpenStack CLI средствами
+              - generic [ref=e72]:
+                - text: ОС
+                - button [ref=e73]:
+                  - img [ref=e74]
+            - list [ref=e78]:
+              - listitem [ref=e79]:
+                - paragraph [ref=e80]:
+                  - link "Установите OpenStack CLI" [ref=e81] [cursor=pointer]:
+                    - /url: "#install-openstack-cli"
+                  - text: .
+              - listitem [ref=e82]:
+                - paragraph [ref=e83]:
+                  - link "Добавьте сервисного пользователя" [ref=e84] [cursor=pointer]:
+                    - /url: "#add-service-user-for-os"
+                  - text: .
+              - listitem [ref=e85]:
+                - paragraph [ref=e86]:
+                  - link "Скачайте RC-файл сервисного пользователя для авторизации в OpenStack API" [ref=e87] [cursor=pointer]:
+                    - /url: "#download-rc-file-for-os"
+                  - text: .
+              - listitem [ref=e88]:
+                - paragraph [ref=e89]:
+                  - link "Настройте авторизацию в OpenStack API" [ref=e90] [cursor=pointer]:
+                    - /url: "#configure-authorization-in-os"
+                  - text: .
+            - heading "1. Установить OpenStack CLI" [level=3] [ref=e91] [cursor=pointer]:
+              - text: 1. Установить OpenStack
+              - generic [ref=e92]:
+                - text: CLI
+                - button [ref=e93]:
+                  - img [ref=e94]
+            - generic [ref=e98]:
+              - tablist [ref=e99]:
+                - tab "Ubuntu/Debian" [selected] [ref=e100] [cursor=pointer]:
+                  - paragraph [ref=e101]: Ubuntu/Debian
+                - tab "CentOS" [ref=e102] [cursor=pointer]:
+                  - paragraph [ref=e103]: CentOS
+                - tab "macOS" [ref=e104] [cursor=pointer]:
+                  - paragraph [ref=e105]: macOS
+                - tab "Windows" [ref=e106] [cursor=pointer]:
+                  - paragraph [ref=e107]: Windows
+              - tabpanel [ref=e109]:
+                - list [ref=e110]:
+                  - listitem [ref=e111]:
+                    - paragraph [ref=e112]: Откройте CLI.
+                  - listitem [ref=e113]:
+                    - paragraph [ref=e114]:
+                      - text: Установите Python 3 и
+                      - code [ref=e115]: virtualenv
+                      - text: ":"
+                    - generic [ref=e117]:
+                      - code [ref=e119]:
+                        - generic [ref=e120]: sudo apt update
+                        - generic [ref=e121]: sudo apt install python3 virtualenv
+                      - button "Скопировать в буфер обмена" [ref=e122] [cursor=pointer]:
+                        - generic [ref=e123]:
+                          - img [ref=e124]
+                          - img [ref=e126]
+                  - listitem [ref=e128]:
+                    - paragraph [ref=e129]:
+                      - text: Установите
+                      - code [ref=e130]: pip3
+                      - text: ":"
+                    - generic [ref=e132]:
+                      - code [ref=e134]:
+                        - generic [ref=e135]: sudo apt install python3-pip
+                      - button "Скопировать в буфер обмена" [ref=e136] [cursor=pointer]:
+                        - generic [ref=e137]:
+                          - img [ref=e138]
+                          - img [ref=e140]
+                  - listitem [ref=e142]:
+                    - paragraph [ref=e143]: "Создайте виртуальную среду для работы с OpenStack:"
+                    - generic [ref=e145]:
+                      - code [ref=e147]:
+                        - generic [ref=e148]: virtualenv env
+                      - button "Скопировать в буфер обмена" [ref=e149] [cursor=pointer]:
+                        - generic [ref=e150]:
+                          - img [ref=e151]
+                          - img [ref=e153]
+                  - listitem [ref=e155]:
+                    - paragraph [ref=e156]: "Активируйте виртуальную среду:"
+                    - generic [ref=e158]:
+                      - code [ref=e160]:
+                        - generic [ref=e161]: source env/bin/activate
+                      - button "Скопировать в буфер обмена" [ref=e162] [cursor=pointer]:
+                        - generic [ref=e163]:
+                          - img [ref=e164]
+                          - img [ref=e166]
+                  - listitem [ref=e168]:
+                    - paragraph [ref=e169]: "Установите OpenStack CLI в виртуальную среду:"
+                    - generic [ref=e171]:
+                      - code [ref=e173]:
+                        - generic [ref=e174]: pip3 install python-openstackclient
+                      - button "Скопировать в буфер обмена" [ref=e175] [cursor=pointer]:
+                        - generic [ref=e176]:
+                          - img [ref=e177]
+                          - img [ref=e179]
+                  - listitem [ref=e181]:
+                    - paragraph [ref=e182]: "Убедитесь, что OpenStack CLI установлен:"
+                    - generic [ref=e184]:
+                      - code [ref=e186]:
+                        - generic [ref=e187]: openstack --version
+                      - button "Скопировать в буфер обмена" [ref=e188] [cursor=pointer]:
+                        - generic [ref=e189]:
+                          - img [ref=e190]
+                          - img [ref=e192]
+                    - paragraph [ref=e194]: "В ответе появится номер версии OpenStack CLI. Например:"
+                    - generic [ref=e196]:
+                      - code [ref=e198]:
+                        - generic [ref=e199]: openstack 6.1.0
+                      - button "Скопировать в буфер обмена" [ref=e200] [cursor=pointer]:
+                        - generic [ref=e201]:
+                          - img [ref=e202]
+                          - img [ref=e204]
+                  - listitem [ref=e206]:
+                    - paragraph [ref=e207]:
+                      - text: "Опционально: для работы с"
+                      - link "облачными балансировщиками нагрузки" [ref=e208] [cursor=pointer]:
+                        - /url: /cloud-servers/load-balancers/
+                      - text: "установите компонент Octavia:"
+                    - generic [ref=e210]:
+                      - code [ref=e212]:
+                        - generic [ref=e213]: pip3 install python-octaviaclient
+                      - button "Скопировать в буфер обмена" [ref=e214] [cursor=pointer]:
+                        - generic [ref=e215]:
+                          - img [ref=e216]
+                          - img [ref=e218]
+                  - listitem [ref=e220]:
+                    - paragraph [ref=e221]:
+                      - text: "Опционально: для работы с"
+                      - link "образами облачных серверов" [ref=e222] [cursor=pointer]:
+                        - /url: /cloud-servers/images/
+                      - text: "установите компонент Glance:"
+                    - generic [ref=e224]:
+                      - code [ref=e226]:
+                        - generic [ref=e227]: pip3 install python-glanceclient
+                      - button "Скопировать в буфер обмена" [ref=e228] [cursor=pointer]:
+                        - generic [ref=e229]:
+                          - img [ref=e230]
+                          - img [ref=e232]
+                  - listitem [ref=e234]:
+                    - paragraph [ref=e235]:
+                      - text: "Опционально: для работы с"
+                      - link "файловыми хранилищами" [ref=e236] [cursor=pointer]:
+                        - /url: /file-storage/
+                      - text: "установите компонент Manila:"
+                    - generic [ref=e238]:
+                      - code [ref=e240]:
+                        - generic [ref=e241]: pip3 install python-manilaclient==3.4.0
+                      - button "Скопировать в буфер обмена" [ref=e242] [cursor=pointer]:
+                        - generic [ref=e243]:
+                          - img [ref=e244]
+                          - img [ref=e246]
+            - heading "2. Добавить сервисного пользователя" [level=3] [ref=e248] [cursor=pointer]:
+              - text: 2. Добавить сервисного
+              - generic [ref=e249]:
+                - text: пользователя
+                - button [ref=e250]:
+                  - img [ref=e251]
+            - paragraph [ref=e255]:
+              - text: Для управления ресурсами проекта через OpenStack API
+              - link "добавьте сервисного пользователя" [ref=e256] [cursor=pointer]:
+                - /url: /access-control/manage/add-user/#add-service-user
+              - text: с разрешением в области доступа
+              - strong [ref=e257]: Проекты
+              - text: "и ролью:"
+            - list [ref=e258]:
+              - listitem [ref=e259]:
+                - link "member" [ref=e260] [cursor=pointer]:
+                  - /url: /access-control/role-reference/#member
+                  - code [ref=e261]: member
+                - text: ;
+              - listitem [ref=e262]:
+                - text: или
+                - link "reader" [ref=e263] [cursor=pointer]:
+                  - /url: /access-control/role-reference/#reader
+                  - code [ref=e264]: reader
+                - text: .
+            - paragraph [ref=e265]:
+              - text: Добавлять пользователей может
+              - link "Владелец аккаунта" [ref=e266] [cursor=pointer]:
+                - /url: /access-control/user-types/#account-owner
+              - text: или пользователи с ролью
+              - link "iam.admin" [ref=e267] [cursor=pointer]:
+                - /url: /access-control/role-reference/#iam-admin
+                - code [ref=e268]: iam.admin
+              - text: .
+            - heading "3. Скачать RC-файл" [level=3] [ref=e269] [cursor=pointer]:
+              - text: 3. Скачать
+              - generic [ref=e270]:
+                - text: RC-файл
+                - button [ref=e271]:
+                  - img [ref=e272]
+            - paragraph [ref=e276]: Для настройки авторизации нужно скачать RC-файл сервисного пользователя.
+            - list [ref=e277]:
+              - listitem [ref=e278]:
+                - paragraph [ref=e279]:
+                  - text: В
+                  - link "панели управления" [ref=e280] [cursor=pointer]:
+                    - /url: https://my.selectel.ru/iam/service-users
+                  - text: в верхнем меню нажмите
+                  - strong [ref=e281]: Аккаунт
+                  - text: .
+              - listitem [ref=e282]:
+                - paragraph [ref=e283]:
+                  - text: Перейдите в раздел
+                  - strong [ref=e284]: Сервисные пользователи
+                  - text: .
+              - listitem [ref=e285]:
+                - paragraph [ref=e286]:
+                  - text: Откройте страницу сервисного пользователя, которого вы
+                  - link "добавили на этапе 2" [ref=e287] [cursor=pointer]:
+                    - /url: "#add-service-user-for-os"
+                  - text: → вкладка
+                  - strong [ref=e288]: Доступ
+                  - text: .
+              - listitem [ref=e289]:
+                - paragraph [ref=e290]:
+                  - text: В блоке
+                  - strong [ref=e291]: RC-файлы
+                  - text: ":"
+                - paragraph [ref=e292]:
+                  - text: 4.1. Выберите
+                  - link "проект" [ref=e293] [cursor=pointer]:
+                    - /url: /access-control/projects/about-projects/
+                  - text: .
+                - paragraph [ref=e294]:
+                  - text: 4.2. Выберите
+                  - link "локацию" [ref=e295] [cursor=pointer]:
+                    - /url: /infrastructure/locations/
+                  - text: .
+                - paragraph [ref=e296]:
+                  - text: 4.3. Нажмите
+                  - strong [ref=e297]: Скачать
+                  - text: .
+            - heading "4. Настроить авторизацию" [level=3] [ref=e298] [cursor=pointer]:
+              - text: 4. Настроить
+              - generic [ref=e299]:
+                - text: авторизацию
+                - button [ref=e300]:
+                  - img [ref=e301]
+            - paragraph [ref=e307]:
+              - text: Авторизацию в OpenStack API можно настроить только для одного
+              - link "аккаунта" [ref=e308] [cursor=pointer]:
+                - /url: /account/
+              - text: ","
+              - link "сервисного пользователя" [ref=e309] [cursor=pointer]:
+                - /url: /access-control/access-management/#roles
+              - text: ","
+              - link "проекта" [ref=e310] [cursor=pointer]:
+                - /url: /access-control/projects/about-projects/
+              - text: и
+              - link "пула" [ref=e311] [cursor=pointer]:
+                - /url: /infrastructure/locations/#pool
+              - text: . Если вам нужно будет управлять ресурсами другого аккаунта, в другом проекте или пуле или под другим сервисным пользователем,
+              - link "измените данные для авторизации" [ref=e312] [cursor=pointer]:
+                - /url: /cloud-servers/tools/openstack-cli/change-authorization-data/
+              - text: .
+            - generic [ref=e313]:
+              - tablist [ref=e314]:
+                - tab "Linux/macOS" [selected] [ref=e315] [cursor=pointer]:
+                  - paragraph [ref=e316]: Linux/macOS
+                - tab "Windows" [ref=e317] [cursor=pointer]:
+                  - paragraph [ref=e318]: Windows
+              - tabpanel [ref=e320]:
+                - list [ref=e321]:
+                  - listitem [ref=e322]:
+                    - paragraph [ref=e323]: Откройте CLI.
+                  - listitem [ref=e324]:
+                    - paragraph [ref=e325]:
+                      - text: Перейдите в директорию с RC-файлом, который вы
+                      - link "скачали на этапе 3" [ref=e326] [cursor=pointer]:
+                        - /url: "#download-rc-file-for-os"
+                      - text: ":"
+                    - generic [ref=e328]:
+                      - code [ref=e330]:
+                        - generic [ref=e331]: cd <directory_name>
+                      - button "Скопировать в буфер обмена" [ref=e332] [cursor=pointer]:
+                        - generic [ref=e333]:
+                          - img [ref=e334]
+                          - img [ref=e336]
+                    - paragraph [ref=e338]:
+                      - text: Укажите
+                      - code [ref=e339]: <directory_name>
+                      - text: — имя директории с RC-файлом.
+                  - listitem [ref=e340]:
+                    - paragraph [ref=e341]: "Примените переменные окружения из RC-файла:"
+                    - generic [ref=e343]:
+                      - code [ref=e345]:
+                        - generic [ref=e346]: source <rcfile_name>
+                      - button "Скопировать в буфер обмена" [ref=e347] [cursor=pointer]:
+                        - generic [ref=e348]:
+                          - img [ref=e349]
+                          - img [ref=e351]
+                    - paragraph [ref=e353]:
+                      - text: Укажите
+                      - code [ref=e354]: <rcfile_name>
+                      - text: — имя RC-файла, который вы
+                      - link "скачали на этапе 3" [ref=e355] [cursor=pointer]:
+                        - /url: "#download-rc-file-for-os"
+                      - text: . По умолчанию
+                      - code [ref=e356]: rc.sh
+                      - text: .
+                  - listitem [ref=e357]:
+                    - paragraph [ref=e358]:
+                      - text: Введите пароль OpenStack — пароль сервисного пользователя, для которого вы
+                      - link "скачали RC-файл на этапе 3" [ref=e359] [cursor=pointer]:
+                        - /url: "#download-rc-file-for-os"
+                      - text: .
+                  - listitem [ref=e360]:
+                    - paragraph [ref=e361]: "Убедитесь, что OpenStack CLI работает. Для этого откройте список облачных серверов:"
+                    - generic [ref=e363]:
+                      - code [ref=e365]:
+                        - generic [ref=e366]: openstack server list
+                      - button "Скопировать в буфер обмена" [ref=e367] [cursor=pointer]:
+                        - generic [ref=e368]:
+                          - img [ref=e369]
+                          - img [ref=e371]
+                    - paragraph [ref=e373]: Если в пуле и проекте, которые указаны в RC-файле, созданы облачные серверы, то в ответе появится их список. Если серверы пока не созданы, в ответе будет пустая строка.
+            - heading "Настроить OpenStack CLI в Docker-контейнере" [level=2] [ref=e374] [cursor=pointer]:
+              - text: Настроить OpenStack CLI в
+              - generic [ref=e375]:
+                - text: Docker-контейнере
+                - button [ref=e376]:
+                  - img [ref=e377]
+            - list [ref=e381]:
+              - listitem [ref=e382]:
+                - paragraph [ref=e383]:
+                  - link "Установите Docker" [ref=e384] [cursor=pointer]:
+                    - /url: "#install-docker"
+                  - text: .
+              - listitem [ref=e385]:
+                - paragraph [ref=e386]:
+                  - link "Добавьте сервисного пользователя" [ref=e387] [cursor=pointer]:
+                    - /url: "#add-service-user-for-docker"
+                  - text: .
+              - listitem [ref=e388]:
+                - paragraph [ref=e389]:
+                  - link "Скачайте RC-файл для авторизации в OpenStack API" [ref=e390] [cursor=pointer]:
+                    - /url: "#download-rc-file-for-docker"
+                  - text: .
+              - listitem [ref=e391]:
+                - paragraph [ref=e392]:
+                  - link "Установите OpenStack CLI в Docker-контейнере" [ref=e393] [cursor=pointer]:
+                    - /url: "#install-openstack-in-docker-container"
+                  - text: .
+            - heading "1. Установить Docker" [level=3] [ref=e394] [cursor=pointer]:
+              - text: 1. Установить
+              - generic [ref=e395]:
+                - text: Docker
+                - button [ref=e396]:
+                  - img [ref=e397]
+            - paragraph [ref=e401]:
+              - text: Для установки Docker на локальный компьютер используйте инструкцию
+              - link "Установить Docker" [ref=e402] [cursor=pointer]:
+                - /url: https://docs.docker.com/engine/install/
+              - text: официальной документации Docker.
+            - heading "2. Добавить сервисного пользователя" [level=3] [ref=e403] [cursor=pointer]:
+              - text: 2. Добавить сервисного
+              - generic [ref=e404]:
+                - text: пользователя
+                - button [ref=e405]:
+                  - img [ref=e406]
+            - paragraph [ref=e410]:
+              - text: Для управления ресурсами проекта через OpenStack API
+              - link "добавьте сервисного пользователя" [ref=e411] [cursor=pointer]:
+                - /url: /access-control/manage/add-user/#add-service-user
+              - text: с разрешением в области доступа
+              - strong [ref=e412]: Проекты
+              - text: "и ролью:"
+            - list [ref=e413]:
+              - listitem [ref=e414]:
+                - link "member" [ref=e415] [cursor=pointer]:
+                  - /url: /access-control/role-reference/#member
+                  - code [ref=e416]: member
+                - text: ;
+              - listitem [ref=e417]:
+                - text: или
+                - link "reader" [ref=e418] [cursor=pointer]:
+                  - /url: /access-control/role-reference/#reader
+                  - code [ref=e419]: reader
+                - text: .
+            - paragraph [ref=e420]:
+              - text: Добавлять пользователей может
+              - link "Владелец аккаунта" [ref=e421] [cursor=pointer]:
+                - /url: /access-control/user-types/#account-owner
+              - text: или пользователи с ролью
+              - link "iam.admin" [ref=e422] [cursor=pointer]:
+                - /url: /access-control/role-reference/#iam-admin
+                - code [ref=e423]: iam.admin
+              - text: .
+            - heading "3. Скачать RC-файл" [level=3] [ref=e424] [cursor=pointer]:
+              - text: 3. Скачать
+              - generic [ref=e425]:
+                - text: RC-файл
+                - button [ref=e426]:
+                  - img [ref=e427]
+            - paragraph [ref=e433]:
+              - text: Авторизацию в OpenStack API можно настроить только для одного
+              - link "аккаунта" [ref=e434] [cursor=pointer]:
+                - /url: /account/
+              - text: ","
+              - link "сервисного пользователя" [ref=e435] [cursor=pointer]:
+                - /url: /access-control/access-management/#roles
+              - text: ","
+              - link "проекта" [ref=e436] [cursor=pointer]:
+                - /url: /access-control/projects/about-projects/
+              - text: и
+              - link "пула" [ref=e437] [cursor=pointer]:
+                - /url: /infrastructure/locations/#pool
+              - text: . Если после авторизации вам нужно будет управлять ресурсами другого аккаунта, в другом проекте или пуле или под другим сервисным пользователем, вы сможете
+              - link "изменить данные для авторизации" [ref=e438] [cursor=pointer]:
+                - /url: /cloud-servers/tools/openstack-cli/change-authorization-data/
+              - text: .
+            - list [ref=e439]:
+              - listitem [ref=e440]:
+                - paragraph [ref=e441]:
+                  - text: В
+                  - link "панели управления" [ref=e442] [cursor=pointer]:
+                    - /url: https://my.selectel.ru/iam/service-users
+                  - text: в верхнем меню нажмите
+                  - strong [ref=e443]: Аккаунт
+                  - text: .
+              - listitem [ref=e444]:
+                - paragraph [ref=e445]:
+                  - text: Перейдите в раздел
+                  - strong [ref=e446]: Сервисные пользователи
+                  - text: .
+              - listitem [ref=e447]:
+                - paragraph [ref=e448]:
+                  - text: Откройте страницу сервисного пользователя, которого вы
+                  - link "добавили на этапе 2" [ref=e449] [cursor=pointer]:
+                    - /url: "#add-service-user-for-docker"
+                  - text: → вкладка
+                  - strong [ref=e450]: Доступ
+                  - text: .
+              - listitem [ref=e451]:
+                - paragraph [ref=e452]:
+                  - text: В блоке
+                  - strong [ref=e453]: RC-файлы
+                  - text: ":"
+                - paragraph [ref=e454]:
+                  - text: 4.1. Выберите
+                  - link "проект" [ref=e455] [cursor=pointer]:
+                    - /url: /access-control/projects/about-projects/
+                  - text: .
+                - paragraph [ref=e456]:
+                  - text: 4.2. Выберите
+                  - link "локацию" [ref=e457] [cursor=pointer]:
+                    - /url: /infrastructure/locations/
+                  - text: .
+                - paragraph [ref=e458]:
+                  - text: 4.3. Нажмите
+                  - strong [ref=e459]: Скачать
+                  - text: .
+            - heading "4. Установить OpenStack CLI в Docker-контейнере" [level=3] [ref=e460] [cursor=pointer]:
+              - text: 4. Установить OpenStack CLI в
+              - generic [ref=e461]:
+                - text: Docker-контейнере
+                - button [ref=e462]:
+                  - img [ref=e463]
+            - list [ref=e467]:
+              - listitem [ref=e468]:
+                - paragraph [ref=e469]: Откройте CLI.
+              - listitem [ref=e470]:
+                - paragraph [ref=e471]: "Создайте директорию для работы с Docker:"
+                - generic [ref=e473]:
+                  - code [ref=e475]:
+                    - generic [ref=e476]: mkdir <docker_directory>
+                  - button "Скопировать в буфер обмена" [ref=e477] [cursor=pointer]:
+                    - generic [ref=e478]:
+                      - img [ref=e479]
+                      - img [ref=e481]
+                - paragraph [ref=e483]:
+                  - text: Укажите
+                  - code [ref=e484]: <docker_directory>
+                  - text: — имя директории, в которую будет добавлен RC-файл и создан Dockerfile.
+              - listitem [ref=e485]:
+                - paragraph [ref=e486]: "Переместите RC-файл в директорию:"
+                - generic [ref=e488]:
+                  - code [ref=e490]:
+                    - generic [ref=e491]: mv <rcfile_name> <docker_directory>
+                  - button "Скопировать в буфер обмена" [ref=e492] [cursor=pointer]:
+                    - generic [ref=e493]:
+                      - img [ref=e494]
+                      - img [ref=e496]
+                - paragraph [ref=e498]: "Укажите:"
+                - list [ref=e499]:
+                  - listitem [ref=e500]:
+                    - code [ref=e501]: <rcfile_name>
+                    - text: — имя RC-файла, который вы
+                    - link "скачали на этапе 3" [ref=e502] [cursor=pointer]:
+                      - /url: "#download-rc-file-for-docker"
+                    - text: . По умолчанию
+                    - code [ref=e503]: rc.sh
+                    - text: ;
+                  - listitem [ref=e504]:
+                    - code [ref=e505]: <docker_directory>
+                    - text: — имя директории, в которую будет добавлен RC-файл и создан Dockerfile.
+              - listitem [ref=e506]:
+                - paragraph [ref=e507]:
+                  - text: Создайте в этой директории пустой Dockerfile с помощью текстового редактора
+                  - code [ref=e508]: nano
+                  - text: ":"
+                - generic [ref=e510]:
+                  - code [ref=e512]:
+                    - generic [ref=e513]: nano Dockerfile
+                  - button "Скопировать в буфер обмена" [ref=e514] [cursor=pointer]:
+                    - generic [ref=e515]:
+                      - img [ref=e516]
+                      - img [ref=e518]
+              - listitem [ref=e520]:
+                - paragraph [ref=e521]: "Добавьте в Dockerfile команды для установки OpenStack CLI:"
+                - generic [ref=e523]:
+                  - code [ref=e525]:
+                    - generic [ref=e526]: FROM alpine:3.17
+                    - generic [ref=e527]: RUN apk add --update --no-cache python3 python3-dev libffi libffi-dev \
+                    - generic [ref=e528]: git openssl openssl-dev cargo build-base iputils curl linux-headers \
+                    - generic [ref=e529]: py3-pip py3-cffi py3-tz py3-pbr py3-setuptools && \
+                    - generic [ref=e530]: pip3 install -UI git+https://github.com/openstack/python-openstackclient.git@stable/2024.2 \
+                    - generic [ref=e531]: git+https://github.com/openstack/python-glanceclient.git@stable/2024.2 \
+                    - generic [ref=e532]: git+https://github.com/openstack/python-octaviaclient.git@stable/2024.2 \
+                    - generic [ref=e533]: git+https://github.com/openstack/python-manilaclient.git@unmaintained/zed \
+                    - generic [ref=e534]: git+https://github.com/openstack/osc-lib.git@stable/2024.2 \
+                    - generic [ref=e535]: "&& apk del build-base linux-headers python3-dev libffi-dev openssl-dev git cargo iputils curl && rm -rf /var/cache"
+                    - generic [ref=e536]: CMD ["sh"]
+                  - button "Скопировать в буфер обмена" [ref=e537] [cursor=pointer]:
+                    - generic [ref=e538]:
+                      - img [ref=e539]
+                      - img [ref=e541]
+              - listitem [ref=e543]:
+                - paragraph [ref=e544]:
+                  - text: Выйдите из текстового редактора
+                  - code [ref=e545]: nano
+                  - text: "с сохранением изменений: нажмите"
+                  - strong [ref=e546]: Ctrl+Х
+                  - text: ", а затем"
+                  - strong [ref=e547]: Y+Enter
+                  - text: .
+              - listitem [ref=e548]:
+                - paragraph [ref=e549]: "Соберите Docker-контейнер:"
+                - generic [ref=e551]:
+                  - code [ref=e553]:
+                    - generic [ref=e554]: docker build -t osc:dalmatian .
+                  - button "Скопировать в буфер обмена" [ref=e555] [cursor=pointer]:
+                    - generic [ref=e556]:
+                      - img [ref=e557]
+                      - img [ref=e559]
+              - listitem [ref=e561]:
+                - paragraph [ref=e562]: "Запустите Docker-контейнер:"
+                - generic [ref=e564]:
+                  - code [ref=e566]:
+                    - generic [ref=e567]: docker run -ti --rm -v $(pwd):/workspace osc:dalmatian
+                  - button "Скопировать в буфер обмена" [ref=e568] [cursor=pointer]:
+                    - generic [ref=e569]:
+                      - img [ref=e570]
+                      - img [ref=e572]
+              - listitem [ref=e574]:
+                - paragraph [ref=e575]:
+                  - text: Перейдите в директорию
+                  - code [ref=e576]: workspace
+                  - text: ":"
+                - generic [ref=e578]:
+                  - code [ref=e580]:
+                    - generic [ref=e581]: cd /workspace
+                  - button "Скопировать в буфер обмена" [ref=e582] [cursor=pointer]:
+                    - generic [ref=e583]:
+                      - img [ref=e584]
+                      - img [ref=e586]
+              - listitem [ref=e588]:
+                - paragraph [ref=e589]: "Примените переменные окружения из RC-файла:"
+                - generic [ref=e591]:
+                  - code [ref=e593]:
+                    - generic [ref=e594]: source <rcfile_name>
+                  - button "Скопировать в буфер обмена" [ref=e595] [cursor=pointer]:
+                    - generic [ref=e596]:
+                      - img [ref=e597]
+                      - img [ref=e599]
+                - paragraph [ref=e601]:
+                  - text: Укажите
+                  - code [ref=e602]: <rcfile_name>
+                  - text: — имя RC-файла, который вы
+                  - link "скачали на этапе 3" [ref=e603] [cursor=pointer]:
+                    - /url: "#download-rc-file-for-docker"
+                  - text: . По умолчанию
+                  - code [ref=e604]: rc.sh
+                  - text: .
+              - listitem [ref=e605]:
+                - paragraph [ref=e606]:
+                  - text: Введите пароль OpenStack — пароль сервисного пользователя, для которого вы
+                  - link "скачали RC-файл на этапе 3" [ref=e607] [cursor=pointer]:
+                    - /url: "#download-rc-file-for-docker"
+                  - text: .
+              - listitem [ref=e608]:
+                - paragraph [ref=e609]: "Убедитесь, что OpenStack CLI работает. Для этого откройте список облачных серверов:"
+            - generic [ref=e611]:
+              - code [ref=e613]:
+                - generic [ref=e614]: openstack server list
+              - button "Скопировать в буфер обмена" [ref=e615] [cursor=pointer]:
+                - generic [ref=e616]:
+                  - img [ref=e617]
+                  - img [ref=e619]
+            - paragraph [ref=e621]: Если в пуле и проекте, которые указаны в RC-файле, созданы облачные серверы, в ответе появится их список. Если серверы пока не созданы, в ответе будет пустая строка.
+            - iframe [ref=e623]:
+              - generic [active] [ref=f19e1]:
+                - alert [ref=f19e2]
+                - generic "Автоматическое закрытие оболочки" [ref=f19e21]:
+                  - generic [ref=f19e32]:
+                    - generic [ref=f19e36]:
+                      - paragraph [ref=f19e39]: Эта статья помогла решить ваш вопрос?
+                      - group "Options" [ref=f19e41]:
+                        - generic [ref=f19e42]: Options
+                        - radiogroup [ref=f19e43]:
+                          - generic [ref=f19e45] [cursor=pointer]:
+                            - radio "Да, помогла 👍" [ref=f19e46]
+                            - generic [ref=f19e47]: Да, помогла 👍
+                          - generic [ref=f19e49] [cursor=pointer]:
+                            - radio "Частично помогла 😐" [ref=f19e50]
+                            - generic [ref=f19e51]: Частично помогла 😐
+                          - generic [ref=f19e53] [cursor=pointer]:
+                            - radio "Не помогла 👎" [ref=f19e54]
+                            - generic [ref=f19e55]: Не помогла 👎
+                    - button "Далее" [ref=f19e58] [cursor=pointer]
+        - text: « »

@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  # Only fire on branch pushes — `pull_request` was dropped to avoid running
+  # the same suite twice on every PR (the `push` trigger already runs on every
+  # commit that lands on the branch, including ones added to an open PR). The
+  # branches are short-lived enough that we don't lose meaningful coverage from
+  # not testing the merged-into-main preview state.
+  push:
+    branches-ignore:
+      - main
+      - gh-pages
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    name: build + test
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: cache cargo registry + target
+        uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: build
+
+      - name: cargo check
+        run: cargo check --all-targets --locked
+
+      - name: cargo test
+        run: cargo test --all-targets --locked
+
+      - name: cargo build --release
+        run: cargo build --release --locked
+
+      - name: binary sanity
+        run: |
+          file target/release/vpn-watchdog
+          ls -la target/release/vpn-watchdog
+          du -h target/release/vpn-watchdog
+
+      - name: clippy (non-fatal)
+        run: cargo clippy --all-targets --locked -- -A clippy::all || true

@@ -1,0 +1,250 @@
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img "Selectel" [ref=e9]
+        - generic [ref=e12]:
+          - link "Documentation" [ref=e13] [cursor=pointer]:
+            - /url: /en/
+          - link "API" [ref=e14] [cursor=pointer]:
+            - /url: /en/api/
+          - link "Terraform" [ref=e15] [cursor=pointer]:
+            - /url: /en/terraform/
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - link "Control panel" [ref=e391] [cursor=pointer]:
+            - /url: https://my.selectel.ru/
+          - button [ref=e23]:
+            - img [ref=e24]
+        - button "Search..." [ref=e30]:
+          - generic [ref=e31]: Search...
+          - img [ref=e33]
+  - main [ref=e37]:
+    - text: ∕ ∕ ∕ ∕
+    - generic [ref=e39]:
+      - navigation "Breadcrumb of the current page" [ref=e41]:
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - link "Documentation" [ref=e44] [cursor=pointer]:
+              - /url: /en/
+            - text: ∕
+          - listitem [ref=e45]:
+            - generic [ref=e46]: Compute
+            - text: ∕
+          - listitem [ref=e47]:
+            - link "Cloud Servers" [ref=e48] [cursor=pointer]:
+              - /url: /en/cloud-servers/
+            - text: ∕
+          - listitem [ref=e49]:
+            - link "Create a cloud server" [ref=e50] [cursor=pointer]:
+              - /url: /en/cloud-servers/create/
+            - text: ∕
+          - listitem [ref=e51]:
+            - generic [ref=e52]: Create a server
+      - generic [ref=e55]:
+        - article [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - heading "Create a cloud server" [level=1] [ref=e59]
+              - generic [ref=e63]:
+                - text: "Last update:"
+                - time [ref=e64]: April 16 2026
+            - generic [ref=e392]:
+              - tablist [ref=e393]:
+                - tab "Control panel" [ref=e394] [cursor=pointer]:
+                  - paragraph [ref=e395]: Control panel
+                - tab "OpenStack CLI" [active] [selected] [ref=e396] [cursor=pointer]:
+                  - paragraph [ref=e397]: OpenStack CLI
+                - tab "Terraform" [ref=e398] [cursor=pointer]:
+                  - paragraph [ref=e399]: Terraform
+              - tabpanel [ref=e720]:
+                - paragraph [ref=e721]:
+                  - text: For an example of creating multiple cloud servers, see the instructions
+                  - link "Create multiple cloud servers through the OpenStack CLI" [ref=e722] [cursor=pointer]:
+                    - /url: /en/cloud-servers/tools/openstack-cli/create-several-servers/
+                  - text: .
+                - list [ref=e723]:
+                  - listitem [ref=e724]:
+                    - paragraph [ref=e725]:
+                      - link "Open the OpenStack CLI" [ref=e726] [cursor=pointer]:
+                        - /url: /en/cloud-servers/tools/openstack-cli/
+                      - text: .
+                  - listitem [ref=e727]:
+                    - paragraph [ref=e728]: "Create a cloud server:"
+                    - generic [ref=e730]:
+                      - code [ref=e732]:
+                        - generic [ref=e733]: openstack server create \
+                        - generic [ref=e734]: "[--image <image> | --volume <volume> | --snapshot <snapshot>] \\"
+                        - generic [ref=e735]: "--flavor <flavor> \\"
+                        - generic [ref=e736]: "--availability-zone <pool_segment> \\"
+                        - generic [ref=e737]: "--nic net-id=<net_uuid> \\"
+                        - generic [ref=e738]: "--security-group <security_group> \\"
+                        - generic [ref=e739]: "--key-name <key_name> \\"
+                        - generic [ref=e740]: <server_name>
+                      - button "Copy to clipboard" [ref=e741] [cursor=pointer]:
+                        - generic [ref=e742]:
+                          - img [ref=e743]
+                          - img [ref=e745]
+                    - paragraph [ref=e747]: "Specify:"
+                    - list [ref=e748]:
+                      - listitem [ref=e749]:
+                        - text: "source type:"
+                        - list [ref=e750]:
+                          - listitem [ref=e751]:
+                            - code [ref=e752]: "--image <image>"
+                            - text: "- to create a server from a"
+                            - link "ready-made" [ref=e753] [cursor=pointer]:
+                              - /url: /en/cloud-servers/images/about-images/#default-images
+                            - text: or
+                            - link "custom image" [ref=e754] [cursor=pointer]:
+                              - /url: /en/cloud-servers/images/about-images/#own-images
+                            - text: . Parameter
+                            - code [ref=e755]: <image>
+                            - text: "- ID or name of the image. The image must be in the same pool as the server. The list of images can be viewed using"
+                            - code [ref=e756]: openstack image list
+                            - text: ;
+                          - listitem [ref=e757]:
+                            - code [ref=e758]: "--volume <volume>"
+                            - text: "- to create a server from"
+                            - link "network disk" [ref=e759] [cursor=pointer]:
+                              - /url: /en/cloud-servers/volumes/about-network-volumes/
+                            - text: . Parameter
+                            - code [ref=e760]: <volume>
+                            - text: "- ID or name of the disk. The disk must be in the same pool segment as the server. The list of network disks can be viewed with"
+                            - code [ref=e761]: openstack volume list
+                            - text: ;
+                          - listitem [ref=e762]:
+                            - code [ref=e763]: "--snapshot <snapshot>"
+                            - text: "- to create a server from"
+                            - link "snapshot" [ref=e764] [cursor=pointer]:
+                              - /url: /en/cloud-servers/volumes/snapshots/
+                            - text: . Parameter
+                            - code [ref=e765]: <snapshot>
+                            - text: "- The ID or name of the snapshot. The snapshot must be in the same pool segment as the server. The list of snapshots can be viewed with"
+                            - code [ref=e766]: openstack snapshot list
+                            - text: ;
+                      - listitem [ref=e767]:
+                        - code [ref=e768]: <flavor>
+                        - text: "- The ID or name of the flavor. The flavors correspond to"
+                        - link "cloud server configurations" [ref=e769] [cursor=pointer]:
+                          - /url: /en/cloud-servers/create/configurations/
+                        - text: and determine the number of vCPUs, RAM, and local disk size (optional) of the server. You can use fixed configuration flavors or
+                        - link "create a flavor" [ref=e770] [cursor=pointer]:
+                          - /url: /en/cloud-servers/create/create-flavor/
+                        - text: . For example,
+                        - code [ref=e771]: "1015"
+                        - text: "- ID to create a Standard lineup fixed configuration server with 4 vCPUs, 16 GB RAM in a ru-9 pool. You can view the list of flavors with"
+                        - code [ref=e772]: openstack flavor list
+                        - text: or in the table
+                        - link "List of fixed configuration flavors in all pools" [ref=e773] [cursor=pointer]:
+                          - /url: /en/cloud-servers/create/configurations/#server-flavors-full-list
+                        - text: ;
+                      - listitem [ref=e774]:
+                        - code [ref=e775]: <pool_segment>
+                        - text: "-"
+                        - link "pool segment" [ref=e776] [cursor=pointer]:
+                          - /url: /en/infrastructure/locations/#pool
+                        - text: in which the cloud server will be created, e.g.
+                        - code [ref=e777]: ru-9a
+                        - text: . The list of available pool segments can be found in the instructions.
+                        - link "Availability matrices" [ref=e778] [cursor=pointer]:
+                          - /url: /en/infrastructure/availability-matrix/
+                        - text: ;
+                      - listitem [ref=e779]:
+                        - code [ref=e780]: <net_uuid>
+                        - text: "- ID of the private or public network to which the server will be connected. The list of networks can be viewed with"
+                        - code [ref=e781]: openstack network list
+                        - text: ;
+                      - listitem [ref=e782]:
+                        - code [ref=e783]: <security_group>
+                        - text: "- The ID or name of the security group that will be assigned to all ports on the server. To create a server with a security group, the network must have port security enabled."
+                        - link "port security" [ref=e784] [cursor=pointer]:
+                          - /url: /en/cloud-servers/cloud-networks/about-networks/#traffic-filtering-port-security
+                        - text: . The list of groups can be viewed with the command
+                        - code [ref=e785]: openstack security group list
+                        - text: ;
+                      - listitem [ref=e786]:
+                        - code [ref=e787]: <key_name>
+                        - text: "- name of the SSH key pair for the service user. If SSH keys are not created,"
+                        - link "generate them" [ref=e788] [cursor=pointer]:
+                          - /url: /en/cloud-servers/manage/create-and-place-ssh-key/#create-ssh-keys
+                        - text: . The list of keypairs can be viewed with
+                        - code [ref=e789]: openstack keypair list
+                        - text: ;
+                      - listitem [ref=e790]:
+                        - text: "optional:"
+                        - code [ref=e791]: "--block-device-mapping vdb=<extra_volume>"
+                        - text: "- ID or name of the extra disk. The list of disks can be viewed using"
+                        - code [ref=e792]: openstack volume list
+                        - text: ;
+                      - listitem [ref=e793]:
+                        - text: "optional:"
+                        - code [ref=e794]: "--property x_cloud_smt_enabled=false"
+                        - text: "- disable"
+                        - link "Hyper-Threading (SMT" [ref=e795] [cursor=pointer]:
+                          - /url: /en/cloud-servers/about/dedicated-cores/#hyper-threading
+                        - text: ). If the parameter is not specified - Hyper-Threading (SMT) will be enabled by default. It can be used only with flavors that support
+                        - link "dedicated cores" [ref=e796] [cursor=pointer]:
+                          - /url: /en/cloud-servers/about/dedicated-cores/
+                        - text: . The list of flavors can be viewed in the table
+                        - link "List of fixed configuration flavors in all pools" [ref=e797] [cursor=pointer]:
+                          - /url: /en/cloud-servers/create/configurations/#server-flavors-full-list
+                        - text: ;
+                      - listitem [ref=e798]:
+                        - text: "optional:"
+                        - code [ref=e799]: "--property x_cloud_numa_nodes=1"
+                        - text: "- placement of resources on one NUMA-node. Can be used only with flavors that support"
+                        - link "dedicated cores" [ref=e800] [cursor=pointer]:
+                          - /url: /en/cloud-servers/about/dedicated-cores/
+                        - text: . The list of flavors can be viewed in the table
+                        - link "List of fixed configuration flavors in all pools" [ref=e801] [cursor=pointer]:
+                          - /url: /en/cloud-servers/create/configurations/#server-flavors-full-list
+                        - text: ;
+                      - listitem [ref=e802]:
+                        - text: "optional:"
+                        - code [ref=e803]: "--tag <tag_name> --os-compute-api-version 2.52"
+                        - text: "-"
+                        - link "tag" [ref=e804] [cursor=pointer]:
+                          - /url: /en/cloud-servers/manage/tags/
+                        - text: to add more information about the server;
+                      - listitem [ref=e805]:
+                        - text: "optional:"
+                        - code [ref=e806]: "--tag preemptible --os-compute-api-version 2.72"
+                        - text: "- tag to create an"
+                        - link "interruptible server" [ref=e807] [cursor=pointer]:
+                          - /url: /en/cloud-servers/about/preemptible-servers/
+                        - text: ;
+                      - listitem [ref=e808]:
+                        - text: "optional:"
+                        - code [ref=e809]: "--user-data <user_data.file>"
+                        - text: "- path to the script with Base64 encoded data. Scripts and tasks from the script will be executed at the first boot of the operating system. Examples of scripts can be found in the"
+                        - link "User data" [ref=e810] [cursor=pointer]:
+                          - /url: /en/cloud-servers/manage/user-data/
+                        - text: instruction;
+                      - listitem [ref=e811]:
+                        - code [ref=e812]: <server_name>
+                        - text: "- server name."
+            - iframe [ref=e719]:
+              - generic [active] [ref=f2e1]:
+                - alert [ref=f2e2]
+                - generic "Auto close wrapper" [ref=f2e15]:
+                  - generic [ref=f2e26]:
+                    - generic [ref=f2e30]:
+                      - paragraph [ref=f2e33]: Did this article answer your question?
+                      - group "Options" [ref=f2e35]:
+                        - generic [ref=f2e36]: Options
+                        - radiogroup [ref=f2e37]:
+                          - generic [ref=f2e39] [cursor=pointer]:
+                            - radio "Yes, it did 👍" [ref=f2e40]
+                            - generic [ref=f2e41]: Yes, it did 👍
+                          - generic [ref=f2e43] [cursor=pointer]:
+                            - radio "Partially 😐" [ref=f2e44]
+                            - generic [ref=f2e45]: Partially 😐
+                          - generic [ref=f2e47] [cursor=pointer]:
+                            - radio "No, it didn't 👎" [ref=f2e48]
+                            - generic [ref=f2e49]: No, it didn't 👎
+                    - button "Next" [ref=f2e52] [cursor=pointer]
+        - text: « »

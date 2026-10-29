@@ -1,0 +1,422 @@
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img "Selectel" [ref=e9]
+        - generic [ref=e11]:
+          - link "Documentation" [ref=e12] [cursor=pointer]:
+            - /url: /en/
+          - link "API" [ref=e13] [cursor=pointer]:
+            - /url: /en/api/
+          - link "Terraform" [ref=e14] [cursor=pointer]:
+            - /url: /en/terraform/
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - link "Control panel" [ref=e19] [cursor=pointer]:
+            - /url: https://my.selectel.ru/
+          - button [ref=e21]:
+            - img [ref=e22]
+        - button "Search..." [ref=e28]:
+          - generic [ref=e29]: Search...
+          - img [ref=e31]
+  - main [ref=e35]:
+    - text: ∕ ∕
+    - generic [ref=e37]:
+      - navigation "Breadcrumb of the current page" [ref=e39]:
+        - list [ref=e40]:
+          - listitem [ref=e41]:
+            - link "Documentation" [ref=e42] [cursor=pointer]:
+              - /url: /en/
+            - text: ∕
+          - listitem [ref=e43]:
+            - generic [ref=e44]: Account
+            - text: ∕
+          - listitem [ref=e45]:
+            - generic [ref=e46]: Manage Access Keys
+      - generic [ref=e49]:
+        - article [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - heading "Manage access keys" [level=1] [ref=e53]
+              - generic [ref=e57]:
+                - text: "Last update:"
+                - time [ref=e58]: April 10 2026
+            - paragraph [ref=e59]: "Users with control panel access can manage their keys:"
+            - list [ref=e60]:
+              - listitem [ref=e61]:
+                - link "SSH keys" [ref=e62] [cursor=pointer]:
+                  - /url: "#manage-ssh-keys"
+                - text: for the cloud platform;
+              - listitem [ref=e63]:
+                - link "API keys" [ref=e64] [cursor=pointer]:
+                  - /url: "#manage-api-keys"
+                - text: ;
+              - listitem [ref=e65]:
+                - link "S3 keys" [ref=e66] [cursor=pointer]:
+                  - /url: "#manage-s3-keys"
+                - text: ;
+              - listitem [ref=e67]:
+                - link "ADB keys" [ref=e68] [cursor=pointer]:
+                  - /url: "#manage-adb-keys"
+                - text: .
+            - heading "Manage SSH keys" [level=2] [ref=e69] [cursor=pointer]:
+              - text: Manage SSH
+              - generic [ref=e70]:
+                - text: keys
+                - button [ref=e71]:
+                  - img [ref=e72]
+            - paragraph [ref=e76]:
+              - text: To securely connect to the server using the encrypted SSH protocol, you can
+              - link "add" [ref=e77] [cursor=pointer]:
+                - /url: "#add-ssh-key"
+              - text: and
+              - link "remove SSH keys" [ref=e78] [cursor=pointer]:
+                - /url: "#delete-ssh-key"
+              - text: in your profile.
+            - paragraph [ref=e79]:
+              - text: Account owner or user with a role
+              - link "iam.admin" [ref=e80] [cursor=pointer]:
+                - /url: /en/access-control/role-reference/#iam-admin
+                - code [ref=e81]: iam.admin
+              - text: can manage SSH keys of other users, including service users, see the
+              - link "Manage SSH User Keys" [ref=e82] [cursor=pointer]:
+                - /url: /en/access-control/manage/edit-user-data-or-role/#manage-ssh-keys
+              - text: section of the Change User Data or Permissions instructions for more information.
+            - heading "Add an SSH key" [level=3] [ref=e83] [cursor=pointer]:
+              - text: Add an SSH
+              - generic [ref=e84]:
+                - text: key
+                - button [ref=e85]:
+                  - img [ref=e86]
+            - paragraph [ref=e90]:
+              - text: If you have
+              - link "created an SSH key" [ref=e91] [cursor=pointer]:
+                - /url: /en/cloud-servers/manage/create-and-place-ssh-key/#create-ssh-keys
+              - text: ", you can add the public part of it to your profile. The added SSH key can be"
+              - link "hosted on a cloud server" [ref=e92] [cursor=pointer]:
+                - /url: /en/cloud-servers/manage/create-and-place-ssh-key/#place-public-ssh-key
+              - text: .
+            - paragraph [ref=e93]: The key will be available in all projects you are added to.
+            - list [ref=e94]:
+              - listitem [ref=e95]:
+                - text: In the
+                - link "control panel" [ref=e96] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/
+                - text: ", on the top menu, click"
+                - strong [ref=e97]: Account
+                - text: .
+              - listitem [ref=e98]:
+                - text: Go to
+                - strong [ref=e99]: Access
+                - text: →
+                - strong [ref=e100]: SSH Keys
+                - text: tab.
+              - listitem [ref=e101]:
+                - text: Click
+                - strong [ref=e102]: Add Key
+                - text: .
+              - listitem [ref=e103]: Enter the name of the key.
+              - listitem [ref=e104]: Insert a public SSH key in OpenSSH format.
+              - listitem [ref=e105]:
+                - text: Click
+                - strong [ref=e106]: Add
+                - text: .
+            - heading "Delete SSH key" [level=3] [ref=e107] [cursor=pointer]:
+              - text: Delete SSH
+              - generic [ref=e108]:
+                - text: key
+                - button [ref=e109]:
+                  - img [ref=e110]
+            - list [ref=e114]:
+              - listitem [ref=e115]:
+                - text: In the
+                - link "control panel" [ref=e116] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/
+                - text: ", on the top menu, click"
+                - strong [ref=e117]: Account
+                - text: .
+              - listitem [ref=e118]:
+                - text: Go to
+                - strong [ref=e119]: Access
+                - text: →
+                - strong [ref=e120]: SSH Keys
+                - text: tab.
+              - listitem [ref=e121]:
+                - text: From the
+                - img [ref=e122]
+                - text: menu of the key, select
+                - strong [ref=e124]: Delete
+                - text: .
+              - listitem [ref=e125]:
+                - text: Click
+                - strong [ref=e126]: Delete
+                - text: .
+            - heading "Manage API keys" [level=2] [ref=e127] [cursor=pointer]:
+              - text: Manage API
+              - generic [ref=e128]:
+                - text: keys
+                - button [ref=e129]:
+                  - img [ref=e130]
+            - paragraph [ref=e134]:
+              - text: An API key (static token, X-Token) is used to manage Selectel products via API, see the
+              - link "Static Token (X-Token" [ref=e135] [cursor=pointer]:
+                - /url: /en/api/authorization/#static-token
+              - text: ) section of the API Documentation Request Authentication instructions for details.
+            - heading "Add API key" [level=3] [ref=e136] [cursor=pointer]:
+              - text: Add API
+              - generic [ref=e137]:
+                - text: key
+                - button [ref=e138]:
+                  - img [ref=e139]
+            - paragraph [ref=e143]:
+              - text: Use the
+              - link "Get Static Token" [ref=e144] [cursor=pointer]:
+                - /url: /en/api/authorization/#get-static-token
+              - text: section of the Request Authentication section of the API documentation.
+            - heading "Disable API key" [level=3] [ref=e145] [cursor=pointer]:
+              - text: Disable API
+              - generic [ref=e146]:
+                - text: key
+                - button [ref=e147]:
+                  - img [ref=e148]
+            - list [ref=e152]:
+              - listitem [ref=e153]:
+                - text: In the
+                - link "control panel" [ref=e154] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/
+                - text: ", on the top menu, click"
+                - strong [ref=e155]: Account
+                - text: .
+              - listitem [ref=e156]:
+                - text: Go to
+                - strong [ref=e157]: Access
+                - text: →
+                - strong [ref=e158]: API Keys
+                - text: tab.
+              - listitem [ref=e159]: In the key line, turn off the toggle switch.
+            - heading "Delete API key" [level=3] [ref=e160] [cursor=pointer]:
+              - text: Delete API
+              - generic [ref=e161]:
+                - text: key
+                - button [ref=e162]:
+                  - img [ref=e163]
+            - list [ref=e167]:
+              - listitem [ref=e168]:
+                - text: In the
+                - link "control panel" [ref=e169] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/
+                - text: ", on the top menu, click"
+                - strong [ref=e170]: Account
+                - text: .
+              - listitem [ref=e171]:
+                - text: Go to
+                - strong [ref=e172]: Access
+                - text: →
+                - strong [ref=e173]: API Keys
+                - text: tab.
+              - listitem [ref=e174]:
+                - text: From the
+                - img [ref=e175]
+                - text: menu of the key, select
+                - strong [ref=e177]: Delete
+                - text: .
+              - listitem [ref=e178]: Enter the name of the key to confirm.
+              - listitem [ref=e179]:
+                - text: Click
+                - strong [ref=e180]: Delete
+                - text: .
+            - heading "Manage S3 keys" [level=2] [ref=e181] [cursor=pointer]:
+              - text: Manage S3
+              - generic [ref=e182]:
+                - text: keys
+                - button [ref=e183]:
+                  - img [ref=e184]
+            - paragraph [ref=e188]:
+              - link "Users" [ref=e189] [cursor=pointer]:
+                - /url: /en/access-control/user-types/#users
+              - text: with access to the control panel can
+              - link "issue themselves S3 keys" [ref=e190] [cursor=pointer]:
+                - /url: "#add-s3-key"
+              - text: but we recommend
+              - link "to create service users" [ref=e191] [cursor=pointer]:
+                - /url: /en/access-control/manage/add-user/#add-service-user
+              - text: and issue S3 keys to them.
+            - paragraph [ref=e192]:
+              - text: To issue an S3 key to another user, including a service
+              - link "user" [ref=e193] [cursor=pointer]:
+                - /url: /en/s3/manage/manage-access/#issue-s3-key
+              - text: ", use the"
+              - link "Issue S3 Key to User" [ref=e194] [cursor=pointer]:
+                - /url: /en/s3/manage/manage-access/#issue-s3-key
+              - text: subsection of the Manage S3 Access instructions.
+            - heading "Add S3 key" [level=3] [ref=e195] [cursor=pointer]:
+              - text: Add S3
+              - generic [ref=e196]:
+                - text: key
+                - button [ref=e197]:
+                  - img [ref=e198]
+            - list [ref=e202]:
+              - listitem [ref=e203]:
+                - text: In the
+                - link "control panel" [ref=e204] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/
+                - text: ", on the top menu, click"
+                - strong [ref=e205]: Account
+                - text: .
+              - listitem [ref=e206]:
+                - text: Go to
+                - strong [ref=e207]: Access
+                - text: →
+                - strong [ref=e208]: S3 keys
+                - text: tab.
+              - listitem [ref=e209]:
+                - text: Click
+                - strong [ref=e210]: Add Key
+                - text: .
+              - listitem [ref=e211]: Enter the name of the key.
+              - listitem [ref=e212]:
+                - text: Select the
+                - link "project" [ref=e213] [cursor=pointer]:
+                  - /url: /en/access-control/projects/about-projects/
+                - text: for which the key will work.
+              - listitem [ref=e214]:
+                - text: Click
+                - strong [ref=e215]: Add
+                - text: .
+            - heading "Delete S3 key" [level=3] [ref=e216] [cursor=pointer]:
+              - text: Delete S3
+              - generic [ref=e217]:
+                - text: key
+                - button [ref=e218]:
+                  - img [ref=e219]
+            - list [ref=e223]:
+              - listitem [ref=e224]:
+                - text: In the
+                - link "control panel" [ref=e225] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/
+                - text: ", on the top menu, click"
+                - strong [ref=e226]: Account
+                - text: .
+              - listitem [ref=e227]:
+                - text: Go to
+                - strong [ref=e228]: Access
+                - text: →
+                - strong [ref=e229]: S3 keys
+                - text: tab.
+              - listitem [ref=e230]:
+                - text: On the key line, click
+                - img [ref=e231]
+                - text: .
+              - listitem [ref=e235]:
+                - text: Click
+                - strong [ref=e236]: Delete
+                - text: .
+            - heading "Manage ADB keys" [level=2] [ref=e237] [cursor=pointer]:
+              - text: Manage ADB
+              - generic [ref=e238]:
+                - text: keys
+                - button [ref=e239]:
+                  - img [ref=e240]
+            - paragraph [ref=e244]: To connect to mobile farm devices over ADB, you can add a public key to your profile.
+            - paragraph [ref=e245]:
+              - link "Account owner" [ref=e246] [cursor=pointer]:
+                - /url: /en/access-control/user-types/#account-owner
+              - text: and users with the role
+              - link "iam.admin" [ref=e247] [cursor=pointer]:
+                - /url: /en/access-control/role-reference/#iam-admin
+                - code [ref=e248]: iam.admin
+              - text: can manage ADB keys of other users, including service users, more details in section
+              - link "Manage user's ADB keys" [ref=e249] [cursor=pointer]:
+                - /url: /en/access-control/manage/edit-user-data-or-role/#manage-adb-keys
+              - text: instructions Change user data or permissions.
+            - heading "Add ADB key" [level=3] [ref=e250] [cursor=pointer]:
+              - text: Add ADB
+              - generic [ref=e251]:
+                - text: key
+                - button [ref=e252]:
+                  - img [ref=e253]
+            - paragraph [ref=e257]:
+              - text: If you have
+              - link "created an ADB key pair" [ref=e258] [cursor=pointer]:
+                - /url: /en/mobile-farm/manage/connect-to-device-with-adb/#create-adb-keys
+              - text: ", you can add a public key to your profile. The added public ADB key can be used to"
+              - link "connect to Mobile Farm devices via ADB" [ref=e259] [cursor=pointer]:
+                - /url: /en/mobile-farm/manage/connect-to-device-with-adb/
+              - text: .
+            - paragraph [ref=e260]: The key will be available in all projects you are added to.
+            - list [ref=e261]:
+              - listitem [ref=e262]:
+                - text: In the
+                - link "control panel" [ref=e263] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/
+                - text: ", on the top menu, click"
+                - strong [ref=e264]: Account
+                - text: .
+              - listitem [ref=e265]:
+                - text: Go to
+                - strong [ref=e266]: Accessibility
+                - text: →
+                - strong [ref=e267]: ADB Keys
+                - text: tab.
+              - listitem [ref=e268]:
+                - text: Click
+                - strong [ref=e269]: Add Key
+                - text: .
+              - listitem [ref=e270]: Enter the name of the key.
+              - listitem [ref=e271]: Insert the public ADB key.
+              - listitem [ref=e272]:
+                - text: Click
+                - strong [ref=e273]: Add
+                - text: .
+            - heading "Delete ADB key" [level=3] [ref=e274] [cursor=pointer]:
+              - text: Delete ADB
+              - generic [ref=e275]:
+                - text: key
+                - button [ref=e276]:
+                  - img [ref=e277]
+            - list [ref=e281]:
+              - listitem [ref=e282]:
+                - text: In the
+                - link "control panel" [ref=e283] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/
+                - text: ", on the top menu, click"
+                - strong [ref=e284]: Account
+                - text: .
+              - listitem [ref=e285]:
+                - text: Go to
+                - strong [ref=e286]: Accessibility
+                - text: →
+                - strong [ref=e287]: ADB Keys
+                - text: tab.
+              - listitem [ref=e288]:
+                - text: On the key line, click
+                - img [ref=e289]
+                - text: .
+              - listitem [ref=e293]:
+                - text: Click
+                - strong [ref=e294]: Delete
+                - text: .
+            - iframe [ref=e296]:
+              - generic [active] [ref=f1e1]:
+                - alert [ref=f1e2]
+                - generic "Auto close wrapper" [ref=f1e21]:
+                  - generic [ref=f1e32]:
+                    - generic [ref=f1e36]:
+                      - paragraph [ref=f1e39]: Did this article answer your question?
+                      - group "Options" [ref=f1e41]:
+                        - generic [ref=f1e42]: Options
+                        - radiogroup [ref=f1e43]:
+                          - generic [ref=f1e45] [cursor=pointer]:
+                            - radio "Yes, it did 👍" [ref=f1e46]
+                            - generic [ref=f1e47]: Yes, it did 👍
+                          - generic [ref=f1e49] [cursor=pointer]:
+                            - radio "Partially 😐" [ref=f1e50]
+                            - generic [ref=f1e51]: Partially 😐
+                          - generic [ref=f1e53] [cursor=pointer]:
+                            - radio "No, it didn't 👎" [ref=f1e54]
+                            - generic [ref=f1e55]: No, it didn't 👎
+                    - button "Next" [ref=f1e58] [cursor=pointer]
+        - text: « »

@@ -1,0 +1,692 @@
+- generic [ref=e2]:
+  - region "Перейти к основному содержимому":
+    - link "Перейти к основному содержимому" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img "Selectel" [ref=e9]
+        - generic [ref=e11]:
+          - link "Документация" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - link "API" [ref=e13] [cursor=pointer]:
+            - /url: /api/
+          - link "Terraform" [ref=e14] [cursor=pointer]:
+            - /url: /terraform/
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - link "В панель" [ref=e19] [cursor=pointer]:
+            - /url: https://my.selectel.ru/
+          - button [ref=e21]:
+            - img [ref=e22]
+        - button "Поиск..." [ref=e28]:
+          - generic [ref=e29]: Поиск...
+          - img [ref=e31]
+  - main [ref=e36]:
+    - text: ∕
+    - generic [ref=e38]:
+      - navigation "Навигационная цепочка текущей страницы" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "API" [ref=e43] [cursor=pointer]:
+              - /url: /api/
+            - text: ∕
+          - listitem [ref=e44]:
+            - generic [ref=e45]: Аутентификация запросов
+      - generic [ref=e48]:
+        - article [ref=e49]:
+          - generic [ref=e50]:
+            - heading "Аутентификация запросов" [level=1] [ref=e52]
+            - paragraph [ref=e53]:
+              - text: В зависимости от
+              - link "продукта" [ref=e54] [cursor=pointer]:
+                - /url: "#supported-tokens-in-apis"
+              - text: "или его ресурса для работы с API продуктов Selectel и аутентификации запросов вместо логина и пароля используются:"
+            - list [ref=e55]:
+              - listitem [ref=e56]:
+                - paragraph [ref=e57]:
+                  - text: IAM-токены — выписываются
+                  - link "сервисным пользователям" [ref=e58] [cursor=pointer]:
+                    - /url: /access-control/user-types/#service-users
+                  - text: . Время жизни токена — 24 часа. IAM-токены передаются в заголовке
+                  - code [ref=e59]: X-Auth-Token
+                  - text: "и имеют разную область действия:"
+                - list [ref=e60]:
+                  - listitem [ref=e61]:
+                    - link "IAM-токены для аккаунта" [ref=e62] [cursor=pointer]:
+                      - /url: "#iam-token-account-scoped"
+                    - text: (
+                    - code [ref=e63]: iam_token_account_scoped
+                    - text: ) — для управления ресурсами, привязанными к аккаунту;
+                  - listitem [ref=e64]:
+                    - link "IAM-токены для проекта" [ref=e65] [cursor=pointer]:
+                      - /url: "#iam-token-project-scoped"
+                    - text: (
+                    - code [ref=e66]: iam_token_project_scoped
+                    - text: ) — для управления ресурсами, привязанными к проекту;
+              - listitem [ref=e67]:
+                - paragraph [ref=e68]:
+                  - link "статические токены" [ref=e69] [cursor=pointer]:
+                    - /url: "#static-token"
+                  - text: (
+                  - code [ref=e70]: static_token
+                  - text: ) — выписываются
+                  - link "пользователям" [ref=e71] [cursor=pointer]:
+                    - /url: /access-control/user-types/#users
+                  - text: с доступом в панель управления и используются для управления ресурсами, привязанными к аккаунту. Время жизни токена не ограничено. Статические токены передаются в заголовке
+                  - code [ref=e72]: X-Token
+                  - text: .
+            - paragraph [ref=e73]:
+              - text: Адрес (URL) для обращения в запросах можно посмотреть в
+              - link "списке URL" [ref=e74] [cursor=pointer]:
+                - /url: /api/urls/
+              - text: .
+            - paragraph [ref=e75]:
+              - text: Вы можете
+              - link "ограничить доступ" [ref=e76] [cursor=pointer]:
+                - /url: /account/limit-access-to-account/
+              - text: к API по адресам, которые включают в себя
+              - code [ref=e77]: https://api.selectel.ru
+              - text: .
+            - heading "IAM-токен для аккаунта (X-Auth-Token)" [level=2] [ref=e78] [cursor=pointer]:
+              - text: IAM-токен для аккаунта
+              - generic [ref=e79]:
+                - text: (X-Auth-Token)
+                - button [ref=e80]:
+                  - img [ref=e81]
+            - paragraph [ref=e87]:
+              - text: IAM-токен для аккаунта можно выписать только
+              - link "сервисному пользователю" [ref=e88] [cursor=pointer]:
+                - /url: /access-control/user-types/#service-users
+              - text: .
+            - paragraph [ref=e89]:
+              - text: Токен передается в заголовке
+              - code [ref=e90]: X-Auth-Token
+              - text: .
+            - paragraph [ref=e91]:
+              - text: IAM-токен для аккаунта (
+              - code [ref=e92]: iam_token_account_scoped
+              - text: ) дает доступ к управлению большинством продуктов Selectel и объектами OpenStack API наравне с логином и паролем в панели управления
+              - link "my.selectel.ru" [ref=e93] [cursor=pointer]:
+                - /url: https://my.selectel.ru/
+              - text: . Позволяет управлять ресурсами аккаунта.
+            - paragraph [ref=e94]: Время жизни токена — 24 часа.
+            - paragraph [ref=e95]: "Токен позволяет управлять:"
+            - list [ref=e96]:
+              - listitem [ref=e97]:
+                - link "пользователями и ролями (IAM)" [ref=e98] [cursor=pointer]:
+                  - /url: /api/users-and-roles/
+                - text: и
+                - link "федерациями" [ref=e99] [cursor=pointer]:
+                  - /url: /api/federations/
+                - text: ;
+              - listitem [ref=e100]:
+                - link "балансом" [ref=e101] [cursor=pointer]:
+                  - /url: /api/balance/
+                - text: и
+                - link "статистикой потребления" [ref=e102] [cursor=pointer]:
+                  - /url: /api/balance-statistics/
+                - text: ;
+              - listitem [ref=e103]:
+                - link "выделенными серверами" [ref=e104] [cursor=pointer]:
+                  - /url: /api/dedicated/
+                - text: ;
+              - listitem [ref=e105]:
+                - text: объектами OpenStack API (облачными серверами, сетевыми дисками и другими) с помощью API
+                - link "проекты и ресурсы облачной платформы" [ref=e106] [cursor=pointer]:
+                  - /url: /api/cloud-projects-and-resources/
+                - text: ","
+                - link "квоты и лимиты проекта" [ref=e107] [cursor=pointer]:
+                  - /url: /api/quota-management/
+                - text: ", подробнее в"
+                - link "документации OpenStack" [ref=e108] [cursor=pointer]:
+                  - /url: https://docs.openstack.org/2023.1/
+                - text: ;
+              - listitem [ref=e109]:
+                - link "глобальным роутером" [ref=e110] [cursor=pointer]:
+                  - /url: /api/global-router/
+                - text: ;
+              - listitem [ref=e111]:
+                - link "DNS-хостингом (legacy)" [ref=e112] [cursor=pointer]:
+                  - /url: /api/dns-legacy/
+                - text: ;
+              - listitem [ref=e113]:
+                - link "мобильной фермой" [ref=e114] [cursor=pointer]:
+                  - /url: /api/mobile-farm/
+                - text: .
+            - heading "Получить IAM-токен для аккаунта" [level=3] [ref=e115] [cursor=pointer]:
+              - text: Получить IAM-токен для
+              - generic [ref=e116]:
+                - text: аккаунта
+                - button [ref=e117]:
+                  - img [ref=e118]
+            - paragraph [ref=e122]:
+              - text: Выписывать IAM-токен для аккаунта можно
+              - link "сервисным пользователям" [ref=e123] [cursor=pointer]:
+                - /url: /access-control/user-types/#service-users
+              - text: ", у которых есть разрешение, где выбрана"
+              - link "область доступа" [ref=e124] [cursor=pointer]:
+                - /url: /access-control/access-management/#scopes
+              - text: Аккаунт.
+            - paragraph [ref=e127]:
+              - text: Если вы используете Windows, в запросах замените одинарные кавычки (
+              - code [ref=e128]: "''"
+              - text: ) на двойные (
+              - code [ref=e129]: "\"\""
+              - text: ). Мы также рекомендуем использовать для запросов PowerShell и не использовать CMD.
+            - list [ref=e130]:
+              - listitem [ref=e131]: "Выполните запрос:"
+            - generic [ref=e133]:
+              - code [ref=e135]:
+                - generic [ref=e136]: curl -i -XPOST \
+                - generic [ref=e137]: "-H 'Content-Type: application/json' \\"
+                - generic [ref=e138]: "-d '{\"auth\":{\"identity\":{\"methods\":[\"password\"],\"password\":{\"user\":{\"name\":\"<username>\",\"domain\":{\"name\":\"<account_id>\"},\"password\":\"<password>\"}}},\"scope\":{\"domain\":{\"name\":\"<account_id>\"}}}}' \\"
+                - generic [ref=e139]: "'https://cloud.api.selcloud.ru/identity/v3/auth/tokens'"
+              - button "Скопировать в буфер обмена" [ref=e140] [cursor=pointer]:
+                - generic [ref=e141]:
+                  - img [ref=e142]
+                  - img [ref=e144]
+            - paragraph [ref=e146]: "Укажите:"
+            - list [ref=e147]:
+              - listitem [ref=e148]:
+                - code [ref=e149]: <username>
+                - text: — имя сервисного пользователя. Посмотреть имя можно в
+                - link "панели управления" [ref=e150] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/users_management/users?type=service
+                - text: ": в верхнем меню нажмите"
+                - strong [ref=e151]: Аккаунт
+                - text: и перейдите в раздел
+                - strong [ref=e152]: Пользователи
+                - text: → вкладка
+                - strong [ref=e153]: Сервисные пользователи
+                - text: (раздел доступен только
+                - link "Владельцу аккаунта" [ref=e154] [cursor=pointer]:
+                  - /url: /access-control/user-types/#account-owner
+                - text: и пользователю с ролью
+                - link "iam.admin" [ref=e155] [cursor=pointer]:
+                  - /url: /access-control/role-reference/#iam-admin
+                  - code [ref=e156]: iam.admin
+                - text: );
+              - listitem [ref=e157]:
+                - code [ref=e158]: <account_id>
+                - text: — номер аккаунта. Можно посмотреть в
+                - link "панели управления" [ref=e159] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/
+                - text: в правом верхнем углу;
+              - listitem [ref=e160]:
+                - code [ref=e161]: <password>
+                - text: — пароль сервисного пользователя, можно посмотреть при создании пользователя или
+                - link "изменить на новый" [ref=e162] [cursor=pointer]:
+                  - /url: /access-control/manage/edit-user-data-or-role/#change-service-user-password
+                - text: .
+            - paragraph [ref=e163]:
+              - text: При успешной авторизации вернется ответ с кодом
+              - code [ref=e164]: 201 Created
+              - text: "в формате:"
+            - generic [ref=e166]:
+              - code [ref=e168]:
+                - generic [ref=e169]: HTTP/2 201
+                - generic [ref=e170]: "X-Subject-Token: token"
+              - button "Скопировать в буфер обмена" [ref=e171] [cursor=pointer]:
+                - generic [ref=e172]:
+                  - img [ref=e173]
+                  - img [ref=e175]
+            - list [ref=e177]:
+              - listitem [ref=e178]:
+                - text: В заголовке
+                - code [ref=e179]: X-Subject-Token
+                - text: посмотрите токен.
+            - heading "IAM-токен для проекта (X-Auth-Token)" [level=2] [ref=e180] [cursor=pointer]:
+              - text: IAM-токен для проекта
+              - generic [ref=e181]:
+                - text: (X-Auth-Token)
+                - button [ref=e182]:
+                  - img [ref=e183]
+            - paragraph [ref=e189]:
+              - text: IAM-токен для проекта можно выписать только
+              - link "сервисному пользователю" [ref=e190] [cursor=pointer]:
+                - /url: /access-control/user-types/
+              - text: .
+            - paragraph [ref=e191]:
+              - text: Токен передается в заголовке
+              - code [ref=e192]: X-Auth-Token
+              - text: .
+            - paragraph [ref=e193]:
+              - text: IAM-токен для проекта (
+              - code [ref=e194]: iam_token_project_scoped
+              - text: ) дает доступ к управлению большинством продуктов Selectel и объектами OpenStack API наравне с логином и паролем в панели управления
+              - link "my.selectel.ru" [ref=e195] [cursor=pointer]:
+                - /url: https://my.selectel.ru/
+              - text: . Позволяет управлять ресурсами проекта.
+            - paragraph [ref=e196]: Время жизни токена — 24 часа.
+            - paragraph [ref=e197]: "Токен позволяет управлять:"
+            - list [ref=e198]:
+              - listitem [ref=e199]:
+                - link "выделенными серверами" [ref=e200] [cursor=pointer]:
+                  - /url: /api/dedicated/
+                - text: ;
+              - listitem [ref=e201]:
+                - text: объектами OpenStack API (облачными серверами, сетевыми дисками и другими) с помощью API
+                - link "проекты и ресурсы облачной платформы" [ref=e202] [cursor=pointer]:
+                  - /url: /api/cloud-projects-and-resources/
+                - text: ","
+                - link "квоты и лимиты проекта" [ref=e203] [cursor=pointer]:
+                  - /url: /api/quota-management/
+                - text: ", подробнее в"
+                - link "документации OpenStack" [ref=e204] [cursor=pointer]:
+                  - /url: https://docs.openstack.org/2023.1/
+                - text: ;
+              - listitem [ref=e205]:
+                - text: облачной платформой —
+                - link "облачные базы данных" [ref=e206] [cursor=pointer]:
+                  - /url: /api/managed-databases/
+                - text: ","
+                - link "Managed Kubernetes" [ref=e207] [cursor=pointer]:
+                  - /url: /api/managed-kubernetes/
+                - text: ","
+                - link "Container Registry" [ref=e208] [cursor=pointer]:
+                  - /url: /api/craas/
+                - text: ", менеджер секретов ("
+                - link "секреты" [ref=e209] [cursor=pointer]:
+                  - /url: /api/secrets-manager/
+                - text: ","
+                - link "сертификаты" [ref=e210] [cursor=pointer]:
+                  - /url: /api/certificates-manager/
+                - text: ","
+                - link "сертификаты Let’s Encrypt®" [ref=e211] [cursor=pointer]:
+                  - /url: /api/lets-encrypt-certificates/
+                - text: );
+              - listitem [ref=e212]:
+                - text: S3 (
+                - link "Swift API" [ref=e213] [cursor=pointer]:
+                  - /url: /api/object-storage-swift/
+                - text: и
+                - link "Object Storage API" [ref=e214] [cursor=pointer]:
+                  - /url: /api/object-storage/
+                - text: );
+              - listitem [ref=e215]:
+                - link "DNS-хостингом" [ref=e216] [cursor=pointer]:
+                  - /url: /api/dns-actual/
+                - text: ;
+              - listitem [ref=e217]:
+                - link "почтовым сервисом Selectel" [ref=e218] [cursor=pointer]:
+                  - /url: /api/email-service/
+                - text: ;
+              - listitem [ref=e219]:
+                - link "готовым облаком 1С" [ref=e220] [cursor=pointer]:
+                  - /url: /api/1c-cloud/
+                - text: ;
+              - listitem [ref=e221]:
+                - link "аудит-логами" [ref=e222] [cursor=pointer]:
+                  - /url: /api/audit-logs/
+                - text: .
+            - heading "Получить IAM-токен для проекта" [level=3] [ref=e223] [cursor=pointer]:
+              - text: Получить IAM-токен для
+              - generic [ref=e224]:
+                - text: проекта
+                - button [ref=e225]:
+                  - img [ref=e226]
+            - paragraph [ref=e230]:
+              - text: Выписывать IAM-токен для проекта можно
+              - link "сервисным пользователям" [ref=e231] [cursor=pointer]:
+                - /url: /access-control/user-types/#service-users
+              - text: ", у которых есть разрешение, где:"
+            - list [ref=e232]:
+              - listitem [ref=e233]:
+                - text: выбрана
+                - link "область доступа" [ref=e234] [cursor=pointer]:
+                  - /url: /access-control/access-management/#scopes
+                - text: Аккаунт;
+              - listitem [ref=e235]:
+                - text: или выбрана
+                - link "область доступа" [ref=e236] [cursor=pointer]:
+                  - /url: /access-control/access-management/#scopes
+                - text: Проекты и выбран нужный проект.
+            - paragraph [ref=e239]:
+              - text: Если вы используете Windows, в запросах замените одинарные кавычки (
+              - code [ref=e240]: "''"
+              - text: ) на двойные (
+              - code [ref=e241]: "\"\""
+              - text: ). Мы также рекомендуем использовать для запросов PowerShell и не использовать CMD.
+            - list [ref=e242]:
+              - listitem [ref=e243]: "Выполните запрос:"
+            - generic [ref=e245]:
+              - code [ref=e247]:
+                - generic [ref=e248]: curl -i -XPOST \
+                - generic [ref=e249]: "-H 'Content-Type: application/json' \\"
+                - generic [ref=e250]: "-d '{\"auth\":{\"identity\":{\"methods\":[\"password\"],\"password\":{\"user\":{\"name\":\"<username>\",\"domain\":{\"name\":\"<account_id>\"},\"password\":\"<password>\"}}},\"scope\":{\"project\":{\"name\":\"<project_name>\",\"domain\":{\"name\":\"<account_id>\"}}}}}' \\"
+                - generic [ref=e251]: "'https://cloud.api.selcloud.ru/identity/v3/auth/tokens'"
+              - button "Скопировать в буфер обмена" [ref=e252] [cursor=pointer]:
+                - generic [ref=e253]:
+                  - img [ref=e254]
+                  - img [ref=e256]
+            - paragraph [ref=e258]: "Укажите:"
+            - list [ref=e259]:
+              - listitem [ref=e260]:
+                - code [ref=e261]: <username>
+                - text: — имя сервисного пользователя. Посмотреть имя можно в
+                - link "панели управления" [ref=e262] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/users_management/users?type=service
+                - text: ": в верхнем меню нажмите"
+                - strong [ref=e263]: Аккаунт
+                - text: и перейдите в раздел
+                - strong [ref=e264]: Пользователи
+                - text: → вкладка
+                - strong [ref=e265]: Сервисные пользователи
+                - text: (раздел доступен только
+                - link "Владельцу аккаунта" [ref=e266] [cursor=pointer]:
+                  - /url: /access-control/user-types/#account-owner
+                - text: и пользователю с ролью
+                - link "iam.admin" [ref=e267] [cursor=pointer]:
+                  - /url: /access-control/role-reference/#iam-admin
+                  - code [ref=e268]: iam.admin
+                - text: );
+              - listitem [ref=e269]:
+                - code [ref=e270]: <account_id>
+                - text: — номер аккаунта. Можно посмотреть в
+                - link "панели управления" [ref=e271] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/
+                - text: в правом верхнем углу;
+              - listitem [ref=e272]:
+                - code [ref=e273]: <password>
+                - text: — пароль сервисного пользователя, можно посмотреть при создании пользователя или
+                - link "изменить на новый" [ref=e274] [cursor=pointer]:
+                  - /url: /access-control/manage/edit-user-data-or-role/#change-service-user-password
+                - text: ;
+              - listitem [ref=e275]:
+                - code [ref=e276]: <project_name>
+                - text: — имя проекта.
+            - paragraph [ref=e277]:
+              - text: При успешной авторизации вернется ответ с кодом
+              - code [ref=e278]: 201 Created
+              - text: "в формате:"
+            - generic [ref=e280]:
+              - code [ref=e282]:
+                - generic [ref=e283]: HTTP/2 201
+                - generic [ref=e284]: "X-Subject-Token: token"
+              - button "Скопировать в буфер обмена" [ref=e285] [cursor=pointer]:
+                - generic [ref=e286]:
+                  - img [ref=e287]
+                  - img [ref=e289]
+            - list [ref=e291]:
+              - listitem [ref=e292]:
+                - text: В заголовке
+                - code [ref=e293]: X-Subject-Token
+                - text: посмотрите токен.
+            - heading "Статический токен (X-Token)" [level=2] [ref=e294] [cursor=pointer]:
+              - text: Статический токен
+              - generic [ref=e295]:
+                - text: (X-Token)
+                - button [ref=e296]:
+                  - img [ref=e297]
+            - paragraph [ref=e303]:
+              - text: X-Token можно выписать только
+              - link "пользователю" [ref=e304] [cursor=pointer]:
+                - /url: /access-control/user-types/#users
+              - text: с доступом в панель управления.
+            - paragraph [ref=e305]:
+              - text: Токен передается в запросе в заголовке
+              - code [ref=e306]: X-Token
+              - text: .
+            - paragraph [ref=e307]:
+              - text: Статический токен (
+              - code [ref=e308]: static_token
+              - text: ) дает полный доступ к управлению всеми продуктами Selectel, кроме объектов OpenStack API, наравне с логином и паролем в
+              - link "панели управления my.selectel.ru" [ref=e309] [cursor=pointer]:
+                - /url: https://my.selectel.ru/
+              - text: .
+            - paragraph [ref=e310]: Время жизни токена не ограничено.
+            - paragraph [ref=e311]:
+              - text: Для API, которые не поддерживают
+              - link "IAM-токен для аккаунта" [ref=e312] [cursor=pointer]:
+                - /url: "#iam-token-account-scoped"
+              - text: и
+              - link "IAM-токен для проекта" [ref=e313] [cursor=pointer]:
+                - /url: "#iam-token-project-scoped"
+              - text: ", статический токен является единственным:"
+            - list [ref=e314]:
+              - listitem [ref=e315]:
+                - link "отчеты" [ref=e316] [cursor=pointer]:
+                  - /url: /api/billing-reports/
+                - text: и
+                - link "транзакции" [ref=e317] [cursor=pointer]:
+                  - /url: /api/billing-transactions/
+                - text: ;
+              - listitem [ref=e318]:
+                - link "сервис учета IP-адресов" [ref=e319] [cursor=pointer]:
+                  - /url: /api/ip-addresses/
+                - text: ;
+              - listitem [ref=e320]:
+                - link "тикеты" [ref=e321] [cursor=pointer]:
+                  - /url: /api/tickets/
+                - text: ;
+              - listitem [ref=e322]:
+                - link "вложения" [ref=e323] [cursor=pointer]:
+                  - /url: /api/tickets-attachments/
+                - text: .
+            - heading "Получить статический токен" [level=3] [ref=e324] [cursor=pointer]:
+              - text: Получить статический
+              - generic [ref=e325]:
+                - text: токен
+                - button [ref=e326]:
+                  - img [ref=e327]
+            - list [ref=e331]:
+              - listitem [ref=e332]:
+                - text: В
+                - link "панели управления" [ref=e333] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/profile/access/api-keys
+                - text: в верхнем меню нажмите
+                - strong [ref=e334]: Аккаунт
+                - text: .
+              - listitem [ref=e335]:
+                - text: Перейдите в раздел
+                - strong [ref=e336]: Доступ
+                - text: → вкладка
+                - strong [ref=e337]: API-ключи
+                - text: .
+              - listitem [ref=e338]:
+                - text: Нажмите
+                - strong [ref=e339]: Добавить ключ
+                - text: .
+              - listitem [ref=e340]: Введите название ключа.
+              - listitem [ref=e341]:
+                - text: Нажмите
+                - strong [ref=e342]: Добавить
+                - text: .
+            - heading "Поддержка токенов в API" [level=2] [ref=e343] [cursor=pointer]:
+              - text: Поддержка токенов в
+              - generic [ref=e344]:
+                - text: API
+                - button [ref=e345]:
+                  - img [ref=e346]
+            - table [ref=e351]:
+              - rowgroup [ref=e352]:
+                - row "API IAM-токен для аккаунта IAM-токен для проекта Статический токен" [ref=e353]:
+                  - columnheader "API" [ref=e354]
+                  - columnheader "IAM-токен для аккаунта" [ref=e355]
+                  - columnheader "IAM-токен для проекта" [ref=e356]
+                  - columnheader "Статический токен" [ref=e357]
+              - rowgroup [ref=e358]:
+                - row "IAM ✓ ✗ ✗" [ref=e359]:
+                  - cell "IAM" [ref=e360]:
+                    - link "IAM" [ref=e361] [cursor=pointer]:
+                      - /url: /api/users-and-roles/
+                  - cell "✓" [ref=e362]
+                  - cell "✗" [ref=e363]
+                  - cell "✗" [ref=e364]
+                - row "Федерации ✓ ✗ ✗" [ref=e365]:
+                  - cell "Федерации" [ref=e366]:
+                    - link "Федерации" [ref=e367] [cursor=pointer]:
+                      - /url: /api/federations/
+                  - cell "✓" [ref=e368]
+                  - cell "✗" [ref=e369]
+                  - cell "✗" [ref=e370]
+                - row "Баланс ✓ ✗ ✓" [ref=e371]:
+                  - cell "Баланс" [ref=e372]:
+                    - link "Баланс" [ref=e373] [cursor=pointer]:
+                      - /url: /api/balance/
+                  - cell "✓" [ref=e374]
+                  - cell "✗" [ref=e375]
+                  - cell "✓" [ref=e376]
+                - row "Статистика ✓ ✗ ✓" [ref=e377]:
+                  - cell "Статистика" [ref=e378]:
+                    - link "Статистика" [ref=e379] [cursor=pointer]:
+                      - /url: /api/balance-statistics/
+                  - cell "✓" [ref=e380]
+                  - cell "✗" [ref=e381]
+                  - cell "✓" [ref=e382]
+                - row "Отчеты ✗ ✗ ✓" [ref=e383]:
+                  - cell "Отчеты" [ref=e384]:
+                    - link "Отчеты" [ref=e385] [cursor=pointer]:
+                      - /url: /api/billing-reports/
+                  - cell "✗" [ref=e386]
+                  - cell "✗" [ref=e387]
+                  - cell "✓" [ref=e388]
+                - row "Транзакции ✗ ✗ ✓" [ref=e389]:
+                  - cell "Транзакции" [ref=e390]:
+                    - link "Транзакции" [ref=e391] [cursor=pointer]:
+                      - /url: /api/billing-transactions/
+                  - cell "✗" [ref=e392]
+                  - cell "✗" [ref=e393]
+                  - cell "✓" [ref=e394]
+                - row "Выделенные серверы ✓ ✓ ✗" [ref=e395]:
+                  - cell "Выделенные серверы" [ref=e396]:
+                    - link "Выделенные серверы" [ref=e397] [cursor=pointer]:
+                      - /url: /api/dedicated/
+                  - cell "✓" [ref=e398]
+                  - cell "✓" [ref=e399]
+                  - cell "✗" [ref=e400]
+                - row "Проекты и ресурсы облачной платформы ✓ ✓ ✗" [ref=e401]:
+                  - cell "Проекты и ресурсы облачной платформы" [ref=e402]:
+                    - link "Проекты и ресурсы облачной платформы" [ref=e403] [cursor=pointer]:
+                      - /url: /api/cloud-projects-and-resources/
+                  - cell "✓" [ref=e404]
+                  - cell "✓" [ref=e405]
+                  - cell "✗" [ref=e406]
+                - row "Квоты и лимиты проекта ✓ ✓ ✗" [ref=e407]:
+                  - cell "Квоты и лимиты проекта" [ref=e408]:
+                    - link "Квоты и лимиты проекта" [ref=e409] [cursor=pointer]:
+                      - /url: /api/quota-management/
+                  - cell "✓" [ref=e410]
+                  - cell "✓" [ref=e411]
+                  - cell "✗" [ref=e412]
+                - row "Облачные базы данных ✗ ✓ ✗" [ref=e413]:
+                  - cell "Облачные базы данных" [ref=e414]:
+                    - link "Облачные базы данных" [ref=e415] [cursor=pointer]:
+                      - /url: /api/managed-databases/
+                  - cell "✗" [ref=e416]
+                  - cell "✓" [ref=e417]
+                  - cell "✗" [ref=e418]
+                - row "Managed Kubernetes ✗ ✓ ✗" [ref=e419]:
+                  - cell "Managed Kubernetes" [ref=e420]:
+                    - link "Managed Kubernetes" [ref=e421] [cursor=pointer]:
+                      - /url: /api/managed-kubernetes/
+                  - cell "✗" [ref=e422]
+                  - cell "✓" [ref=e423]
+                  - cell "✗" [ref=e424]
+                - row "Container Registry ✗ ✓ ✗" [ref=e425]:
+                  - cell "Container Registry" [ref=e426]:
+                    - link "Container Registry" [ref=e427] [cursor=pointer]:
+                      - /url: /api/craas/
+                  - cell "✗" [ref=e428]
+                  - cell "✓" [ref=e429]
+                  - cell "✗" [ref=e430]
+                - row "Секреты ✗ ✓ ✗" [ref=e431]:
+                  - cell "Секреты" [ref=e432]:
+                    - link "Секреты" [ref=e433] [cursor=pointer]:
+                      - /url: /api/secrets-manager/
+                  - cell "✗" [ref=e434]
+                  - cell "✓" [ref=e435]
+                  - cell "✗" [ref=e436]
+                - row "Сертификаты ✗ ✓ ✗" [ref=e437]:
+                  - cell "Сертификаты" [ref=e438]:
+                    - link "Сертификаты" [ref=e439] [cursor=pointer]:
+                      - /url: /api/certificates-manager/
+                  - cell "✗" [ref=e440]
+                  - cell "✓" [ref=e441]
+                  - cell "✗" [ref=e442]
+                - row "Сертификаты Let’s Encrypt® ✗ ✓ ✗" [ref=e443]:
+                  - cell "Сертификаты Let’s Encrypt®" [ref=e444]:
+                    - link "Сертификаты Let’s Encrypt®" [ref=e445] [cursor=pointer]:
+                      - /url: /api/lets-encrypt-certificates/
+                  - cell "✗" [ref=e446]
+                  - cell "✓" [ref=e447]
+                  - cell "✗" [ref=e448]
+                - row "Swift ✗ ✓ ✗" [ref=e449]:
+                  - cell "Swift" [ref=e450]:
+                    - link "Swift" [ref=e451] [cursor=pointer]:
+                      - /url: /api/object-storage-swift/
+                  - cell "✗" [ref=e452]
+                  - cell "✓" [ref=e453]
+                  - cell "✗" [ref=e454]
+                - row "Object Storage ✗ ✓ ✗" [ref=e455]:
+                  - cell "Object Storage" [ref=e456]:
+                    - link "Object Storage" [ref=e457] [cursor=pointer]:
+                      - /url: /api/object-storage/
+                  - cell "✗" [ref=e458]
+                  - cell "✓" [ref=e459]
+                  - cell "✗" [ref=e460]
+                - row "DNS-хостинг (actual) ✗ ✓ ✗" [ref=e461]:
+                  - cell "DNS-хостинг (actual)" [ref=e462]:
+                    - link "DNS-хостинг (actual)" [ref=e463] [cursor=pointer]:
+                      - /url: /api/dns-actual/
+                  - cell "✗" [ref=e464]
+                  - cell "✓" [ref=e465]
+                  - cell "✗" [ref=e466]
+                - row "DNS-хостинг (legacy) ✓ ✗ ✓" [ref=e467]:
+                  - cell "DNS-хостинг (legacy)" [ref=e468]:
+                    - link "DNS-хостинг (legacy)" [ref=e469] [cursor=pointer]:
+                      - /url: /api/dns-legacy/
+                  - cell "✓" [ref=e470]
+                  - cell "✗" [ref=e471]
+                  - cell "✓" [ref=e472]
+                - row "Почтовый сервис Selectel ✗ ✓ ✗" [ref=e473]:
+                  - cell "Почтовый сервис Selectel" [ref=e474]:
+                    - link "Почтовый сервис Selectel" [ref=e475] [cursor=pointer]:
+                      - /url: /api/email-service/
+                  - cell "✗" [ref=e476]
+                  - cell "✓" [ref=e477]
+                  - cell "✗" [ref=e478]
+                - row "Сервис учета IP-адресов ✗ ✗ ✓" [ref=e479]:
+                  - cell "Сервис учета IP-адресов" [ref=e480]:
+                    - link "Сервис учета IP-адресов" [ref=e481] [cursor=pointer]:
+                      - /url: /api/ip-addresses/
+                  - cell "✗" [ref=e482]
+                  - cell "✗" [ref=e483]
+                  - cell "✓" [ref=e484]
+                - row "Аудит-логи ✓ ✗ ✗" [ref=e485]:
+                  - cell "Аудит-логи" [ref=e486]:
+                    - link "Аудит-логи" [ref=e487] [cursor=pointer]:
+                      - /url: /api/audit-logs/
+                  - cell "✓" [ref=e488]
+                  - cell "✗" [ref=e489]
+                  - cell "✗" [ref=e490]
+                - row "Готовое облако 1С ✗ ✓ ✗" [ref=e491]:
+                  - cell "Готовое облако 1С" [ref=e492]:
+                    - link "Готовое облако 1С" [ref=e493] [cursor=pointer]:
+                      - /url: /api/1c-cloud/
+                  - cell "✗" [ref=e494]
+                  - cell "✓" [ref=e495]
+                  - cell "✗" [ref=e496]
+                - row "Мобильная ферма ✓ ✓ ✗" [ref=e497]:
+                  - cell "Мобильная ферма" [ref=e498]:
+                    - link "Мобильная ферма" [ref=e499] [cursor=pointer]:
+                      - /url: /api/mobile-farm/
+                  - cell "✓" [ref=e500]
+                  - cell "✓" [ref=e501]
+                  - cell "✗" [ref=e502]
+                - row "Тикеты ✗ ✗ ✓" [ref=e503]:
+                  - cell "Тикеты" [ref=e504]:
+                    - link "Тикеты" [ref=e505] [cursor=pointer]:
+                      - /url: /api/tickets/
+                  - cell "✗" [ref=e506]
+                  - cell "✗" [ref=e507]
+                  - cell "✓" [ref=e508]
+                - row "Вложения ✗ ✗ ✓" [ref=e509]:
+                  - cell "Вложения" [ref=e510]:
+                    - link "Вложения" [ref=e511] [cursor=pointer]:
+                      - /url: /api/tickets-attachments/
+                  - cell "✗" [ref=e512]
+                  - cell "✗" [ref=e513]
+                  - cell "✓" [ref=e514]
+        - text: »

@@ -1,0 +1,186 @@
+# Generated with protoc-gen-openapi
+# https://github.com/google/gnostic/tree/master/cmd/protoc-gen-openapi
+
+openapi: 3.0.3
+info:
+    title: API Аутентификации
+    version: v1.2.1
+servers:
+    - url: https://api.beget.com
+paths:
+    /v1/auth:
+        post:
+            tags:
+                - AuthService
+            operationId: AuthService_Auth
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Auth_AuthRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Auth_AuthResponse'
+    /v1/auth/key:
+        get:
+            tags:
+                - KeyService
+            operationId: KeyService_GetKey
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Key_GetKeyResponse'
+    /v1/auth/logout:
+        post:
+            tags:
+                - AuthService
+            operationId: AuthService_Logout
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Auth_LogoutResponse'
+    /v1/auth/refresh:
+        post:
+            tags:
+                - AuthService
+            operationId: AuthService_RefreshToken
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Auth_RefreshTokenResponse'
+    /v1/auth/switch:
+        post:
+            tags:
+                - AuthService
+            operationId: AuthService_SwitchUser
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Auth_SwitchUserRequest'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Auth_SwitchUserResponse'
+components:
+    schemas:
+        Auth_AuthRequest:
+            type: object
+            properties:
+                login:
+                    type: string
+                password:
+                    type: string
+                code:
+                    type: string
+                saveMe:
+                    type: boolean
+        Auth_AuthResponse:
+            type: object
+            properties:
+                token:
+                    type: string
+                error:
+                    enum:
+                        - INTERNAL_ERROR
+                        - EMPTY_LOGIN
+                        - EMPTY_PASSWORD
+                        - INCORRECT_CREDENTIALS
+                        - IP_BLOCKED
+                        - CODE_REQUIRED
+                        - INCORRECT_CODE
+                        - CODE_SENT_LIMIT
+                        - CODE_INPUT_LIMIT
+                        - ACCOUNT_ON_MAINTANCE
+                        - ACCOUNT_DELETED
+                        - CODE_REQUIRED_EMAIL
+                        - CODE_REQUIRED_SMS
+                        - EXPIRED_PASSWORD
+                        - CODE_REQUIRED_TOTP
+                    type: string
+                    format: enum
+        Auth_LogoutResponse:
+            type: object
+            properties: {}
+        Auth_RefreshTokenResponse:
+            type: object
+            properties:
+                token:
+                    type: string
+                error:
+                    enum:
+                        - INTERNAL_ERROR
+                        - PAYLOAD_CHANGED
+                        - IP_BLOCKED
+                        - ACCOUNT_ON_MAINTANCE
+                        - ACCOUNT_DELETED
+                        - TOKEN_REVOKED
+                    type: string
+                    format: enum
+        Auth_SwitchUserRequest:
+            type: object
+            properties:
+                login:
+                    type: string
+                password:
+                    type: string
+                code:
+                    type: string
+        Auth_SwitchUserResponse:
+            type: object
+            properties:
+                token:
+                    type: string
+                error:
+                    enum:
+                        - INTERNAL_ERROR
+                        - EMPTY_TARGET_LOGIN
+                        - TARGET_FORBIDDEN
+                        - TARGET_NOT_FOUND
+                        - TARGET_PASSWORD_REQUIRED
+                        - TARGET_CODE_REQUIRED
+                        - TARGET_INCORRECT_CODE
+                        - SENT_LIMIT_REACHED
+                        - INPUT_LIMIT_REACHED
+                        - TARGET_ON_MAINTENANCE
+                        - TARGET_DELETED
+                        - TOKEN_REVOKED
+                        - CODE_REQUIRED_EMAIL
+                        - CODE_REQUIRED_SMS
+                        - IP_BLOCKED
+                        - CODE_REQUIRED_TOTP
+                    type: string
+                    format: enum
+        Key_GetKeyResponse:
+            type: object
+            properties:
+                key:
+                    type: string
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+security:
+    - bearerAuth: []
+tags:
+    - name: AuthService
+    - name: KeyService

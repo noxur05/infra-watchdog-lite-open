@@ -1,0 +1,687 @@
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img "Selectel" [ref=e9]
+        - generic [ref=e11]:
+          - link "Documentation" [ref=e12] [cursor=pointer]:
+            - /url: /en/
+          - link "API" [ref=e13] [cursor=pointer]:
+            - /url: /en/api/
+          - link "Terraform" [ref=e14] [cursor=pointer]:
+            - /url: /en/terraform/
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - link "Control panel" [ref=e19] [cursor=pointer]:
+            - /url: https://my.selectel.ru/
+          - button [ref=e21]:
+            - img [ref=e22]
+        - button "Search..." [ref=e28]:
+          - generic [ref=e29]: Search...
+          - img [ref=e31]
+  - main [ref=e35]:
+    - text: ∕ ∕ ∕ ∕ ∕
+    - generic [ref=e37]:
+      - navigation "Breadcrumb of the current page" [ref=e39]:
+        - list [ref=e40]:
+          - listitem [ref=e41]:
+            - link "Documentation" [ref=e42] [cursor=pointer]:
+              - /url: /en/
+            - text: ∕
+          - listitem [ref=e43]:
+            - generic [ref=e44]: Compute
+            - text: ∕
+          - listitem [ref=e45]:
+            - link "Cloud Servers" [ref=e46] [cursor=pointer]:
+              - /url: /en/cloud-servers/
+            - text: ∕
+          - listitem [ref=e47]:
+            - link "Tools for Automation" [ref=e48] [cursor=pointer]:
+              - /url: /en/cloud-servers/tools/
+            - text: ∕
+          - listitem [ref=e49]:
+            - link "OpenStack CLI" [ref=e50] [cursor=pointer]:
+              - /url: /en/cloud-servers/tools/openstack-cli/
+            - text: ∕
+          - listitem [ref=e51]:
+            - generic [ref=e52]: Configure OpenStack CLI
+      - generic [ref=e55]:
+        - article [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - heading "To configure the OpenStack CLI" [level=1] [ref=e59]
+              - generic [ref=e63]:
+                - text: "Last update:"
+                - time [ref=e64]: April 15 2026
+            - paragraph [ref=e65]: "You can customize the CLI console client:"
+            - list [ref=e66]:
+              - listitem [ref=e67]:
+                - link "through the operating system" [ref=e68] [cursor=pointer]:
+                  - /url: "#configure-openstack-in-os"
+                - text: ;
+              - listitem [ref=e69]:
+                - text: in a
+                - link "Docker container" [ref=e70] [cursor=pointer]:
+                  - /url: "#configure-openstack-in-docker-container"
+                - text: .
+            - heading "Configure OpenStack CLI using OS tools" [level=2] [ref=e71] [cursor=pointer]:
+              - text: Configure OpenStack CLI using OS
+              - generic [ref=e72]:
+                - text: tools
+                - button [ref=e73]:
+                  - img [ref=e74]
+            - list [ref=e78]:
+              - listitem [ref=e79]:
+                - paragraph [ref=e80]:
+                  - link "Install the OpenStack CLI" [ref=e81] [cursor=pointer]:
+                    - /url: "#install-openstack-cli"
+                  - text: .
+              - listitem [ref=e82]:
+                - paragraph [ref=e83]:
+                  - link "Add a service user" [ref=e84] [cursor=pointer]:
+                    - /url: "#add-service-user-for-os"
+                  - text: .
+              - listitem [ref=e85]:
+                - paragraph [ref=e86]:
+                  - link "Download the service user RC file for authorization to the OpenStack API" [ref=e87] [cursor=pointer]:
+                    - /url: "#download-rc-file-for-os"
+                  - text: .
+              - listitem [ref=e88]:
+                - paragraph [ref=e89]:
+                  - link "Configure authorization in the OpenStack API" [ref=e90] [cursor=pointer]:
+                    - /url: "#configure-authorization-in-os"
+                  - text: .
+            - heading "1. Install the OpenStack CLI" [level=3] [ref=e91] [cursor=pointer]:
+              - text: 1. Install the OpenStack
+              - generic [ref=e92]:
+                - text: CLI
+                - button [ref=e93]:
+                  - img [ref=e94]
+            - generic [ref=e98]:
+              - tablist [ref=e99]:
+                - tab "Ubuntu/Debian" [selected] [ref=e100] [cursor=pointer]:
+                  - paragraph [ref=e101]: Ubuntu/Debian
+                - tab "CentOS" [ref=e102] [cursor=pointer]:
+                  - paragraph [ref=e103]: CentOS
+                - tab "macOS" [ref=e104] [cursor=pointer]:
+                  - paragraph [ref=e105]: macOS
+                - tab "Windows" [ref=e106] [cursor=pointer]:
+                  - paragraph [ref=e107]: Windows
+              - tabpanel [ref=e109]:
+                - list [ref=e110]:
+                  - listitem [ref=e111]:
+                    - paragraph [ref=e112]: Open the CLI.
+                  - listitem [ref=e113]:
+                    - paragraph [ref=e114]:
+                      - text: Install Python 3 and
+                      - code [ref=e115]: virtualenv
+                      - text: ":"
+                    - generic [ref=e117]:
+                      - code [ref=e119]:
+                        - generic [ref=e120]: sudo apt update
+                        - generic [ref=e121]: sudo apt install python3 virtualenv
+                      - button "Copy to clipboard" [ref=e122] [cursor=pointer]:
+                        - generic [ref=e123]:
+                          - img [ref=e124]
+                          - img [ref=e126]
+                  - listitem [ref=e128]:
+                    - paragraph [ref=e129]:
+                      - text: Install
+                      - code [ref=e130]: pip3
+                      - text: ":"
+                    - generic [ref=e132]:
+                      - code [ref=e134]:
+                        - generic [ref=e135]: sudo apt install python3-pip
+                      - button "Copy to clipboard" [ref=e136] [cursor=pointer]:
+                        - generic [ref=e137]:
+                          - img [ref=e138]
+                          - img [ref=e140]
+                  - listitem [ref=e142]:
+                    - paragraph [ref=e143]: "Create a virtual environment to work with OpenStack:"
+                    - generic [ref=e145]:
+                      - code [ref=e147]:
+                        - generic [ref=e148]: virtualenv env
+                      - button "Copy to clipboard" [ref=e149] [cursor=pointer]:
+                        - generic [ref=e150]:
+                          - img [ref=e151]
+                          - img [ref=e153]
+                  - listitem [ref=e155]:
+                    - paragraph [ref=e156]: "Activate the virtual environment:"
+                    - generic [ref=e158]:
+                      - code [ref=e160]:
+                        - generic [ref=e161]: source env/bin/activate
+                      - button "Copy to clipboard" [ref=e162] [cursor=pointer]:
+                        - generic [ref=e163]:
+                          - img [ref=e164]
+                          - img [ref=e166]
+                  - listitem [ref=e168]:
+                    - paragraph [ref=e169]: "Install the OpenStack CLI in a virtualized environment:"
+                    - generic [ref=e171]:
+                      - code [ref=e173]:
+                        - generic [ref=e174]: pip3 install python-openstackclient
+                      - button "Copy to clipboard" [ref=e175] [cursor=pointer]:
+                        - generic [ref=e176]:
+                          - img [ref=e177]
+                          - img [ref=e179]
+                  - listitem [ref=e181]:
+                    - paragraph [ref=e182]: "Make sure that the OpenStack CLI is installed:"
+                    - generic [ref=e184]:
+                      - code [ref=e186]:
+                        - generic [ref=e187]: openstack --version
+                      - button "Copy to clipboard" [ref=e188] [cursor=pointer]:
+                        - generic [ref=e189]:
+                          - img [ref=e190]
+                          - img [ref=e192]
+                    - paragraph [ref=e194]: "The OpenStack CLI version number appears in the response. For example:"
+                    - generic [ref=e196]:
+                      - code [ref=e198]:
+                        - generic [ref=e199]: openstack 6.1.0
+                      - button "Copy to clipboard" [ref=e200] [cursor=pointer]:
+                        - generic [ref=e201]:
+                          - img [ref=e202]
+                          - img [ref=e204]
+                  - listitem [ref=e206]:
+                    - paragraph [ref=e207]:
+                      - text: "Optional: To work with"
+                      - link "cloud load balancers" [ref=e208] [cursor=pointer]:
+                        - /url: /en/cloud-servers/load-balancers/
+                      - text: ", install the Octavia component:"
+                    - generic [ref=e210]:
+                      - code [ref=e212]:
+                        - generic [ref=e213]: pip3 install python-octaviaclient
+                      - button "Copy to clipboard" [ref=e214] [cursor=pointer]:
+                        - generic [ref=e215]:
+                          - img [ref=e216]
+                          - img [ref=e218]
+                  - listitem [ref=e220]:
+                    - paragraph [ref=e221]:
+                      - text: "Optional: to work with"
+                      - link "cloud server images" [ref=e222] [cursor=pointer]:
+                        - /url: /en/cloud-servers/images/
+                      - text: ", install the Glance component:"
+                    - generic [ref=e224]:
+                      - code [ref=e226]:
+                        - generic [ref=e227]: pip3 install python-glanceclient
+                      - button "Copy to clipboard" [ref=e228] [cursor=pointer]:
+                        - generic [ref=e229]:
+                          - img [ref=e230]
+                          - img [ref=e232]
+                  - listitem [ref=e234]:
+                    - paragraph [ref=e235]:
+                      - text: "Optional: to work with"
+                      - link "file storages" [ref=e236] [cursor=pointer]:
+                        - /url: /en/file-storage/
+                      - text: ", install the Manila component:"
+                    - generic [ref=e238]:
+                      - code [ref=e240]:
+                        - generic [ref=e241]: pip3 install python-manilaclient==3.4.0
+                      - button "Copy to clipboard" [ref=e242] [cursor=pointer]:
+                        - generic [ref=e243]:
+                          - img [ref=e244]
+                          - img [ref=e246]
+            - heading "2. Add a service user" [level=3] [ref=e248] [cursor=pointer]:
+              - text: 2. Add a service
+              - generic [ref=e249]:
+                - text: user
+                - button [ref=e250]:
+                  - img [ref=e251]
+            - paragraph [ref=e255]:
+              - text: To manage project resources through the OpenStack API,
+              - link "add a service user" [ref=e256] [cursor=pointer]:
+                - /url: /en/access-control/manage/add-user/#add-service-user
+              - text: with permission in the
+              - strong [ref=e257]: Projects
+              - text: "access area and role:"
+            - list [ref=e258]:
+              - listitem [ref=e259]:
+                - code [ref=e260]: I'm a member;
+              - listitem [ref=e261]:
+                - text: or
+                - link "reader" [ref=e262] [cursor=pointer]:
+                  - /url: /en/access-control/role-reference/#reader
+                  - code [ref=e263]: reader
+                - text: .
+            - paragraph [ref=e264]:
+              - text: Users can be added by the
+              - link "Account Owner" [ref=e265] [cursor=pointer]:
+                - /url: /en/access-control/user-types/#account-owner
+              - text: or users with the role of
+              - link "iam.admin" [ref=e266] [cursor=pointer]:
+                - /url: /en/access-control/role-reference/#iam-admin
+                - code [ref=e267]: iam.admin
+              - text: .
+            - heading "3. Download RC file" [level=3] [ref=e268] [cursor=pointer]:
+              - text: 3. Download RC
+              - generic [ref=e269]:
+                - text: file
+                - button [ref=e270]:
+                  - img [ref=e271]
+            - paragraph [ref=e275]: To set up authorization, you need to download the service user RC file.
+            - list [ref=e276]:
+              - listitem [ref=e277]:
+                - paragraph [ref=e278]:
+                  - text: In the
+                  - link "control panel" [ref=e279] [cursor=pointer]:
+                    - /url: https://my.selectel.ru/iam/service-users
+                  - text: ", on the top menu, click"
+                  - strong [ref=e280]: Account
+                  - text: .
+              - listitem [ref=e281]:
+                - paragraph [ref=e282]:
+                  - text: Go to the
+                  - strong [ref=e283]: Service Users
+                  - text: section.
+              - listitem [ref=e284]:
+                - paragraph [ref=e285]:
+                  - text: Open the page of the service user you
+                  - link "added in step 2" [ref=e286] [cursor=pointer]:
+                    - /url: "#add-service-user-for-os"
+                  - text: →
+                  - strong [ref=e287]: Access
+                  - text: tab.
+              - listitem [ref=e288]:
+                - paragraph [ref=e289]:
+                  - strong [ref=e290]: RC files
+                  - text: "in the block:"
+                - paragraph [ref=e291]:
+                  - text: 4.1 Select a
+                  - link "project" [ref=e292] [cursor=pointer]:
+                    - /url: /en/access-control/projects/about-projects/
+                  - text: .
+                - paragraph [ref=e293]:
+                  - text: 4.2 Select a
+                  - link "location" [ref=e294] [cursor=pointer]:
+                    - /url: /en/infrastructure/locations/
+                  - text: .
+                - paragraph [ref=e295]:
+                  - text: 4.3. Click
+                  - strong [ref=e296]: Download
+                  - text: .
+            - heading "4. Set up authorization" [level=3] [ref=e297] [cursor=pointer]:
+              - text: 4. Set up
+              - generic [ref=e298]:
+                - text: authorization
+                - button [ref=e299]:
+                  - img [ref=e300]
+            - paragraph [ref=e306]:
+              - text: Authorization in the OpenStack API can be configured for only one
+              - link "account" [ref=e307] [cursor=pointer]:
+                - /url: /en/account/
+              - text: ","
+              - link "service user" [ref=e308] [cursor=pointer]:
+                - /url: /en/access-control/access-management/#roles
+              - text: ","
+              - link "project" [ref=e309] [cursor=pointer]:
+                - /url: /en/access-control/projects/about-projects/
+              - text: ", and"
+              - link "pool" [ref=e310] [cursor=pointer]:
+                - /url: /en/infrastructure/locations/#pool
+              - text: . If you need to manage resources of another account, in a different project or pool, or under a different service user,
+              - link "change the authorization details" [ref=e311] [cursor=pointer]:
+                - /url: /en/cloud-servers/tools/openstack-cli/change-authorization-data/
+              - text: .
+            - generic [ref=e312]:
+              - tablist [ref=e313]:
+                - tab "Linux/macOS" [selected] [ref=e314] [cursor=pointer]:
+                  - paragraph [ref=e315]: Linux/macOS
+                - tab "Windows" [ref=e316] [cursor=pointer]:
+                  - paragraph [ref=e317]: Windows
+              - tabpanel [ref=e319]:
+                - list [ref=e320]:
+                  - listitem [ref=e321]:
+                    - paragraph [ref=e322]: Open the CLI.
+                  - listitem [ref=e323]:
+                    - paragraph [ref=e324]:
+                      - text: Navigate to the directory with the RC file you
+                      - link "downloaded in step 3" [ref=e325] [cursor=pointer]:
+                        - /url: "#download-rc-file-for-os"
+                      - text: ":"
+                    - generic [ref=e327]:
+                      - code [ref=e329]:
+                        - generic [ref=e330]: cd <directory_name>
+                      - button "Copy to clipboard" [ref=e331] [cursor=pointer]:
+                        - generic [ref=e332]:
+                          - img [ref=e333]
+                          - img [ref=e335]
+                    - paragraph [ref=e337]:
+                      - text: Specify
+                      - code [ref=e338]: <directory_name>
+                      - text: "- the name of the directory with the RC file."
+                  - listitem [ref=e339]:
+                    - paragraph [ref=e340]: "Apply the environment variables from the RC file:"
+                    - generic [ref=e342]:
+                      - code [ref=e344]:
+                        - generic [ref=e345]: source <rcfile_name>
+                      - button "Copy to clipboard" [ref=e346] [cursor=pointer]:
+                        - generic [ref=e347]:
+                          - img [ref=e348]
+                          - img [ref=e350]
+                    - paragraph [ref=e352]:
+                      - text: Specify
+                      - code [ref=e353]: <rcfile_name>
+                      - text: is the name of the RC file you
+                      - link "downloaded in step 3" [ref=e354] [cursor=pointer]:
+                        - /url: "#download-rc-file-for-os"
+                      - text: . The default
+                      - code [ref=e355]: is rc.sh
+                      - text: .
+                  - listitem [ref=e356]:
+                    - paragraph [ref=e357]:
+                      - text: Enter the OpenStack password - the password for the service user for whom you
+                      - link "downloaded the RC file in step 3" [ref=e358] [cursor=pointer]:
+                        - /url: "#download-rc-file-for-os"
+                      - text: .
+                  - listitem [ref=e359]:
+                    - paragraph [ref=e360]: "Verify that the OpenStack CLI is running. To do this, open the list of cloud servers:"
+                    - generic [ref=e362]:
+                      - code [ref=e364]:
+                        - generic [ref=e365]: openstack server list
+                      - button "Copy to clipboard" [ref=e366] [cursor=pointer]:
+                        - generic [ref=e367]:
+                          - img [ref=e368]
+                          - img [ref=e370]
+                    - paragraph [ref=e372]: If cloud servers have been created in the pool and project specified in the RC file, the response will list them. If no servers have been created yet, the response will contain an empty string.
+            - heading "Configure OpenStack CLI in a Docker container" [level=2] [ref=e373] [cursor=pointer]:
+              - text: Configure OpenStack CLI in a Docker
+              - generic [ref=e374]:
+                - text: container
+                - button [ref=e375]:
+                  - img [ref=e376]
+            - list [ref=e380]:
+              - listitem [ref=e381]:
+                - paragraph [ref=e382]:
+                  - link "Install Docker" [ref=e383] [cursor=pointer]:
+                    - /url: "#install-docker"
+                  - text: .
+              - listitem [ref=e384]:
+                - paragraph [ref=e385]:
+                  - link "Add a service user" [ref=e386] [cursor=pointer]:
+                    - /url: "#add-service-user-for-docker"
+                  - text: .
+              - listitem [ref=e387]:
+                - paragraph [ref=e388]:
+                  - link "Download the RC file for authorization to the OpenStack API" [ref=e389] [cursor=pointer]:
+                    - /url: "#download-rc-file-for-docker"
+                  - text: .
+              - listitem [ref=e390]:
+                - paragraph [ref=e391]:
+                  - link "Install the OpenStack CLI in the Docker container" [ref=e392] [cursor=pointer]:
+                    - /url: "#install-openstack-in-docker-container"
+                  - text: .
+            - heading "1. Install Docker" [level=3] [ref=e393] [cursor=pointer]:
+              - text: 1. Install
+              - generic [ref=e394]:
+                - text: Docker
+                - button [ref=e395]:
+                  - img [ref=e396]
+            - paragraph [ref=e400]:
+              - text: To install Docker on your local computer, use the
+              - link "Install Docker" [ref=e401] [cursor=pointer]:
+                - /url: https://docs.docker.com/engine/install/
+              - text: instructions in the official Docker documentation.
+            - heading "2. Add a service user" [level=3] [ref=e402] [cursor=pointer]:
+              - text: 2. Add a service
+              - generic [ref=e403]:
+                - text: user
+                - button [ref=e404]:
+                  - img [ref=e405]
+            - paragraph [ref=e409]:
+              - text: To manage project resources through the OpenStack API,
+              - link "add a service user" [ref=e410] [cursor=pointer]:
+                - /url: /en/access-control/manage/add-user/#add-service-user
+              - text: with permission in the
+              - strong [ref=e411]: Projects
+              - text: "access area and role:"
+            - list [ref=e412]:
+              - listitem [ref=e413]:
+                - code [ref=e414]: I'm a member;
+              - listitem [ref=e415]:
+                - text: or
+                - link "reader" [ref=e416] [cursor=pointer]:
+                  - /url: /en/access-control/role-reference/#reader
+                  - code [ref=e417]: reader
+                - text: .
+            - paragraph [ref=e418]:
+              - text: Users can be added by the
+              - link "Account Owner" [ref=e419] [cursor=pointer]:
+                - /url: /en/access-control/user-types/#account-owner
+              - text: or users with the role of
+              - link "iam.admin" [ref=e420] [cursor=pointer]:
+                - /url: /en/access-control/role-reference/#iam-admin
+                - code [ref=e421]: iam.admin
+              - text: .
+            - heading "3. Download RC file" [level=3] [ref=e422] [cursor=pointer]:
+              - text: 3. Download RC
+              - generic [ref=e423]:
+                - text: file
+                - button [ref=e424]:
+                  - img [ref=e425]
+            - paragraph [ref=e431]:
+              - text: Authorization in the OpenStack API can be configured for only one
+              - link "account" [ref=e432] [cursor=pointer]:
+                - /url: /en/account/
+              - text: ","
+              - link "service user" [ref=e433] [cursor=pointer]:
+                - /url: /en/access-control/access-management/#roles
+              - text: ","
+              - link "project" [ref=e434] [cursor=pointer]:
+                - /url: /en/access-control/projects/about-projects/
+              - text: ", and"
+              - link "pool" [ref=e435] [cursor=pointer]:
+                - /url: /en/infrastructure/locations/#pool
+              - text: . If after authorization you need to manage resources of another account, in another project or pool, or under another service user, you can
+              - link "change the authorization data" [ref=e436] [cursor=pointer]:
+                - /url: /en/cloud-servers/tools/openstack-cli/change-authorization-data/
+              - text: .
+            - list [ref=e437]:
+              - listitem [ref=e438]:
+                - paragraph [ref=e439]:
+                  - text: In the
+                  - link "control panel" [ref=e440] [cursor=pointer]:
+                    - /url: https://my.selectel.ru/iam/service-users
+                  - text: ", on the top menu, click"
+                  - strong [ref=e441]: Account
+                  - text: .
+              - listitem [ref=e442]:
+                - paragraph [ref=e443]:
+                  - text: Go to the
+                  - strong [ref=e444]: Service Users
+                  - text: section.
+              - listitem [ref=e445]:
+                - paragraph [ref=e446]:
+                  - text: Open the page of the service user you
+                  - link "added in step 2" [ref=e447] [cursor=pointer]:
+                    - /url: "#add-service-user-for-docker"
+                  - text: →
+                  - strong [ref=e448]: Access
+                  - text: tab.
+              - listitem [ref=e449]:
+                - paragraph [ref=e450]:
+                  - strong [ref=e451]: RC files
+                  - text: "in the block:"
+                - paragraph [ref=e452]:
+                  - text: 4.1 Select a
+                  - link "project" [ref=e453] [cursor=pointer]:
+                    - /url: /en/access-control/projects/about-projects/
+                  - text: .
+                - paragraph [ref=e454]:
+                  - text: 4.2 Select a
+                  - link "location" [ref=e455] [cursor=pointer]:
+                    - /url: /en/infrastructure/locations/
+                  - text: .
+                - paragraph [ref=e456]:
+                  - text: 4.3. Click
+                  - strong [ref=e457]: Download
+                  - text: .
+            - heading "4. Install OpenStack CLI in a Docker container" [level=3] [ref=e458] [cursor=pointer]:
+              - text: 4. Install OpenStack CLI in a Docker
+              - generic [ref=e459]:
+                - text: container
+                - button [ref=e460]:
+                  - img [ref=e461]
+            - list [ref=e465]:
+              - listitem [ref=e466]:
+                - paragraph [ref=e467]: Open the CLI.
+              - listitem [ref=e468]:
+                - paragraph [ref=e469]: "Create a directory to work with Docker:"
+                - generic [ref=e471]:
+                  - code [ref=e473]:
+                    - generic [ref=e474]: mkdir <docker_directory>
+                  - button "Copy to clipboard" [ref=e475] [cursor=pointer]:
+                    - generic [ref=e476]:
+                      - img [ref=e477]
+                      - img [ref=e479]
+                - paragraph [ref=e481]:
+                  - text: Specify
+                  - code [ref=e482]: <docker_directory>
+                  - text: "- the name of the directory where the RC file will be added and the Dockerfile will be created."
+              - listitem [ref=e483]:
+                - paragraph [ref=e484]: "Move the RC file to the directory:"
+                - generic [ref=e486]:
+                  - code [ref=e488]:
+                    - generic [ref=e489]: mv <rcfile_name> <docker_directory>
+                  - button "Copy to clipboard" [ref=e490] [cursor=pointer]:
+                    - generic [ref=e491]:
+                      - img [ref=e492]
+                      - img [ref=e494]
+                - paragraph [ref=e496]: "Specify:"
+                - list [ref=e497]:
+                  - listitem [ref=e498]:
+                    - code [ref=e499]: <rcfile_name>
+                    - text: "- name of the RC file you"
+                    - link "downloaded in step 3" [ref=e500] [cursor=pointer]:
+                      - /url: "#download-rc-file-for-docker"
+                    - text: . The default is.
+                    - code [ref=e501]: rc.sh
+                    - text: ;
+                  - listitem [ref=e502]:
+                    - code [ref=e503]: <docker_directory>
+                    - text: "- name of the directory where the RC file will be added and the Dockerfile will be created."
+              - listitem [ref=e504]:
+                - paragraph [ref=e505]:
+                  - text: Create an empty Dockerfile in this directory using the
+                  - code [ref=e506]: nano
+                  - text: "text editor:"
+                - generic [ref=e508]:
+                  - code [ref=e510]:
+                    - generic [ref=e511]: nano Dockerfile
+                  - button "Copy to clipboard" [ref=e512] [cursor=pointer]:
+                    - generic [ref=e513]:
+                      - img [ref=e514]
+                      - img [ref=e516]
+              - listitem [ref=e518]:
+                - paragraph [ref=e519]: "Add commands to the Dockerfile to install the OpenStack CLI:"
+                - generic [ref=e521]:
+                  - code [ref=e523]:
+                    - generic [ref=e524]: FROM alpine:3.17
+                    - generic [ref=e525]: RUN apk add --update --no-cache python3 python3-dev libffi libffi-dev \
+                    - generic [ref=e526]: git openssl openssl-dev cargo build-base iputils curl linux-headers \
+                    - generic [ref=e527]: py3-pip py3-cffi py3-tz py3-pbr py3-setuptools && \
+                    - generic [ref=e528]: pip3 install -UI git+https://github.com/openstack/python-openstackclient.git@stable/2024.2 \
+                    - generic [ref=e529]: git+https://github.com/openstack/python-glanceclient.git@stable/2024.2 \
+                    - generic [ref=e530]: git+https://github.com/openstack/python-octaviaclient.git@stable/2024.2 \
+                    - generic [ref=e531]: git+https://github.com/openstack/python-manilaclient.git@unmaintained/zed \
+                    - generic [ref=e532]: git+https://github.com/openstack/osc-lib.git@stable/2024.2 \
+                    - generic [ref=e533]: "&& apk del build-base linux-headers python3-dev libffi-dev openssl-dev git cargo iputils curl && rm -rf /var/cache"
+                    - generic [ref=e534]: CMD ["sh"]
+                  - button "Copy to clipboard" [ref=e535] [cursor=pointer]:
+                    - generic [ref=e536]:
+                      - img [ref=e537]
+                      - img [ref=e539]
+              - listitem [ref=e541]:
+                - paragraph [ref=e542]:
+                  - text: Exit the
+                  - code [ref=e543]: nano
+                  - text: "text editor with your changes saved: press"
+                  - strong [ref=e544]: Ctrl+X
+                  - text: and then
+                  - strong [ref=e545]: Y+Enter
+                  - text: .
+              - listitem [ref=e546]:
+                - paragraph [ref=e547]: "Build a Docker container:"
+                - generic [ref=e549]:
+                  - code [ref=e551]:
+                    - generic [ref=e552]: docker build -t osc:dalmatian .
+                  - button "Copy to clipboard" [ref=e553] [cursor=pointer]:
+                    - generic [ref=e554]:
+                      - img [ref=e555]
+                      - img [ref=e557]
+              - listitem [ref=e559]:
+                - paragraph [ref=e560]: "Start the Docker container:"
+                - generic [ref=e562]:
+                  - code [ref=e564]:
+                    - generic [ref=e565]: docker run -ti --rm -v $(pwd):/workspace osc:dalmatian
+                  - button "Copy to clipboard" [ref=e566] [cursor=pointer]:
+                    - generic [ref=e567]:
+                      - img [ref=e568]
+                      - img [ref=e570]
+              - listitem [ref=e572]:
+                - paragraph [ref=e573]:
+                  - text: Navigate to the
+                  - code [ref=e574]: workspace
+                  - text: "directory:"
+                - generic [ref=e576]:
+                  - code [ref=e578]:
+                    - generic [ref=e579]: cd /workspace
+                  - button "Copy to clipboard" [ref=e580] [cursor=pointer]:
+                    - generic [ref=e581]:
+                      - img [ref=e582]
+                      - img [ref=e584]
+              - listitem [ref=e586]:
+                - paragraph [ref=e587]: "Apply the environment variables from the RC file:"
+                - generic [ref=e589]:
+                  - code [ref=e591]:
+                    - generic [ref=e592]: source <rcfile_name>
+                  - button "Copy to clipboard" [ref=e593] [cursor=pointer]:
+                    - generic [ref=e594]:
+                      - img [ref=e595]
+                      - img [ref=e597]
+                - paragraph [ref=e599]:
+                  - text: Specify
+                  - code [ref=e600]: <rcfile_name>
+                  - text: is the name of the RC file you
+                  - link "downloaded in step 3" [ref=e601] [cursor=pointer]:
+                    - /url: "#download-rc-file-for-docker"
+                  - text: . The default
+                  - code [ref=e602]: is rc.sh
+                  - text: .
+              - listitem [ref=e603]:
+                - paragraph [ref=e604]:
+                  - text: Enter the OpenStack password - the password for the service user for whom you
+                  - link "downloaded the RC file in step 3" [ref=e605] [cursor=pointer]:
+                    - /url: "#download-rc-file-for-docker"
+                  - text: .
+              - listitem [ref=e606]:
+                - paragraph [ref=e607]: "Verify that the OpenStack CLI is running. To do this, open the list of cloud servers:"
+            - generic [ref=e609]:
+              - code [ref=e611]:
+                - generic [ref=e612]: openstack server list
+              - button "Copy to clipboard" [ref=e613] [cursor=pointer]:
+                - generic [ref=e614]:
+                  - img [ref=e615]
+                  - img [ref=e617]
+            - paragraph [ref=e619]: If cloud servers have been created in the pool and project specified in the RC file, the response will list them. If no servers have been created yet, the response will be empty.
+            - iframe [ref=e621]:
+              - generic [active] [ref=f5e1]:
+                - alert [ref=f5e2]
+                - generic "Auto close wrapper" [ref=f5e15]:
+                  - generic [ref=f5e26]:
+                    - generic [ref=f5e30]:
+                      - paragraph [ref=f5e33]: Did this article answer your question?
+                      - group "Options" [ref=f5e35]:
+                        - generic [ref=f5e36]: Options
+                        - radiogroup [ref=f5e37]:
+                          - generic [ref=f5e39] [cursor=pointer]:
+                            - radio "Yes, it did 👍" [ref=f5e40]
+                            - generic [ref=f5e41]: Yes, it did 👍
+                          - generic [ref=f5e43] [cursor=pointer]:
+                            - radio "Partially 😐" [ref=f5e44]
+                            - generic [ref=f5e45]: Partially 😐
+                          - generic [ref=f5e47] [cursor=pointer]:
+                            - radio "No, it didn't 👎" [ref=f5e48]
+                            - generic [ref=f5e49]: No, it didn't 👎
+                    - button "Next" [ref=f5e52] [cursor=pointer]
+        - text: « »

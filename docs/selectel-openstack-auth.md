@@ -1,0 +1,82 @@
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img "Selectel" [ref=e9]
+        - generic [ref=e11]:
+          - link "Documentation" [ref=e12] [cursor=pointer]:
+            - /url: /en/
+          - link "API" [ref=e13] [cursor=pointer]:
+            - /url: /en/api/
+          - link "Terraform" [ref=e14] [cursor=pointer]:
+            - /url: /en/terraform/
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - link "Control panel" [ref=e95] [cursor=pointer]:
+            - /url: https://my.selectel.ru/
+          - button [ref=e22]:
+            - img [ref=e23]
+        - button "Search..." [ref=e29]:
+          - generic [ref=e30]: Search...
+          - img [ref=e32]
+  - main [ref=e36]:
+    - text: ∕ ∕ ∕ ∕
+    - generic [ref=e38]:
+      - navigation "Breadcrumb of the current page" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "Documentation" [ref=e43] [cursor=pointer]:
+              - /url: /en/
+            - text: ∕
+          - listitem [ref=e44]:
+            - generic [ref=e45]: Compute
+            - text: ∕
+          - listitem [ref=e46]:
+            - link "Cloud Servers" [ref=e47] [cursor=pointer]:
+              - /url: /en/cloud-servers/
+            - text: ∕
+          - listitem [ref=e48]:
+            - link "Tools for Automation" [ref=e49] [cursor=pointer]:
+              - /url: /en/cloud-servers/tools/
+            - text: ∕
+          - listitem [ref=e50]:
+            - generic [ref=e51]: OpenStack CLI
+      - generic [ref=e54]:
+        - article [ref=e55]:
+          - generic [ref=e56]:
+            - heading "OpenStack CLI" [level=1] [ref=e58]
+            - generic [ref=e59]:
+              - article [ref=e60]:
+                - link "OpenStack CLI What is the OpenStack CLI console client and OpenStack API component versions" [ref=e61] [cursor=pointer]:
+                  - /url: /en/cloud-servers/tools/openstack-cli/about-openstack-cli/
+                  - heading "OpenStack CLI" [level=5] [ref=e62]
+                  - paragraph [ref=e63]: What is the OpenStack CLI console client and OpenStack API component versions
+                  - img [ref=e65]
+              - article [ref=e67]:
+                - link "Configure OpenStack CLI How to install the OpenStack API console client and set up authorization" [ref=e68] [cursor=pointer]:
+                  - /url: /en/cloud-servers/tools/openstack-cli/configure-openstack-cli/
+                  - heading "Configure OpenStack CLI" [level=5] [ref=e69]
+                  - paragraph [ref=e70]: How to install the OpenStack API console client and set up authorization
+                  - img [ref=e72]
+              - article [ref=e74]:
+                - link "Start OpenStack CLI How to Start OpenStack CLI" [ref=e75] [cursor=pointer]:
+                  - /url: /en/cloud-servers/tools/openstack-cli/run-openstack-cli/
+                  - heading "Start OpenStack CLI" [level=5] [ref=e76]
+                  - paragraph [ref=e77]: How to Start OpenStack CLI
+                  - img [ref=e79]
+              - article [ref=e81]:
+                - link "Change authorization data in OpenStack API How to change authorization data in OpenStack API" [ref=e82] [cursor=pointer]:
+                  - /url: /en/cloud-servers/tools/openstack-cli/change-authorization-data/
+                  - heading "Change authorization data in OpenStack API" [level=5] [ref=e83]
+                  - paragraph [ref=e84]: How to change authorization data in OpenStack API
+                  - img [ref=e86]
+              - article [ref=e88]:
+                - link "Create multiple cloud servers Example of creating multiple cloud servers via OpenStack CLI" [ref=e89] [cursor=pointer]:
+                  - /url: /en/cloud-servers/tools/openstack-cli/create-several-servers/
+                  - heading "Create multiple cloud servers" [level=5] [ref=e90]
+                  - paragraph [ref=e91]: Example of creating multiple cloud servers via OpenStack CLI
+                  - img [ref=e93]
+        - text: « »

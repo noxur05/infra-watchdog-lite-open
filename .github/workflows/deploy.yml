@@ -1,0 +1,208 @@
+name: Deploy to production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type DEPLOY to confirm (manual deploy only)'
+        required: false
+        default: ''
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+env:
+  PROD_USER: root
+  PROD_DIR: /root/rust/vpn-watchdog
+
+jobs:
+  deploy:
+    name: build + deploy
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    environment: production
+
+    steps:
+      - name: guard — manual deploy must type DEPLOY
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ "${{ inputs.confirm }}" != "DEPLOY" ]; then
+            echo "::error::Refusing manual deploy: confirm input must be literal 'DEPLOY'."
+            exit 1
+          fi
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: cache cargo registry + target
+        uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: build
+
+      - name: cargo check
+        run: cargo check --all-targets --locked
+
+      - name: cargo test
+        run: cargo test --all-targets --locked
+
+      - name: cargo build --release
+        run: cargo build --release --locked
+
+      - name: binary sanity
+        run: |
+          file target/release/vpn-watchdog
+          test -x target/release/vpn-watchdog
+
+      - name: configure SSH
+        env:
+          SSH_KEY:      ${{ secrets.PROD_SSH_KEY }}
+          SSH_HOST_KEY: ${{ secrets.PROD_HOST_KEY }}
+          PROD_HOST:    ${{ secrets.PROD_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$SSH_HOST_KEY" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          echo "configured"
+
+      - name: preflight — reach prod
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o ConnectTimeout=15 -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              "${PROD_USER}@${PROD_HOST}" 'echo ok; systemctl is-active vpn-watchdog.service || true'
+
+      - name: backup current binary + migrations
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+        run: |
+          # Snapshot both the binary AND the migrations dir so a rollback can
+          # restore both. A new migration that crashes startup will brick the
+          # OLD binary too if we leave the new migration file on disk.
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              "${PROD_USER}@${PROD_HOST}" '
+              set -e
+              cp "'"${PROD_DIR}"'/vpn-watchdog" "'"${PROD_DIR}"'/vpn-watchdog.previous"
+              rm -rf "'"${PROD_DIR}"'/migrations.previous"
+              cp -r "'"${PROD_DIR}"'/migrations" "'"${PROD_DIR}"'/migrations.previous"
+              ls -la "'"${PROD_DIR}"'/vpn-watchdog"* "'"${PROD_DIR}"'/migrations.previous" | head -20
+              '
+
+      - name: stop service
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              "${PROD_USER}@${PROD_HOST}" "systemctl stop vpn-watchdog.service && systemctl is-active vpn-watchdog.service; exit 0"
+
+      - name: upload binary + migrations
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+        run: |
+          scp -i ~/.ssh/deploy_key -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              target/release/vpn-watchdog \
+              "${PROD_USER}@${PROD_HOST}:${PROD_DIR}/vpn-watchdog.new"
+
+          # scp each migration separately so a partial upload doesn't corrupt the dir
+          for f in migrations/*.sql; do
+            scp -i ~/.ssh/deploy_key -o BatchMode=yes \
+                -o UserKnownHostsFile=~/.ssh/known_hosts \
+                "$f" "${PROD_USER}@${PROD_HOST}:${PROD_DIR}/migrations/$(basename "$f")"
+          done
+
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              "${PROD_USER}@${PROD_HOST}" \
+              "chmod 755 '${PROD_DIR}/vpn-watchdog.new' && mv '${PROD_DIR}/vpn-watchdog.new' '${PROD_DIR}/vpn-watchdog' && ls -la '${PROD_DIR}/vpn-watchdog'"
+
+      - name: start service + health check
+        id: health
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+        run: |
+          set -e
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              "${PROD_USER}@${PROD_HOST}" "systemctl start vpn-watchdog.service"
+
+          # Give it a moment to boot + run migrations
+          sleep 8
+
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              "${PROD_USER}@${PROD_HOST}" '
+              set -e
+              STATE=$(systemctl is-active vpn-watchdog.service || true)
+              echo "systemctl is-active: $STATE"
+              if [ "$STATE" != "active" ]; then
+                echo "::error::service not active"
+                journalctl -u vpn-watchdog.service -n 80 --no-pager || true
+                exit 1
+              fi
+              LOG=$(journalctl -u vpn-watchdog.service --since "30 seconds ago" --no-pager)
+              echo "$LOG" | tail -40
+              if echo "$LOG" | grep -Ei "panic|thread .* panicked|FATAL|SIGSEGV" ; then
+                echo "::error::panic or fatal error in startup log"
+                exit 1
+              fi
+              if ! echo "$LOG" | grep -q "Bot is running"; then
+                echo "::warning::did not see \"Bot is running\" marker yet"
+              fi
+              echo "health check: ok"
+              '
+
+      - name: rollback on failure
+        if: failure() && steps.health.outcome == 'failure'
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+        run: |
+          echo "::warning::rolling back binary + migrations to previous snapshot"
+          ssh -i ~/.ssh/deploy_key -o BatchMode=yes \
+              -o UserKnownHostsFile=~/.ssh/known_hosts \
+              "${PROD_USER}@${PROD_HOST}" '
+              set -e
+              systemctl stop vpn-watchdog.service || true
+              if [ ! -x "'"${PROD_DIR}"'/vpn-watchdog.previous" ]; then
+                echo "::error::no previous binary found — manual intervention needed"
+                exit 1
+              fi
+              cp "'"${PROD_DIR}"'/vpn-watchdog.previous" "'"${PROD_DIR}"'/vpn-watchdog"
+              # Also restore migrations dir if a new migration was the cause of the crash
+              if [ -d "'"${PROD_DIR}"'/migrations.previous" ]; then
+                rm -rf "'"${PROD_DIR}"'/migrations"
+                cp -r "'"${PROD_DIR}"'/migrations.previous" "'"${PROD_DIR}"'/migrations"
+              fi
+              systemctl start vpn-watchdog.service
+              # Poll up to 30s — startup runs N migrations and may stay
+              # "activating" longer than the 5s the original check used.
+              ok=0
+              for i in 1 2 3 4 5 6; do
+                sleep 5
+                STATE=$(systemctl is-active vpn-watchdog.service || true)
+                echo "rollback poll #$i: $STATE"
+                if [ "$STATE" = "active" ]; then ok=1; break; fi
+              done
+              if [ "$ok" = "1" ]; then
+                echo "rollback complete"
+              else
+                journalctl -u vpn-watchdog.service -n 60 --no-pager || true
+                echo "::error::rollback failed — service did not return to active"
+                exit 1
+              fi
+              '
+
+      - name: cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

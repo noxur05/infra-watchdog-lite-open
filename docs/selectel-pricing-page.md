@@ -1,0 +1,1046 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: Москва, 22 апреля
+      - generic [ref=e7]:
+        - text: "МЛечный путь: конференция про бизнес и ИИ"
+        - link "Зарегистрироваться" [ref=e8] [cursor=pointer]:
+          - /url: https://mlconf.selectel.ru/
+      - button [ref=e10] [cursor=pointer]:
+        - img [ref=e11]
+    - banner [ref=e13]:
+      - generic [ref=e17]:
+        - link [ref=e18] [cursor=pointer]:
+          - /url: /
+          - img [ref=e19]
+        - generic [ref=e23]:
+          - button "Цены" [ref=e24] [cursor=pointer]:
+            - text: Цены
+            - img
+          - generic [ref=e25]:
+            - generic [ref=e26]:
+              - link "Калькулятор цен" [ref=e27] [cursor=pointer]:
+                - /url: https://selectel.ru/prices/calculator/
+                - generic [ref=e28]:
+                  - img [ref=e29]
+                  - generic [ref=e32]: Калькулятор цен
+              - generic [ref=e33]: Инструмент для расчета затрат на инфраструктуру
+            - generic [ref=e34]:
+              - link "Тарифы" [ref=e35] [cursor=pointer]:
+                - /url: https://selectel.ru/prices/
+                - generic [ref=e36]:
+                  - img [ref=e37]
+                  - generic [ref=e39]: Тарифы
+              - generic [ref=e40]: Актуальные цены на все продукты и услуги Selectel
+            - generic [ref=e41]:
+              - link "Акции" [ref=e42] [cursor=pointer]:
+                - /url: https://selectel.ru/services/offerwall/
+                - generic [ref=e43]:
+                  - img [ref=e44]
+                  - generic [ref=e46]: Акции
+              - generic [ref=e47]: Специальные предложения и бонусы для новых и действующих клиентов
+        - generic [ref=e49]:
+          - button "Академия" [ref=e50] [cursor=pointer]:
+            - text: Академия
+            - img
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - link "Блог" [ref=e53] [cursor=pointer]:
+                - /url: https://selectel.ru/blog/
+                - img [ref=e54]
+                - text: Блог
+              - generic [ref=e56]: Техобзоры, инструкции и квизы для технических специалистов
+            - generic [ref=e57]:
+              - link "Security Center" [ref=e58] [cursor=pointer]:
+                - /url: https://selectel.ru/blog/security-center/
+                - img [ref=e59]
+                - text: Security Center
+              - generic [ref=e61]: Все об информационной безопасности, требованиях и изменениях в законодательстве
+            - generic [ref=e62]:
+              - link "Курсы" [ref=e63] [cursor=pointer]:
+                - /url: https://selectel.ru/blog/courses/
+                - img [ref=e64]
+                - text: Курсы
+              - generic [ref=e66]: Бесплатные тематические подборки для специалистов с разным уровнем знаний
+            - generic [ref=e67]:
+              - link "Мероприятия" [ref=e68] [cursor=pointer]:
+                - /url: https://selectel.ru/blog/events/
+                - img [ref=e69]
+                - text: Мероприятия
+              - generic [ref=e71]: Вебинары, митапы и конференции Selectel в онлайн- и офлайн-форматах
+            - generic [ref=e72]:
+              - link "Кейсы" [ref=e73] [cursor=pointer]:
+                - /url: https://selectel.ru/blog/category/case/
+                - img [ref=e74]
+                - text: Кейсы
+              - generic [ref=e76]: Истории успеха клиентов Selectel
+        - button [ref=e78] [cursor=pointer]:
+          - img [ref=e79]
+        - button "toggle menu" [ref=e84] [cursor=pointer]
+    - main [ref=e85]:
+      - generic [ref=e86]:
+        - navigation [ref=e89]:
+          - list [ref=e90]:
+            - listitem [ref=e91]:
+              - link "Главная /" [ref=e93] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e94]:
+              - generic [ref=e95]: Облачные серверы
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - heading "Облачные серверы" [level=1] [ref=e100]
+            - paragraph [ref=e103]: Надежные виртуальные машины для сайтов и сервисов любой сложности — с моментальным масштабированием, оплатой по потреблению и готовностью меньше минуты.
+            - generic [ref=e104]:
+              - generic [ref=e105]: 3 региона, 6 зон доступности, 17 пулов
+              - generic [ref=e106]: Пропускная способность сети — до 10 Гбит/с
+              - generic [ref=e107]: 3 ТБ трафика бесплатно
+              - generic [ref=e108]: Бесплатная защита от DDoS
+              - generic [ref=e109]: 152-ФЗ
+          - generic [ref=e110]:
+            - heading "Зарегистрируйтесь в панели" [level=5] [ref=e111]
+            - generic [ref=e112]: Управляйте 50+ продуктами в одном интерфейсе
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - generic [ref=e115]: Электронная почта
+                - textbox "Электронная почта" [ref=e117]
+              - generic [ref=e118]:
+                - generic [ref=e119]:
+                  - text: Придумайте пароль
+                  - generic [ref=e120] [cursor=pointer]: Сгенерировать
+                - generic [ref=e121]:
+                  - textbox "Придумайте пароль Сгенерировать" [ref=e122]
+                  - img [ref=e124] [cursor=pointer]
+              - generic [ref=e128]:
+                - checkbox "Я подтверждаю свое согласие на получение новостных рассылок" [ref=e129]
+                - generic [ref=e131]:
+                  - text: Я подтверждаю свое
+                  - link "согласие" [ref=e132] [cursor=pointer]:
+                    - /url: https://files.selectel.ru/docs/ru/consent-to-personal-data-processing-email.pdf
+                  - text: на получение новостных рассылок
+              - button "Создать аккаунт" [ref=e133] [cursor=pointer]
+              - paragraph [ref=e134]:
+                - text: Регистрируясь,
+                - generic [ref=e135]:
+                  - text: вы
+                  - link "соглашаетесь" [ref=e136] [cursor=pointer]:
+                    - /url: https://files.selectel.ru/docs/ru/consentform.pdf
+                - text: на обработку персональных данных в соответствии
+                - generic [ref=e137]:
+                  - text: с
+                  - link "политикой" [ref=e138] [cursor=pointer]:
+                    - /url: https://files.selectel.ru/docs/ru/personal-data-processing-and-protection-policy.pdf
+              - paragraph [ref=e139]:
+                - text: Есть аккаунт?
+                - link "Войти" [ref=e140] [cursor=pointer]:
+                  - /url: https://my.selectel.ru/registration
+        - generic [ref=e141]:
+          - navigation [ref=e145] [cursor=pointer]:
+            - generic [ref=e146]: О продукте
+            - generic [ref=e147]: Цены
+            - generic [ref=e148]: Безопасность
+            - generic [ref=e149]: Документация
+            - generic [ref=e150]: С этим заказывают
+            - generic [ref=e151]: FAQ
+          - generic [ref=e153]:
+            - list [ref=e156]:
+              - listitem [ref=e157]:
+                - generic [ref=e158]:
+                  - heading "1 000 000 на миграцию" [level=4] [ref=e159]
+                  - generic [ref=e160]:
+                    - paragraph [ref=e162]: Перенесите ваши проекты в Selectel — сами или с помощью наших инженеров
+                    - link "Узнать детали" [ref=e164] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/migration-to-selectel/
+              - listitem [ref=e165]:
+                - generic [ref=e166]:
+                  - heading "Грант на тест облака" [level=4] [ref=e167]
+                  - generic [ref=e168]:
+                    - paragraph [ref=e170]: Получите до 30 000 бонусов на тестирование облачных сервисов в течение месяца
+                    - link "Получить" [ref=e172] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/cloud/grant/
+              - listitem [ref=e173]:
+                - generic [ref=e174]:
+                  - heading "Серверы с GPU для LLM" [level=4] [ref=e175]
+                  - generic [ref=e176]:
+                    - paragraph [ref=e178]: Облачные серверы для инференса и файн-тюнинга c H200, H100, RTX PRO 6000 и другими GPU
+                    - link "Арендовать" [ref=e180] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/gpu/?section=cloud
+            - generic [ref=e182]:
+              - heading "Преимущества аренды облачных серверов в Selectel" [level=3] [ref=e184]
+              - generic [ref=e185]:
+                - generic [ref=e187]:
+                  - heading "Экономическая эффективность" [level=4] [ref=e188]
+                  - paragraph [ref=e190]:
+                    - text: Платите только за использованные ресурсы. Снижайте расходы до 75% благодаря
+                    - link "прерываемым виртуальным машинам" [ref=e191] [cursor=pointer]:
+                      - /url: https://docs.selectel.ru/cloud-servers/create/create-preemptible-server/
+                    - text: и
+                    - link "функции «Заморозка»" [ref=e192] [cursor=pointer]:
+                      - /url: https://docs.selectel.ru/cloud-servers/manage/manage-server/#freeze-server
+                    - text: .
+                - generic [ref=e194]:
+                  - heading "Высокая производительность" [level=4] [ref=e195]
+                  - paragraph [ref=e197]:
+                    - link "Выделенные ядра" [ref=e198] [cursor=pointer]:
+                      - /url: https://docs.selectel.ru/cloud-servers/about/dedicated-cores/
+                    - text: гарантируют стабильную работу без Steal Time. А
+                    - link "размещение ресурсов на одной NUMA-ноде" [ref=e199] [cursor=pointer]:
+                      - /url: https://docs.selectel.ru/cloud-servers/about/dedicated-cores/#placing-on-one-numa-node
+                    - text: сократит задержки при работе с памятью на 20–50%.
+                - generic [ref=e200]:
+                  - generic [ref=e201]:
+                    - heading "Отказоустойчивость" [level=4] [ref=e202]
+                    - paragraph [ref=e204]: Серверы размещены в 3 регионах, 6 зонах доступности и 17 пулах в дата-центрах Selectel уровня Tier III — это гарантирует устойчивость к сбоям. Запущен новый геораспределенный (Multi-AZ) регион с катастрофоустойчивостью из коробки.
+                  - link "Подробнее про ru-6" [ref=e205] [cursor=pointer]:
+                    - /url: https://selectel.ru/services/cloud/servers/ru-6/
+                - generic [ref=e207]:
+                  - heading "Мгновенное масштабирование" [level=4] [ref=e208]
+                  - paragraph [ref=e210]: "Масштабируйте ресурсы в пару кликов: добавляйте ВМ при росте нагрузки и оптимизируйте затраты, когда она падает."
+                - generic [ref=e212]:
+                  - heading "Безопасность данных" [level=4] [ref=e213]
+                  - paragraph [ref=e215]:
+                    - text: Храните и обрабатывайте данные в соответствии с российскими и международными стандартами. Подробнее об этом —
+                    - link "в табе «Безопасность»" [ref=e216] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/cloud/servers/?section=security
+                    - text: .
+                - generic [ref=e218]:
+                  - heading "Библиотека готовых образов" [level=4] [ref=e219]
+                  - paragraph [ref=e221]: Установите готовые образы с операционными системами и приложениями. Или загрузите собственные в удобных форматах.
+                - generic [ref=e223]:
+                  - heading "Можно изолировать хост, пул или его сегмент" [level=4] [ref=e224]
+                  - paragraph [ref=e226]:
+                    - text: Арендуйте
+                    - link "приватные решения" [ref=e227] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/cloud/vpc/
+                    - text: на базе публичного облака, управляйте доступами и полностью контролируйте сервисы в любой момент времени.
+                - generic [ref=e229]:
+                  - heading "Вся инфраструктура — у одного провайдера" [level=4] [ref=e230]
+                  - paragraph [ref=e232]:
+                    - text: У Selectel больше 50 продуктов. Развернуть
+                    - link "кластеры Managed Kubernetes" [ref=e233] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/cloud/kubernetes/
+                    - text: ", подключить"
+                    - link "S3" [ref=e234] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/cloud/storage/
+                    - text: и
+                    - link "CDN" [ref=e235] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/additional/cdn/
+                    - text: ", — это и не только можно сделать в Selectel."
+            - generic [ref=e237]:
+              - heading "Решайте задачи любой сложности в облаке" [level=3] [ref=e239]
+              - generic [ref=e240]:
+                - list [ref=e241]:
+                  - listitem [ref=e242]:
+                    - heading "Запустить масштабируемую систему" [level=5] [ref=e243]
+                    - generic [ref=e246]: Разверните сложные проекты с высокой нагрузкой и увеличивайте ресурсы по мере роста количества пользователей.
+                  - listitem [ref=e247] [cursor=pointer]:
+                    - heading "Создать среду разработки и тестирования" [level=5] [ref=e248]
+                    - generic [ref=e249]: Разворачивайте окружения для тестов, пилотных проектов и MVP. Облачные серверы подходят для нагрузочного тестирования, CI/CD и проверки новых версий ПО. Используйте платформу логов для дебага и поддержки сложных систем.
+                  - listitem [ref=e250] [cursor=pointer]:
+                    - heading "Разместить внутренние сервисы" [level=5] [ref=e251]
+                    - generic [ref=e252]: Развертывайте корпоративные системы документооборота, ERP, CRM и внутренние порталы с полным соответствием требованиям безопасности.
+                  - listitem [ref=e253] [cursor=pointer]:
+                    - heading "Организовать резервное копирование" [level=5] [ref=e254]
+                    - generic [ref=e255]:
+                      - link "Подключите резервное копирование в облаке" [ref=e256]:
+                        - /url: https://selectel.ru/services/cloud/backups/
+                      - text: и настраивайте бэкапы дисков по расписанию. Дальше сервис сделает все за вас. Тройная репликация и хранение на изолированной инфраструктуре защитят критичные данные от атак шифровальщиков.
+                  - listitem [ref=e257] [cursor=pointer]:
+                    - heading "Построить гибридную инфраструктуру" [level=5] [ref=e258]
+                    - generic [ref=e259]:
+                      - text: Объедините облачные серверы с
+                      - link "выделенными" [ref=e260]:
+                        - /url: https://selectel.ru/services/dedicated/
+                      - text: ","
+                      - link "обособленным сегментом публичного облака" [ref=e261]:
+                        - /url: https://selectel.ru/services/cloud/vpc/?section=segment
+                      - text: или собственной инфраструктурой on-premise. Разместите стабильную нагрузку на «железе», остальное — в облаке. Свяжите все через
+                      - link "Direct Connect" [ref=e262]:
+                        - /url: https://selectel.ru/services/additional/direct-connect/
+                      - text: и
+                      - link "глобальный роутер" [ref=e263]:
+                        - /url: https://selectel.ru/services/additional/local-network/
+                      - text: .
+                - img [ref=e267]
+            - generic [ref=e269]:
+              - heading "Конфигурации облачных серверов" [level=3] [ref=e270]
+              - paragraph [ref=e271]: Все серверы работают на базе современных процессоров Intel и AMD и оснащены производительной оперативной памятью. Почасовая оплата, поддержка прерываемых ВМ и функция «Заморозка» помогут снизить затраты до 75%.
+              - generic [ref=e272]:
+                - generic [ref=e273]:
+                  - generic [ref=e274]:
+                    - heading "Standard Line" [level=5] [ref=e275]
+                    - paragraph [ref=e277]: Для сред разработки и продакшен-нагрузок, размещения сайтов, приложений, веб-сервисов и корпоративных систем.
+                  - generic [ref=e278]:
+                    - generic [ref=e280]:
+                      - paragraph [ref=e281]: От 948,50
+                      - generic [ref=e282]: ₽/мес.
+                    - button "Выбрать" [ref=e284] [cursor=pointer]
+                - generic [ref=e285]:
+                  - generic [ref=e286]:
+                    - heading "HighFreq Line" [level=5] [ref=e287]
+                    - paragraph [ref=e289]: Для баз данных, 1С, Битрикс24 и других требовательных ко времени отклика систем.
+                    - generic [ref=e290]:
+                      - text: CPU
+                      - paragraph [ref=e291]:
+                        - text: Intel
+                        - superscript [ref=e292]: ®
+                        - text: Xeon
+                        - superscript [ref=e293]: ®
+                        - text: Gold 6354 и AMD EPYC™ 9474F с частотой до 3,6 ГГц
+                  - generic [ref=e294]:
+                    - generic [ref=e296]:
+                      - paragraph [ref=e297]: От 1 809,79
+                      - generic [ref=e298]: ₽/мес.
+                    - button "Выбрать" [ref=e300] [cursor=pointer]
+                - generic [ref=e301]:
+                  - generic [ref=e302]:
+                    - heading "GPU Line" [level=5] [ref=e303]
+                    - paragraph [ref=e305]: Для обучения ML-моделей, инференса LLM, аналитики, а также 3D-моделирования и рендеринга.
+                    - generic [ref=e306]:
+                      - text: GPU
+                      - paragraph [ref=e307]:
+                        - text: NVIDIA
+                        - superscript [ref=e308]: ®
+                        - text: Tesla
+                        - superscript [ref=e309]: ®
+                        - text: T4, A100, A2, A30, A2000, A5000, GTX 1080, RTX™ 2080 Ti, 4090 и A6000 Ada
+                  - generic [ref=e310]:
+                    - generic [ref=e312]:
+                      - paragraph [ref=e313]: От 21 999,36
+                      - generic [ref=e314]: ₽/мес.
+                    - button "Выбрать" [ref=e316] [cursor=pointer]
+                - generic [ref=e317]:
+                  - generic [ref=e318]:
+                    - heading "10G Net" [level=5] [ref=e319]
+                    - paragraph [ref=e321]: "Для быстрой передачи больших объемов данных: репликации баз данных, миграции систем, обработки Big Data и работы с распределенными кластерами."
+                  - generic [ref=e322]:
+                    - generic [ref=e324]:
+                      - paragraph [ref=e325]: От 32 885,06
+                      - generic [ref=e326]: ₽/мес.
+                    - link "Арендовать" [ref=e328] [cursor=pointer]:
+                      - /url: https://my.selectel.ru/registration?destination=vpc
+                - generic [ref=e329]:
+                  - generic [ref=e330]:
+                    - heading "Dedicated" [level=5] [ref=e331]
+                    - paragraph [ref=e333]: Для ПО с привязкой к физическому оборудованию, задач с требованиями к изоляции вычислительной нагрузки и высоконагруженных систем.
+                  - generic [ref=e334]:
+                    - generic [ref=e336]:
+                      - paragraph [ref=e337]: От 30 521,22
+                      - generic [ref=e338]: ₽/мес.
+                    - link "Арендовать" [ref=e340] [cursor=pointer]:
+                      - /url: https://my.selectel.ru/registration?destination=vpc
+                - generic [ref=e341]:
+                  - generic [ref=e342]:
+                    - heading "Произвольные" [level=5] [ref=e343]
+                    - paragraph [ref=e345]: "Соберите конфигурацию, подходящую под ваши задачи: вы сами устанавливаете количество ядер виртуальной машины, ее память, тип диска и его объем."
+                  - button "Выбрать" [ref=e348] [cursor=pointer]
+            - generic [ref=e351]:
+              - generic [ref=e352]: Экономьте с Shared Line
+              - generic [ref=e353]: "Арендуйте конфигурации Shared Line — это облачные серверы с возможностью использования и оплаты только части vCPU: 10%, 20% или 50%. Они подходят для хостинга сайтов, pet-проектов, запуска стейджинга, тестовых сред и обучения — там, где не нужны постоянные высокие нагрузки."
+              - button "Выбрать сервер" [ref=e355] [cursor=pointer]
+            - generic [ref=e357]:
+              - heading "Локальные и сетевые диски" [level=3] [ref=e358]
+              - paragraph [ref=e359]: Сетевые диски обеспечивают стабильную работу вне зависимости от объема. А тройная репликация и встроенный сервис резервного копирования помогают защитить данные от потерь.
+              - generic [ref=e360]:
+                - generic [ref=e361]:
+                  - generic [ref=e362]:
+                    - heading "Локальные" [level=5] [ref=e363]
+                    - paragraph [ref=e365]: Диски с задержкой до 1 мс, которые подключаются напрямую к серверу.
+                    - generic [ref=e366]:
+                      - text: Для каких задач
+                      - paragraph [ref=e367]: Для задач, чувствительных к показателям скорости чтения и записи. Например, для работы баз данных.
+                  - generic [ref=e369]:
+                    - generic [ref=e371]: Цена за ГБ
+                    - generic [ref=e372]:
+                      - paragraph [ref=e373]: 11,18
+                      - generic [ref=e374]: ₽/мес.
+                - generic [ref=e375]:
+                  - generic [ref=e376]:
+                    - heading "Сетевые HDD" [level=5] [ref=e377]
+                    - paragraph [ref=e379]: HDD-диски на базе SATA-дисков enterprise-класса.
+                    - generic [ref=e380]:
+                      - text: Для каких задач
+                      - paragraph [ref=e381]: Для хранения больших объемов данных, которые не нужно часто читать или перезаписывать.
+                  - generic [ref=e383]:
+                    - generic [ref=e385]: Цена за ГБ
+                    - generic [ref=e386]:
+                      - paragraph [ref=e387]: 7,28
+                      - generic [ref=e388]: ₽/мес.
+                - generic [ref=e389]:
+                  - generic [ref=e390]:
+                    - heading "Сетевые SSD" [level=5] [ref=e391]
+                    - paragraph [ref=e393]: Диски с высокой производительностью и низкой задержкой до 2 мс.
+                    - generic [ref=e394]:
+                      - text: Для каких задач
+                      - paragraph [ref=e395]: Для систем с интенсивной нагрузкой и критичными данными.
+                  - generic [ref=e397]:
+                    - generic [ref=e399]: Цена за ГБ
+                    - generic [ref=e400]:
+                      - paragraph [ref=e401]: От 8,99
+                      - generic [ref=e402]: ₽/мес.
+                - generic [ref=e403]:
+                  - generic [ref=e404]:
+                    - heading "Настройте бэкапы сетевых дисков" [level=5] [ref=e405]
+                    - paragraph [ref=e407]: Создайте план создания бэкапов и задайте параметры хранения. Дальше сервис сделает все за вас.
+                    - paragraph [ref=e409]: Даже если сервер будет взломан, злоумышленники не получат доступа к бэкапам — они хранятся и управляются отдельно.
+                  - button "Узнать подробнее" [ref=e412] [cursor=pointer]
+            - generic [ref=e415]:
+              - generic [ref=e417]:
+                - heading "Как устроена сеть в облаке" [level=3] [ref=e419]
+                - paragraph [ref=e421]:
+                  - text: Вы можете настроить приватную или публичную сеть под свои задачи — с выходом в интернет или без. Подробнее о сетях Selectel читайте
+                  - link "на странице «Сети»." [ref=e422] [cursor=pointer]:
+                    - /url: https://selectel.ru/services/additional/veeam-cloud-connect/
+              - generic [ref=e423]:
+                - generic [ref=e424]:
+                  - generic [ref=e426]:
+                    - heading "3 ТБ" [level=5] [ref=e427]
+                    - paragraph [ref=e428]: трафика в месяц включены бесплатно
+                  - generic [ref=e430]:
+                    - heading "Защита L3/L4" [level=5] [ref=e431]
+                    - paragraph [ref=e432]: включена в стоимость
+                - generic [ref=e435]:
+                  - heading "От 3 Гбит/с" [level=5] [ref=e436]
+                  - paragraph [ref=e437]: пропускная способность канала
+            - generic [ref=e440]:
+              - generic [ref=e442]:
+                - heading "Как устроена сеть за пределами облака" [level=3] [ref=e444]
+                - paragraph [ref=e446]: Вы можете соединить облачные серверы с другими частями инфраструктуры — внутри Selectel или за ее пределами.
+              - generic [ref=e447]:
+                - generic [ref=e450]:
+                  - heading "Глобальный роутер Selectel" [level=5] [ref=e451]
+                  - paragraph [ref=e452]:
+                    - text: Соединит облачные и выделенные серверы Selectel между разными пулами внутри региона или между регионами.
+                    - link "Подробнее о продукте" [ref=e453] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/additional/local-network/
+                - generic [ref=e456]:
+                  - heading "Direct Connect" [level=5] [ref=e457]
+                  - paragraph [ref=e458]:
+                    - text: Соединит облако Selectel c локальной инфраструктурой — в офисе или вашем ЦОДе.
+                    - link "Подробнее о продукте" [ref=e459] [cursor=pointer]:
+                      - /url: https://selectel.ru/services/additional/direct-connect/
+            - generic [ref=e463]:
+              - heading "Бесплатный переезд в Selectel" [level=3] [ref=e464]
+              - generic [ref=e465]: Проведем аудит ваших сервисов и информационных систем, подберем облачную инфраструктуру нужной конфигурации, перенесем проекты и внимательно проследим за их работой. Все это — бесплатно.
+              - link "Узнать больше" [ref=e467] [cursor=pointer]:
+                - /url: https://selectel.ru/onboarding/
+            - generic [ref=e469]:
+              - heading "Управляйте облачными серверами так, как удобно" [level=3] [ref=e472]
+              - generic [ref=e473]:
+                - list [ref=e474]:
+                  - listitem [ref=e475]:
+                    - generic [ref=e476]: В панели
+                    - generic [ref=e479]: Создавайте SSH-ключи, меняйте конфигурацию серверов, управляйте их питанием, следите за нагрузкой и не только.
+                  - listitem [ref=e480] [cursor=pointer]:
+                    - generic [ref=e481]: Через API
+                    - generic [ref=e482]: Автоматизируйте все действия с облачными серверами, доступные в панели управления.
+                  - listitem [ref=e483] [cursor=pointer]:
+                    - generic [ref=e484]: Через Terraform
+                    - generic [ref=e485]: Разверните облачную инфраструктуру и управляйте ей с помощью утилиты от HashiCorp.
+                - img [ref=e489]
+            - generic [ref=e490]:
+              - generic [ref=e491]:
+                - generic:
+                  - heading [level=3]
+                - generic [ref=e493]:
+                  - generic [ref=e494]:
+                    - generic [ref=e496]: 33 000+ клиентов
+                    - img [ref=e497]
+                    - img [ref=e499]
+                    - img [ref=e502]
+                    - img [ref=e507]
+                    - img [ref=e513]
+                    - img [ref=e515]
+                    - generic [ref=e521]: 33 000+ клиентов
+                    - img [ref=e522]
+                    - img [ref=e526]
+                    - img [ref=e531]
+                    - img [ref=e533]
+                    - img [ref=e546]
+                    - img [ref=e549]
+                  - generic [ref=e552]:
+                    - generic [ref=e554]: 33 000+ клиентов
+                    - img [ref=e555]
+                    - img [ref=e557]
+                    - img [ref=e560]
+                    - img [ref=e565]
+                    - img [ref=e571]
+                    - img [ref=e573]
+                    - generic [ref=e579]: 33 000+ клиентов
+                    - img [ref=e580]
+                    - img [ref=e584]
+                    - img [ref=e589]
+                    - img [ref=e591]
+                    - img [ref=e604]
+                    - img [ref=e607]
+                  - generic [ref=e610]:
+                    - generic [ref=e612]: 33 000+ клиентов
+                    - img [ref=e613]
+                    - img [ref=e615]
+                    - img [ref=e618]
+                    - img [ref=e623]
+                    - img [ref=e629]
+                    - img [ref=e631]
+                    - generic [ref=e637]: 33 000+ клиентов
+                    - img [ref=e638]
+                    - img [ref=e642]
+                    - img [ref=e647]
+                    - img [ref=e649]
+                    - img [ref=e662]
+                    - img [ref=e665]
+                  - generic [ref=e668]:
+                    - generic [ref=e670]: 33 000+ клиентов
+                    - img [ref=e671]
+                    - img [ref=e673]
+                    - img [ref=e676]
+                    - img [ref=e681]
+                    - img [ref=e687]
+                    - img [ref=e689]
+                    - generic [ref=e695]: 33 000+ клиентов
+                    - img [ref=e696]
+                    - img [ref=e700]
+                    - img [ref=e705]
+                    - img [ref=e707]
+                    - img [ref=e720]
+                    - img [ref=e723]
+                  - generic [ref=e726]:
+                    - generic [ref=e728]: 33 000+ клиентов
+                    - img [ref=e729]
+                    - img [ref=e731]
+                    - img [ref=e734]
+                    - img [ref=e739]
+                    - img [ref=e745]
+                    - img [ref=e747]
+                    - generic [ref=e753]: 33 000+ клиентов
+                    - img [ref=e754]
+                    - img [ref=e758]
+                    - img [ref=e763]
+                    - img [ref=e765]
+                    - img [ref=e778]
+                    - img [ref=e781]
+                  - generic [ref=e784]:
+                    - generic [ref=e786]: 33 000+ клиентов
+                    - img [ref=e787]
+                    - img [ref=e789]
+                    - img [ref=e792]
+                    - img [ref=e797]
+                    - img [ref=e803]
+                    - img [ref=e805]
+                    - generic [ref=e811]: 33 000+ клиентов
+                    - img [ref=e812]
+                    - img [ref=e816]
+                    - img [ref=e821]
+                    - img [ref=e823]
+                    - img [ref=e836]
+                    - img [ref=e839]
+                  - generic [ref=e842]:
+                    - generic [ref=e844]: 33 000+ клиентов
+                    - img [ref=e845]
+                    - img [ref=e847]
+                    - img [ref=e850]
+                    - img [ref=e855]
+                    - img [ref=e861]
+                    - img [ref=e863]
+                    - generic [ref=e869]: 33 000+ клиентов
+                    - img [ref=e870]
+                    - img [ref=e874]
+                    - img [ref=e879]
+                    - img [ref=e881]
+                    - img [ref=e894]
+                    - img [ref=e897]
+              - heading "Истории успеха" [level=3] [ref=e902]
+              - generic [ref=e903]:
+                - region [ref=e904]:
+                  - generic [ref=e905]:
+                    - group [ref=e906]:
+                      - generic [ref=e907]:
+                        - generic [ref=e908]:
+                          - img [ref=e910]
+                          - heading [level=4] [ref=e911]: Как Гардиум сократил расходы на инфраструктуру в 3 раза
+                          - generic [ref=e912]: Кейс о том, как компания отказалась от распределения инфраструктуры между разными провайдерами и перенесла все ресурсы в Selectel. Совмещение возможностей выделенных серверов и облачной платформы позволило команде ощутимо оптимизировать затраты.
+                          - link [ref=e913] [cursor=pointer]:
+                            - /url: https://selectel.ru/blog/kejs-gardium/
+                            - text: Читать кейс
+                        - generic [ref=e914]:
+                          - heading [level=4] [ref=e915]: Чем помог Selectel
+                          - generic [ref=e916]:
+                            - link [ref=e917] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/dedicated/
+                              - text: Выделенные серверы
+                            - link [ref=e918] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/servers/
+                              - text: Облачные серверы
+                        - generic [ref=e919]:
+                          - heading [level=4] [ref=e920]: Результаты
+                          - generic [ref=e921]:
+                            - generic [ref=e922]:
+                              - heading [level=4] [ref=e923]: На 350 часов
+                              - text: уменьшился цикл разработки благодаря отсутствию даунтаймов
+                            - generic [ref=e924]:
+                              - heading [level=4] [ref=e925]: В 3 раза
+                              - text: сократилась стоимость владения инфраструктурой
+                    - group [ref=e926]:
+                      - generic [ref=e927]:
+                        - generic [ref=e928]:
+                          - img [ref=e930]
+                          - heading [level=4] [ref=e931]: Как сервис Yclients снизил время обработки запросов за счет IT-инфраструктуры
+                          - generic [ref=e932]: В компании хотели в сжатые реорганизовать IT-инфраструктуру с увеличением присутствия на российском рынке и нарастить вычислительные мощности. Мы помогли создать отказоустойчивую инфраструктуру, распределенную между облаком и выделенными серверами, в нескольких дата-центрах Selectel, и провели миграцию в течение одного месяца.
+                          - link [ref=e933] [cursor=pointer]:
+                            - /url: https://selectel.ru/blog/keys-yclients/
+                            - text: Читать кейс
+                        - generic [ref=e934]:
+                          - heading [level=4] [ref=e935]: Чем помог Selectel
+                          - generic [ref=e936]:
+                            - link [ref=e937] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/dedicated/
+                              - text: Выделенные серверы
+                            - link [ref=e938] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/servers/
+                              - text: Облачные серверы
+                            - link [ref=e939] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/additional/direct-connect/
+                              - text: Direct Connect
+                        - generic [ref=e940]:
+                          - heading [level=4] [ref=e941]: Результаты
+                          - generic [ref=e942]:
+                            - generic [ref=e943]:
+                              - heading [level=4] [ref=e944]: В 10 раз
+                              - text: уменьшилось время обработки сложных запросов в дневное время
+                            - generic [ref=e945]:
+                              - heading [level=4] [ref=e946]: На 95%
+                              - text: сократили время обработки запросов пользователей
+                    - group [ref=e1293]:
+                      - generic [ref=e948]:
+                        - generic [ref=e949]:
+                          - img [ref=e951]
+                          - heading [level=4] [ref=e1294]: Как RobotMIA удалось запустить более 400 голосовых роботов в облаке
+                          - generic [ref=e953]: В компании хотели создать комфортные условия для пользователей при общении с голосовыми роботами, а также научить тех предоставлять максимально релевантные ответы. Все это удалось благодаря размещению сервисов на инфраструктуре Selectel.
+                          - link [ref=e1295] [cursor=pointer]:
+                            - /url: https://selectel.ru/blog/case-robotmia/
+                            - text: Читать кейс
+                        - generic [ref=e955]:
+                          - heading [level=4] [ref=e1296]: Чем помог Selectel
+                          - generic [ref=e957]:
+                            - link [ref=e1297] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/servers/
+                              - text: Облачные серверы
+                            - link [ref=e1298] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/gpu/
+                              - text: Серверы с GPU
+                            - link [ref=e1299] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/storage/
+                              - text: Объектное хранилище
+                        - generic [ref=e961]:
+                          - heading [level=4] [ref=e1300]: Результаты
+                          - generic [ref=e963]:
+                            - generic [ref=e964]:
+                              - heading [level=4] [ref=e1301]: 1–2 секунды
+                              - text: среднее время ответа голосового робота
+                            - generic [ref=e966]:
+                              - heading [level=4] [ref=e1302]: "4"
+                              - text: региона ЦОД поддерживают инфраструктуру клиента
+                    - group "2 of 4" [ref=e1303]:
+                      - generic [ref=e969]:
+                        - generic [ref=e970]:
+                          - img [ref=e972]
+                          - heading "Как сервис для туристов QVEDO организовал удобное окружение в облаке Selectel" [level=4] [ref=e1304]
+                          - generic [ref=e974]: Платформа QVEDO хотела мигрировать от зарубежного провайдера в сжатые сроки и организовать комфортный процесс разработки и выпуска релизов мобильного приложения. Кроме этого, туристический сезон с пиковыми нагрузками был уже близко, поэтому они обратились к нам.
+                          - link "Читать кейс" [ref=e1305] [cursor=pointer]:
+                            - /url: https://selectel.ru/blog/keys-qvedo/
+                        - generic [ref=e976]:
+                          - heading "Чем помог Selectel" [level=4] [ref=e1306]
+                          - generic [ref=e978]:
+                            - link "Облачные серверы" [ref=e1307] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/servers/
+                            - link "Облачные базы данных" [ref=e1308] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/managed-databases/
+                            - link "Managed Kubernetes" [ref=e1309] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/kubernetes/
+                        - generic [ref=e982]:
+                          - heading "Результаты" [level=4] [ref=e1310]
+                          - generic [ref=e984]:
+                            - generic [ref=e985]:
+                              - heading "2 базы данных" [level=4] [ref=e1311]
+                              - text: Redis и PostgreSQL для хранения данных и управления очередями
+                            - generic [ref=e987]:
+                              - heading "Кластеры Kubernetes" [level=4] [ref=e1312]
+                              - text: помогли обучить уникальную рекомендательную систему событий
+                    - group [ref=e989]:
+                      - generic [ref=e990]:
+                        - generic [ref=e991]:
+                          - img [ref=e993]
+                          - heading [level=4] [ref=e994]: Как Гардиум сократил расходы на инфраструктуру в 3 раза
+                          - generic [ref=e995]: Кейс о том, как компания отказалась от распределения инфраструктуры между разными провайдерами и перенесла все ресурсы в Selectel. Совмещение возможностей выделенных серверов и облачной платформы позволило команде ощутимо оптимизировать затраты.
+                          - link [ref=e996] [cursor=pointer]:
+                            - /url: https://selectel.ru/blog/kejs-gardium/
+                            - text: Читать кейс
+                        - generic [ref=e997]:
+                          - heading [level=4] [ref=e998]: Чем помог Selectel
+                          - generic [ref=e999]:
+                            - link [ref=e1000] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/dedicated/
+                              - text: Выделенные серверы
+                            - link [ref=e1001] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/servers/
+                              - text: Облачные серверы
+                        - generic [ref=e1002]:
+                          - heading [level=4] [ref=e1003]: Результаты
+                          - generic [ref=e1004]:
+                            - generic [ref=e1005]:
+                              - heading [level=4] [ref=e1006]: На 350 часов
+                              - text: уменьшился цикл разработки благодаря отсутствию даунтаймов
+                            - generic [ref=e1007]:
+                              - heading [level=4] [ref=e1008]: В 3 раза
+                              - text: сократилась стоимость владения инфраструктурой
+                    - group [ref=e1009]:
+                      - generic [ref=e1010]:
+                        - generic [ref=e1011]:
+                          - img [ref=e1013]
+                          - heading [level=4] [ref=e1014]: Как сервис Yclients снизил время обработки запросов за счет IT-инфраструктуры
+                          - generic [ref=e1015]: В компании хотели в сжатые реорганизовать IT-инфраструктуру с увеличением присутствия на российском рынке и нарастить вычислительные мощности. Мы помогли создать отказоустойчивую инфраструктуру, распределенную между облаком и выделенными серверами, в нескольких дата-центрах Selectel, и провели миграцию в течение одного месяца.
+                          - link [ref=e1016] [cursor=pointer]:
+                            - /url: https://selectel.ru/blog/keys-yclients/
+                            - text: Читать кейс
+                        - generic [ref=e1017]:
+                          - heading [level=4] [ref=e1018]: Чем помог Selectel
+                          - generic [ref=e1019]:
+                            - link [ref=e1020] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/dedicated/
+                              - text: Выделенные серверы
+                            - link [ref=e1021] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/servers/
+                              - text: Облачные серверы
+                            - link [ref=e1022] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/additional/direct-connect/
+                              - text: Direct Connect
+                        - generic [ref=e1023]:
+                          - heading [level=4] [ref=e1024]: Результаты
+                          - generic [ref=e1025]:
+                            - generic [ref=e1026]:
+                              - heading [level=4] [ref=e1027]: В 10 раз
+                              - text: уменьшилось время обработки сложных запросов в дневное время
+                            - generic [ref=e1028]:
+                              - heading [level=4] [ref=e1029]: На 95%
+                              - text: сократили время обработки запросов пользователей
+                    - group [ref=e1030]:
+                      - generic [ref=e1031]:
+                        - generic [ref=e1032]:
+                          - img [ref=e1034]
+                          - heading [level=4] [ref=e1035]: Как RobotMIA удалось запустить более 400 голосовых роботов в облаке
+                          - generic [ref=e1036]: В компании хотели создать комфортные условия для пользователей при общении с голосовыми роботами, а также научить тех предоставлять максимально релевантные ответы. Все это удалось благодаря размещению сервисов на инфраструктуре Selectel.
+                          - link [ref=e1037] [cursor=pointer]:
+                            - /url: https://selectel.ru/blog/case-robotmia/
+                            - text: Читать кейс
+                        - generic [ref=e1038]:
+                          - heading [level=4] [ref=e1039]: Чем помог Selectel
+                          - generic [ref=e1040]:
+                            - link [ref=e1041] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/servers/
+                              - text: Облачные серверы
+                            - link [ref=e1042] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/gpu/
+                              - text: Серверы с GPU
+                            - link [ref=e1043] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/storage/
+                              - text: Объектное хранилище
+                        - generic [ref=e1044]:
+                          - heading [level=4] [ref=e1045]: Результаты
+                          - generic [ref=e1046]:
+                            - generic [ref=e1047]:
+                              - heading [level=4] [ref=e1048]: 1–2 секунды
+                              - text: среднее время ответа голосового робота
+                            - generic [ref=e1049]:
+                              - heading [level=4] [ref=e1050]: "4"
+                              - text: региона ЦОД поддерживают инфраструктуру клиента
+                    - group [ref=e1051]:
+                      - generic [ref=e1052]:
+                        - generic [ref=e1053]:
+                          - img [ref=e1055]
+                          - heading [level=4] [ref=e1056]: Как сервис для туристов QVEDO организовал удобное окружение в облаке Selectel
+                          - generic [ref=e1057]: Платформа QVEDO хотела мигрировать от зарубежного провайдера в сжатые сроки и организовать комфортный процесс разработки и выпуска релизов мобильного приложения. Кроме этого, туристический сезон с пиковыми нагрузками был уже близко, поэтому они обратились к нам.
+                          - link [ref=e1058] [cursor=pointer]:
+                            - /url: https://selectel.ru/blog/keys-qvedo/
+                            - text: Читать кейс
+                        - generic [ref=e1059]:
+                          - heading [level=4] [ref=e1060]: Чем помог Selectel
+                          - generic [ref=e1061]:
+                            - link [ref=e1062] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/servers/
+                              - text: Облачные серверы
+                            - link [ref=e1063] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/managed-databases/
+                              - text: Облачные базы данных
+                            - link [ref=e1064] [cursor=pointer]:
+                              - /url: https://selectel.ru/services/cloud/kubernetes/
+                              - text: Managed Kubernetes
+                        - generic [ref=e1065]:
+                          - heading [level=4] [ref=e1066]: Результаты
+                          - generic [ref=e1067]:
+                            - generic [ref=e1068]:
+                              - heading [level=4] [ref=e1069]: 2 базы данных
+                              - text: Redis и PostgreSQL для хранения данных и управления очередями
+                            - generic [ref=e1070]:
+                              - heading [level=4] [ref=e1071]: Кластеры Kubernetes
+                              - text: помогли обучить уникальную рекомендательную систему событий
+                - generic [ref=e1073]:
+                  - button "Назад" [ref=e1074] [cursor=pointer]:
+                    - img [ref=e1075]
+                    - generic [ref=e1077]: Назад
+                  - generic [ref=e1078]:
+                    - generic [ref=e1079]: "02"
+                    - generic [ref=e1080]: "-"
+                    - generic [ref=e1081]: "04"
+                  - button "Вперед" [ref=e1082] [cursor=pointer]:
+                    - generic [ref=e1083]: Вперед
+                    - img [ref=e1084]
+        - generic [ref=e1088]:
+          - generic [ref=e1089]:
+            - generic [ref=e1090]:
+              - heading "Готовы начать?" [level=3] [ref=e1091]
+              - paragraph [ref=e1093]: Зарегистрируйтесь в панели управления, чтобы получить доступ ко всем продуктам Selectel и управлять инфраструктурой в едином окне
+            - generic [ref=e1095]:
+              - generic [ref=e1098]: 24/7
+              - generic [ref=e1099]:
+                - generic [ref=e1100]:
+                  - text: Получите бесплатную
+                  - text: консультацию в любое время
+                - link "8 812 614-52-08" [ref=e1313] [cursor=pointer]:
+                  - /url: tel:+78126145208
+                  - generic [ref=e1314]: 8 812 614-52-08
+          - generic [ref=e1105]:
+            - generic [ref=e1106]:
+              - generic [ref=e1107]: Электронная почта
+              - textbox "Электронная почта" [ref=e1109]
+            - generic [ref=e1110]:
+              - generic [ref=e1111]:
+                - text: Придумайте пароль
+                - generic [ref=e1112] [cursor=pointer]: Сгенерировать
+              - generic [ref=e1113]:
+                - textbox "Придумайте пароль Сгенерировать" [ref=e1114]
+                - img [ref=e1116] [cursor=pointer]
+            - generic [ref=e1120]:
+              - checkbox "Я подтверждаю свое согласие на получение новостных рассылок" [ref=e1121]
+              - generic [ref=e1123]:
+                - text: Я подтверждаю свое
+                - link "согласие" [ref=e1124] [cursor=pointer]:
+                  - /url: https://files.selectel.ru/docs/ru/consent-to-personal-data-processing-email.pdf
+                - text: на получение новостных рассылок
+            - button "Создать аккаунт" [ref=e1125] [cursor=pointer]
+            - paragraph [ref=e1126]:
+              - text: Регистрируясь,
+              - generic [ref=e1127]:
+                - text: вы
+                - link "соглашаетесь" [ref=e1128] [cursor=pointer]:
+                  - /url: https://files.selectel.ru/docs/ru/consentform.pdf
+              - text: на обработку персональных данных в соответствии
+              - generic [ref=e1129]:
+                - text: с
+                - link "политикой" [ref=e1130] [cursor=pointer]:
+                  - /url: https://files.selectel.ru/docs/ru/personal-data-processing-and-protection-policy.pdf
+            - paragraph [ref=e1131]:
+              - text: Есть аккаунт?
+              - link "Войти" [ref=e1132] [cursor=pointer]:
+                - /url: https://my.selectel.ru/registration
+    - generic [ref=e1135]:
+      - generic [ref=e1136]:
+        - link [ref=e1137] [cursor=pointer]:
+          - /url: https://selectel.ru/
+          - img [ref=e1138]
+        - button "Вверх" [ref=e1141] [cursor=pointer]
+      - navigation [ref=e1142]:
+        - list [ref=e1143]:
+          - listitem [ref=e1144]:
+            - generic [ref=e1145]: О компании
+            - list [ref=e1146]:
+              - listitem [ref=e1147]:
+                - link "О нас" [ref=e1148] [cursor=pointer]:
+                  - /url: /about/company/
+              - listitem [ref=e1149]:
+                - link "Дата-центры" [ref=e1150] [cursor=pointer]:
+                  - /url: /about/data-centers/
+              - listitem [ref=e1151]:
+                - link "Безопасность" [ref=e1152] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/security/
+              - listitem [ref=e1153]:
+                - link "Техническая поддержка" [ref=e1154] [cursor=pointer]:
+                  - /url: /support/
+              - listitem [ref=e1155]:
+                - link "Сети" [ref=e1156] [cursor=pointer]:
+                  - /url: /about/networks/
+              - listitem [ref=e1157]:
+                - link "Партнерская программа" [ref=e1158] [cursor=pointer]:
+                  - /url: /about/partners-programm/
+              - listitem [ref=e1159]:
+                - link "Деловая этика и комплаенс" [ref=e1160] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/compliance/
+              - listitem [ref=e1161]:
+                - link "Акции" [ref=e1162] [cursor=pointer]:
+                  - /url: /services/offerwall/
+              - listitem [ref=e1163]:
+                - link "Мнения" [ref=e1164] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/company/research/
+              - listitem [ref=e1165]:
+                - link "Горячая линия" [ref=e1166] [cursor=pointer]:
+                  - /url: https://selectel.ru/hotline/
+              - listitem [ref=e1167]:
+                - link "Контакты" [ref=e1168] [cursor=pointer]:
+                  - /url: /about/contacts/
+          - listitem [ref=e1169]:
+            - generic [ref=e1170]: Документация
+            - list [ref=e1171]:
+              - listitem [ref=e1172]:
+                - link "Документация" [ref=e1173] [cursor=pointer]:
+                  - /url: https://docs.selectel.ru/
+              - listitem [ref=e1174]:
+                - link "API" [ref=e1175] [cursor=pointer]:
+                  - /url: https://docs.selectel.ru/api/
+              - listitem [ref=e1176]:
+                - link "Terraform" [ref=e1177] [cursor=pointer]:
+                  - /url: https://docs.selectel.ru/terraform/
+          - listitem [ref=e1178]:
+            - generic [ref=e1179]: Карьера
+            - list [ref=e1180]:
+              - listitem [ref=e1181]:
+                - link "Работа в Selectel" [ref=e1182] [cursor=pointer]:
+                  - /url: /careers/
+              - listitem [ref=e1183]:
+                - link "Вакансии" [ref=e1184] [cursor=pointer]:
+                  - /url: /careers/all/
+              - listitem [ref=e1185]:
+                - link "Стажировки" [ref=e1186] [cursor=pointer]:
+                  - /url: /careers/internships/
+          - listitem [ref=e1187]:
+            - generic [ref=e1188]: Инвесторам
+            - list [ref=e1189]:
+              - listitem [ref=e1190]:
+                - link "Финансовые результаты" [ref=e1191] [cursor=pointer]:
+                  - /url: https://investors.selectel.ru/reports-and-results/
+              - listitem [ref=e1192]:
+                - link "Долговые инструменты" [ref=e1193] [cursor=pointer]:
+                  - /url: https://investors.selectel.ru/bonds/
+          - listitem [ref=e1194]:
+            - generic [ref=e1195]: Прессе
+            - list [ref=e1196]:
+              - listitem [ref=e1197]:
+                - link "Новости и пресс-релизы" [ref=e1198] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/newsroom/news/
+              - listitem [ref=e1199]:
+                - link "Пресса о нас" [ref=e1200] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/newsroom/press/
+              - listitem [ref=e1201]:
+                - link "Материалы для прессы" [ref=e1202] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/newsroom/materials/
+              - listitem [ref=e1203]:
+                - link "Брендбук" [ref=e1204] [cursor=pointer]:
+                  - /url: https://brand.selectel.ru/
+          - listitem [ref=e1205]:
+            - generic [ref=e1206]: Академия
+            - list [ref=e1207]:
+              - listitem [ref=e1208]:
+                - link "Блог" [ref=e1209] [cursor=pointer]:
+                  - /url: https://selectel.ru/blog/all/
+              - listitem [ref=e1210]:
+                - link "Курсы" [ref=e1211] [cursor=pointer]:
+                  - /url: https://selectel.ru/blog/courses/
+              - listitem [ref=e1212]:
+                - link "Мероприятия" [ref=e1213] [cursor=pointer]:
+                  - /url: https://selectel.ru/blog/events/
+              - listitem [ref=e1214]:
+                - link "Кейсы" [ref=e1215] [cursor=pointer]:
+                  - /url: https://selectel.ru/blog/category/case/
+          - listitem [ref=e1216]:
+            - generic [ref=e1217]: Контрагентам
+            - list [ref=e1218]:
+              - listitem [ref=e1219]:
+                - link "Документы" [ref=e1220] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/documents/
+              - listitem [ref=e1221]:
+                - link "Способы оплаты" [ref=e1222] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/payments/individuals-pay/
+              - listitem [ref=e1223]:
+                - link "Реквизиты и лицензии" [ref=e1224] [cursor=pointer]:
+                  - /url: https://selectel.ru/about/details/
+              - listitem [ref=e1225]:
+                - link "Тендеры и закупки" [ref=e1226] [cursor=pointer]:
+                  - /url: https://selectel.ru/tenders/
+      - generic [ref=e1227]:
+        - generic [ref=e1228]:
+          - heading "Новости Selectel" [level=3] [ref=e1229]
+          - generic [ref=e1230]:
+            - paragraph [ref=e1231]: "Присоединяйтесь — нам есть, о чем рассказать: запускаем новые продукты, проводим мероприятия и акции."
+            - link "Подписаться" [ref=e1232] [cursor=pointer]:
+              - /url: /subscribe/
+        - generic [ref=e1233]:
+          - heading "Нужна помощь?" [level=3] [ref=e1234]
+          - generic [ref=e1235]:
+            - paragraph [ref=e1236]:
+              - text: Звоните
+              - link "8 812 614-52-08" [ref=e1315] [cursor=pointer]:
+                - /url: tel:+78126145208
+              - text: или пишите
+              - link "sales@selectel.ru" [ref=e1238] [cursor=pointer]:
+                - /url: mailto:sales@selectel.ru
+              - text: — изучим задачу и подберем подходящее решение.
+            - paragraph [ref=e1239]:
+              - text: Если у вас проблема в работе услуг — создайте
+              - link "тикет" [ref=e1240] [cursor=pointer]:
+                - /url: https://my.selectel.ru/tickets/create
+              - text: .
+      - generic [ref=e1241]:
+        - heading "Сообщество" [level=5] [ref=e1242]
+        - list [ref=e1243]:
+          - listitem [ref=e1244]:
+            - link "VK" [ref=e1245] [cursor=pointer]:
+              - /url: https://vk.com/selectel
+              - img [ref=e1246]
+          - listitem [ref=e1248]:
+            - link "Telegram" [ref=e1249] [cursor=pointer]:
+              - /url: https://t.me/selectel
+              - img [ref=e1250]
+          - listitem [ref=e1252]:
+            - link "Habr" [ref=e1253] [cursor=pointer]:
+              - /url: https://habr.com/ru/companies/selectel/articles/
+              - img [ref=e1254]
+          - listitem [ref=e1256]:
+            - link "YouTube" [ref=e1257] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCVU0Ml1l_Y90wmy5EjWTSng
+              - img [ref=e1258]
+          - listitem [ref=e1260]:
+            - link "LinkedIn" [ref=e1261] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/selectel/?originalSubdomain=ru
+              - img [ref=e1262]
+      - generic [ref=e1264]:
+        - paragraph [ref=e1265]: © АО «Селектел», 2008–2026
+        - generic [ref=e1266]:
+          - paragraph [ref=e1267]: Лицензия на телематические услуги № 176267
+          - paragraph [ref=e1268]:
+            - link "Страница эмитента на сайте аккредитованного агентства" [ref=e1269] [cursor=pointer]:
+              - /url: https://www.e-disclosure.ru/portal/company.aspx?id=38305
+          - paragraph [ref=e1270]:
+            - link "Политика в отношении обработки персональных данных" [ref=e1271] [cursor=pointer]:
+              - /url: https://files.selectel.ru/docs/ru/personal-data-processing-and-protection-policy.pdf
+    - region "Notifications alt+T":
+      - list:
+        - listitem [ref=e1272]:
+          - generic [ref=e1273]:
+            - generic [ref=e1274]:
+              - heading "Мы используем Cookies" [level=5] [ref=e1275]
+              - paragraph [ref=e1276]:
+                - text: Продолжая пользоваться сайтом, вы соглашаетесь
+                - link "на обработку обязательных cookie" [ref=e1277] [cursor=pointer]:
+                  - /url: https://files.selectel.ru/docs/ru/cookie_policy.pdf
+                - text: . Подробнее —
+                - generic [ref=e1278]:
+                  - text: в
+                  - link "Политике конфиденциальности" [ref=e1279] [cursor=pointer]:
+                    - /url: https://files.selectel.ru/docs/ru/personal-data-processing-and-protection-policy.pdf
+                  - text: .
+            - button [ref=e1280] [cursor=pointer]:
+              - img [ref=e1281]
+            - generic [ref=e1283]:
+              - button "Принять" [ref=e1284] [cursor=pointer]
+              - button "Подробнее" [ref=e1285] [cursor=pointer]
+    - button [ref=e1286] [cursor=pointer]:
+      - img [ref=e1287]
+  - button "Консультация перед заказом" [ref=e1289] [cursor=pointer]:
+    - img [ref=e1290]
+    - generic [ref=e1292]: Консультация перед заказом

@@ -1,0 +1,553 @@
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img "Selectel" [ref=e9]
+        - generic [ref=e12]:
+          - link "Documentation" [ref=e13] [cursor=pointer]:
+            - /url: /en/
+          - link "API" [ref=e14] [cursor=pointer]:
+            - /url: /en/api/
+          - link "Terraform" [ref=e15] [cursor=pointer]:
+            - /url: /en/terraform/
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - link "Control panel" [ref=e391] [cursor=pointer]:
+            - /url: https://my.selectel.ru/
+          - button [ref=e23]:
+            - img [ref=e24]
+        - button "Search..." [ref=e30]:
+          - generic [ref=e31]: Search...
+          - img [ref=e33]
+  - main [ref=e37]:
+    - text: ∕ ∕ ∕ ∕
+    - generic [ref=e39]:
+      - navigation "Breadcrumb of the current page" [ref=e41]:
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - link "Documentation" [ref=e44] [cursor=pointer]:
+              - /url: /en/
+            - text: ∕
+          - listitem [ref=e45]:
+            - generic [ref=e46]: Compute
+            - text: ∕
+          - listitem [ref=e47]:
+            - link "Cloud Servers" [ref=e48] [cursor=pointer]:
+              - /url: /en/cloud-servers/
+            - text: ∕
+          - listitem [ref=e49]:
+            - link "Create a cloud server" [ref=e50] [cursor=pointer]:
+              - /url: /en/cloud-servers/create/
+            - text: ∕
+          - listitem [ref=e51]:
+            - generic [ref=e52]: Create a server
+      - generic [ref=e55]:
+        - article [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - heading "Create a cloud server" [level=1] [ref=e59]
+              - generic [ref=e63]:
+                - text: "Last update:"
+                - time [ref=e64]: April 16 2026
+            - generic [ref=e392]:
+              - tablist [ref=e393]:
+                - tab "Control panel" [selected] [ref=e394] [cursor=pointer]:
+                  - paragraph [ref=e395]: Control panel
+                - tab "OpenStack CLI" [ref=e396] [cursor=pointer]:
+                  - paragraph [ref=e397]: OpenStack CLI
+                - tab "Terraform" [ref=e398] [cursor=pointer]:
+                  - paragraph [ref=e399]: Terraform
+              - tabpanel [ref=e401]:
+                - list [ref=e402]:
+                  - listitem [ref=e403]:
+                    - paragraph [ref=e404]:
+                      - text: In the
+                      - link "Dashboard" [ref=e405] [cursor=pointer]:
+                        - /url: https://my.selectel.ru/vpc/default/servers/
+                      - text: ", on the top menu, click"
+                      - strong [ref=e406]: Products
+                      - text: and select
+                      - strong [ref=e407]: Cloud Servers
+                      - text: .
+                  - listitem [ref=e408]:
+                    - paragraph [ref=e409]:
+                      - text: Click
+                      - strong [ref=e410]: Create Server
+                      - text: .
+                  - listitem [ref=e411]:
+                    - paragraph [ref=e412]: "Fill in the blocks:"
+                    - list [ref=e413]:
+                      - listitem [ref=e414]:
+                        - link "Name and location" [ref=e415] [cursor=pointer]:
+                          - /url: "#name-and-placement"
+                      - listitem [ref=e416]:
+                        - link "Source" [ref=e417] [cursor=pointer]:
+                          - /url: "#source"
+                      - listitem [ref=e418]:
+                        - link "Configuration" [ref=e419] [cursor=pointer]:
+                          - /url: "#configuration"
+                      - listitem [ref=e420]:
+                        - link "Disks" [ref=e421] [cursor=pointer]:
+                          - /url: "#disks"
+                      - listitem [ref=e422]:
+                        - link "Network" [ref=e423] [cursor=pointer]:
+                          - /url: "#network"
+                      - listitem [ref=e424]:
+                        - link "Safety" [ref=e425] [cursor=pointer]:
+                          - /url: "#security"
+                      - listitem [ref=e426]:
+                        - link "Access" [ref=e427] [cursor=pointer]:
+                          - /url: "#access"
+                      - listitem [ref=e428]:
+                        - text: "optional:"
+                        - link "Additional settings" [ref=e429] [cursor=pointer]:
+                          - /url: "#additional-settings"
+                  - listitem [ref=e430]:
+                    - paragraph [ref=e431]:
+                      - text: Check the cloud server price. For more information, see the
+                      - link "Cloud Server Payment Model and Pricing" [ref=e432] [cursor=pointer]:
+                        - /url: /en/cloud-servers/about/payment/
+                      - text: instructions.
+                  - listitem [ref=e433]:
+                    - paragraph [ref=e434]:
+                      - text: Click
+                      - strong [ref=e435]: Create
+                      - text: .
+                - heading "Name and location" [level=3] [ref=e436] [cursor=pointer]:
+                  - text: Name and
+                  - generic [ref=e437]:
+                    - text: location
+                    - button [ref=e438]:
+                      - img [ref=e439]
+                - list [ref=e443]:
+                  - listitem [ref=e444]:
+                    - paragraph [ref=e445]: Enter the server name. This will be set as the host name in the operating system.
+                  - listitem [ref=e446]:
+                    - paragraph [ref=e447]:
+                      - text: Select the
+                      - link "location" [ref=e448] [cursor=pointer]:
+                        - /url: /en/infrastructure/locations/
+                      - text: where the server will be created. The list of available server configurations and the cost of resources depends on the location. Once the server is created, the location cannot be changed.
+                - heading "Source" [level=3] [ref=e449] [cursor=pointer]:
+                  - generic [ref=e450]:
+                    - text: Source
+                    - button [ref=e451]:
+                      - img [ref=e452]
+                - paragraph [ref=e456]:
+                  - text: You can create a server from a pre-built
+                  - link "image" [ref=e457] [cursor=pointer]:
+                    - /url: /en/cloud-servers/images/about-images/#default-images
+                  - text: with a pre-installed and configured operating system, an
+                  - link "application" [ref=e458] [cursor=pointer]:
+                    - /url: /en/cloud-servers/applications/
+                  - text: ", your"
+                  - link "own image" [ref=e459] [cursor=pointer]:
+                    - /url: /en/cloud-servers/images/about-images/#own-images
+                  - text: ", a"
+                  - link "network disk" [ref=e460] [cursor=pointer]:
+                    - /url: /en/cloud-servers/volumes/about-network-volumes/
+                  - text: ", or a"
+                  - link "snapshot" [ref=e461] [cursor=pointer]:
+                    - /url: /en/cloud-servers/volumes/snapshots/
+                  - text: .
+                - generic [ref=e462]:
+                  - tablist [ref=e463]:
+                    - tab "Finished image" [selected] [ref=e464] [cursor=pointer]:
+                      - paragraph [ref=e465]: Finished image
+                    - tab "appendix" [ref=e466] [cursor=pointer]:
+                      - paragraph [ref=e467]: appendix
+                    - tab "network volume" [ref=e468] [cursor=pointer]:
+                      - paragraph [ref=e469]: network volume
+                    - tab "Own image" [ref=e470] [cursor=pointer]:
+                      - paragraph [ref=e471]: Own image
+                    - tab "Snapshot" [ref=e472] [cursor=pointer]:
+                      - paragraph [ref=e473]: Snapshot
+                  - tabpanel [ref=e475]:
+                    - list [ref=e476]:
+                      - listitem [ref=e477]:
+                        - paragraph [ref=e478]:
+                          - text: Open the
+                          - strong [ref=e479]: OS
+                          - text: tab.
+                      - listitem [ref=e480]:
+                        - paragraph [ref=e481]: Select an image. Ready images are available in all pool segments.
+                      - listitem [ref=e482]:
+                        - paragraph [ref=e483]:
+                          - text: If you are building a GPU server, enable the
+                          - strong [ref=e484]: Auto Select GPU Image
+                          - text: toggle switch so that an optimized OS image is automatically selected when you select a configuration.
+                      - listitem [ref=e485]:
+                        - paragraph [ref=e486]:
+                          - text: "Optional: if you need a different current or archived version of the OS, select the correct version in the"
+                          - strong [ref=e487]: Version
+                          - text: field. OSes that are marked as
+                          - strong [ref=e488]: GPU optimized
+                          - text: contain the drivers needed to work with GPUs.
+                - heading "Configuration" [level=3] [ref=e489] [cursor=pointer]:
+                  - generic [ref=e490]:
+                    - text: Configuration
+                    - button [ref=e491]:
+                      - img [ref=e492]
+                - paragraph [ref=e496]:
+                  - text: Two types of server configurations are available for all
+                  - link "rulers" [ref=e497] [cursor=pointer]:
+                    - /url: /en/cloud-servers/create/configurations/#lines
+                  - text: except
+                  - link "Shared" [ref=e498] [cursor=pointer]:
+                    - /url: /en/cloud-servers/create/configurations/#shared
+                  - text: and
+                  - link "Dedicated" [ref=e499] [cursor=pointer]:
+                    - /url: /en/cloud-servers/create/configurations/#dedicated
+                  - text: ":"
+                - list [ref=e500]:
+                  - listitem [ref=e501]: fixed configurations - configurations of lines with different technical characteristics in which the resource ratio is fixed;
+                  - listitem [ref=e502]: custom configurations - configurations in which any resource ratio can be specified.
+                - paragraph [ref=e503]:
+                  - text: The configurations use different
+                  - link "processors" [ref=e504] [cursor=pointer]:
+                    - /url: /en/cloud-servers/create/configurations/#available-processors
+                  - text: depending on the line and pool segment. You can customize the selected configuration. After the server is created, you can
+                  - link "change the configuration" [ref=e505] [cursor=pointer]:
+                    - /url: /en/cloud-servers/manage/change-server-configuration/
+                  - text: .
+                - generic [ref=e506]:
+                  - tablist [ref=e507]:
+                    - tab "Fixed configuration" [selected] [ref=e508] [cursor=pointer]:
+                      - paragraph [ref=e509]: Fixed configuration
+                    - tab "Arbitrary configuration" [ref=e510] [cursor=pointer]:
+                      - paragraph [ref=e511]: Arbitrary configuration
+                  - tabpanel [ref=e513]:
+                    - list [ref=e514]:
+                      - listitem [ref=e515]:
+                        - paragraph [ref=e516]: Open the tab with the line.
+                      - listitem [ref=e517]:
+                        - paragraph [ref=e518]:
+                          - text: Click
+                          - strong [ref=e519]: Fixed
+                          - text: .
+                      - listitem [ref=e520]:
+                        - paragraph [ref=e521]:
+                          - text: "Optional: you can customize the configuration if you are creating a server in the"
+                          - link "multizone pool" [ref=e522] [cursor=pointer]:
+                            - /url: /en/infrastructure/locations/#multi-az-pool
+                          - text: "segment ru-6 or pool segments ru-3b, ru-7a and ru-7b:"
+                        - paragraph [ref=e523]: 3.1 Expand the block with description of configuration settings.
+                        - paragraph [ref=e524]: "3.2 Optionally: select the processor manufacturer. Manufacturer selection is not available in all pools."
+                        - paragraph [ref=e525]:
+                          - text: "3.3 Optional: If you do not want the vCPU of the cloud server to be assigned to physical CPU cores, clear the"
+                          - strong [ref=e526]: Dedicated Cores
+                          - text: checkbox. See the Dedicated Cores instruction for more information.
+                        - paragraph [ref=e527]:
+                          - text: "3.4 Optional: If you want to disable"
+                          - link "Hyper-Threading" [ref=e528] [cursor=pointer]:
+                            - /url: /en/cloud-servers/about/dedicated-cores/#hyper-threading
+                          - text: for a server with dedicated cores, clear the
+                          - strong [ref=e529]: Hyper-Threading (SMT)
+                          - text: checkbox .
+                        - paragraph [ref=e530]:
+                          - text: "3.5 Optional: if you create a server with dedicated cores and want to host a multiprocessor server on a single NUMA-node, check the checkbox"
+                          - strong [ref=e531]: Mandatory hosting on a single NUMA-node
+                          - text: . You can host a server with 4 vCPUs or more on a single NUMA-node. If cloud server resources cannot be placed on a single node, it will not be created. For more information, see the
+                          - link "Placement on a single NUMA node" [ref=e532] [cursor=pointer]:
+                            - /url: /en/cloud-servers/about/dedicated-cores/#placing-on-one-numa-node
+                          - text: section of
+                          - link "the Dedicated Cores" [ref=e533] [cursor=pointer]:
+                            - /url: /en/cloud-servers/about/dedicated-cores/
+                          - text: tutorial.
+                      - listitem [ref=e534]:
+                        - paragraph [ref=e535]:
+                          - text: Select a
+                          - link "configuration" [ref=e536] [cursor=pointer]:
+                            - /url: /en/cloud-servers/create/configurations/
+                          - text: .
+                      - listitem [ref=e537]:
+                        - paragraph [ref=e538]: "If both local and network disks are available in the selected configuration, select the disk to be used as the boot disk:"
+                        - list [ref=e539]:
+                          - listitem [ref=e540]:
+                            - link "local disk" [ref=e541] [cursor=pointer]:
+                              - /url: /en/cloud-servers/volumes/about-local-disks/
+                            - text: "- check the box"
+                            - strong [ref=e542]: Local SSD NVMe disk
+                            - text: . A server with a local disk can only be created from images and applications;
+                          - listitem [ref=e543]:
+                            - link "network drive" [ref=e544] [cursor=pointer]:
+                              - /url: /en/cloud-servers/volumes/about-network-volumes/
+                            - text: "- do not check the checkbox."
+                        - paragraph [ref=e545]:
+                          - text: The amount of RAM allocated to the server may be less than the amount specified in the configuration - the operating system kernel reserves some RAM depending on the kernel version and distribution. You can check the allocated amount on the server with
+                          - code [ref=e546]: sudo dmesg | grep Memory
+                          - text: .
+                - heading "Disks" [level=3] [ref=e547] [cursor=pointer]:
+                  - generic [ref=e548]:
+                    - text: Disks
+                    - button [ref=e549]:
+                      - img [ref=e550]
+                - list [ref=e554]:
+                  - listitem [ref=e555]:
+                    - paragraph [ref=e556]:
+                      - text: If you did not check the
+                      - strong [ref=e557]: Local SSD NVMe disk
+                      - text: "checkbox when setting up the configuration, the first specified network disk will be used as the server boot disk. To configure it:"
+                    - paragraph [ref=e558]:
+                      - text: 1.1 Select the
+                      - link "type of network boot disk" [ref=e559] [cursor=pointer]:
+                        - /url: /en/cloud-servers/volumes/about-network-volumes/#network-volume-types
+                      - text: .
+                    - paragraph [ref=e560]:
+                      - text: 1.2 Specify the size of the network boot disk in GB or TB. Observe the maximum size
+                      - link "limits of network disks" [ref=e561] [cursor=pointer]:
+                        - /url: /en/cloud-servers/volumes/about-network-volumes/#network-volume-limits
+                      - text: .
+                    - paragraph [ref=e562]:
+                      - text: 1.3 If you selected the disk type Universal v2 or SSD Fast v2, specify the total number of read and write operations in IOPS. After you create the disk, you can
+                      - link "change the number of IOPS" [ref=e563] [cursor=pointer]:
+                        - /url: /en/cloud-servers/volumes/edit-volume/#update-iops
+                      - text: "- decrease or increase. There is no limit to the number of IOPS changes."
+                  - listitem [ref=e564]:
+                    - paragraph [ref=e565]:
+                      - text: "Optional: to add additional server"
+                      - link "network disks" [ref=e566] [cursor=pointer]:
+                        - /url: /en/cloud-servers/volumes/about-network-volumes/
+                      - text: ":"
+                    - paragraph [ref=e567]:
+                      - text: 2.1 Click
+                      - strong [ref=e568]: Add
+                      - text: .
+                    - paragraph [ref=e569]:
+                      - text: 2.2 Select the
+                      - link "type of network disk" [ref=e570] [cursor=pointer]:
+                        - /url: /en/cloud-servers/volumes/about-network-volumes/#network-volume-types
+                      - text: .
+                    - paragraph [ref=e571]:
+                      - text: 2.3 Specify the network disk size in GB or TB. Observe the maximum size
+                      - link "limits of the network disks" [ref=e572] [cursor=pointer]:
+                        - /url: /en/cloud-servers/volumes/about-network-volumes/#network-volume-limits
+                      - text: .
+                    - paragraph [ref=e573]:
+                      - text: 2.4 If you selected the disk type Universal v2 or SSD Fast v2, specify the total number of read and write operations in IOPS. After you create the disk, you can
+                      - link "change the number of IOPS" [ref=e574] [cursor=pointer]:
+                        - /url: /en/cloud-servers/volumes/edit-volume/#update-iops
+                      - text: "- decrease or increase. There is no limit to the number of IOPS changes."
+                    - paragraph [ref=e575]:
+                      - text: Once the server is created, you can
+                      - link "disconnect additional disks from it or connect new ones" [ref=e576] [cursor=pointer]:
+                        - /url: /en/cloud-servers/volumes/attach-detach-volume/
+                      - text: .
+                - heading "Network" [level=3] [ref=e577] [cursor=pointer]:
+                  - generic [ref=e578]:
+                    - text: Network
+                    - button [ref=e579]:
+                      - img [ref=e580]
+                - paragraph [ref=e584]: "A server can be added to a new subnet or to an existing subnet. The subnet can be:"
+                - list [ref=e585]:
+                  - listitem [ref=e586]: private - a subnet without access from the Internet or with a single static public IP address. The IP address connects to a server that will be accessible from the Internet;
+                  - listitem [ref=e587]: public - a subnet in which all addresses are accessible from the Internet.
+                - generic [ref=e588]:
+                  - tablist [ref=e589]:
+                    - tab "Private subnet" [selected] [ref=e590] [cursor=pointer]:
+                      - paragraph [ref=e591]: Private subnet
+                    - tab "Public subnet" [ref=e592] [cursor=pointer]:
+                      - paragraph [ref=e593]: Public subnet
+                  - tabpanel [ref=e595]:
+                    - list [ref=e596]:
+                      - listitem [ref=e597]:
+                        - paragraph [ref=e598]:
+                          - text: Click
+                          - strong [ref=e599]: Private Subnet
+                          - text: .
+                      - listitem [ref=e600]:
+                        - paragraph [ref=e601]:
+                          - text: In the
+                          - strong [ref=e602]: Public IP address for access from the Internet
+                          - text: "field, select the subnet type:"
+                        - list [ref=e603]:
+                          - listitem [ref=e604]: The new public IP address is a private subnet with a static public IP address. Only the server to which the public IP address is connected will be accessible from the Internet;
+                          - listitem [ref=e605]: No public IP address - a private subnet with no access from the Internet. You cannot connect to the server from the Internet, including via SSH or RDP.
+                      - listitem [ref=e606]:
+                        - paragraph [ref=e607]: "To add a server to an existing private subnet:"
+                        - paragraph [ref=e608]: 3.1 Expand the private subnet settings block.
+                        - paragraph [ref=e609]:
+                          - text: 3.2 Select an existing subnet in the
+                          - strong [ref=e610]: Subnet
+                          - text: field.
+                        - paragraph [ref=e611]:
+                          - text: 3.3 In the
+                          - strong [ref=e612]: Private IP
+                          - text: field, specify the private IP address of the server. For a private subnet with a public IP address, the public address will be automatically connected to the private address;
+                      - listitem [ref=e613]:
+                        - paragraph [ref=e614]: "To add a server to a new private subnet on an existing network:"
+                        - paragraph [ref=e615]: 4.1 Expand the private subnet settings block.
+                        - paragraph [ref=e616]:
+                          - text: 4.2. In the
+                          - strong [ref=e617]: Subnet
+                          - text: field, select
+                          - strong [ref=e618]: New Subnet
+                          - text: .
+                        - paragraph [ref=e619]: "4.3 Optional: Change the CIDR of the subnet."
+                        - paragraph [ref=e620]:
+                          - text: "4.4 Optionally: enable the"
+                          - strong [ref=e621]: DHCP
+                          - text: toggle switch.
+                        - paragraph [ref=e622]:
+                          - text: "4.5 Optionally: in the"
+                          - strong [ref=e623]: Gateway
+                          - text: field, change the IP address of the default gateway.
+                        - paragraph [ref=e624]:
+                          - text: 4.6. In the
+                          - strong [ref=e625]: Network
+                          - text: field, select the existing network where the subnet will be created or
+                          - strong [ref=e626]: New network
+                          - text: . For a private subnet with a public IP address,
+                          - code [ref=e627]: router-<network_name>
+                          - text: ", where"
+                          - code [ref=e628]: <network_name>
+                          - text: is the network name, will be automatically created.
+                        - paragraph [ref=e629]:
+                          - text: 4.7. If you selected
+                          - strong [ref=e630]: New Network
+                          - text: ", enter a network name."
+                      - listitem [ref=e631]:
+                        - paragraph [ref=e632]: "To add a server to a new network and private subnet:"
+                        - paragraph [ref=e633]: 5.1 Expand the private subnet settings block.
+                        - paragraph [ref=e634]: "5.2 Optional: Change the CIDR of the subnet."
+                        - paragraph [ref=e635]:
+                          - text: "5.3 Optionally: enable the"
+                          - strong [ref=e636]: DHCP
+                          - text: toggle switch.
+                        - paragraph [ref=e637]:
+                          - text: "5.4 Optionally: in the"
+                          - strong [ref=e638]: Gateway
+                          - text: field, change the IP address of the default gateway.
+                        - paragraph [ref=e639]:
+                          - text: 5.5. In the
+                          - strong [ref=e640]: Network
+                          - text: field, select
+                          - strong [ref=e641]: New Network
+                          - text: to create a new network and private subnet.
+                        - paragraph [ref=e642]:
+                          - text: 5.6 Enter the network name. For a private subnet with a public IP address,
+                          - code [ref=e643]: router-<network_name>
+                          - text: ", where"
+                          - code [ref=e644]: <network_name>
+                          - text: is the network name, will be automatically created.
+                - heading "Safety" [level=3] [ref=e645] [cursor=pointer]:
+                  - generic [ref=e646]:
+                    - text: Safety
+                    - button [ref=e647]:
+                      - img [ref=e648]
+                - paragraph [ref=e652]:
+                  - text: Select
+                  - link "security groups" [ref=e653] [cursor=pointer]:
+                    - /url: /en/cloud-servers/security-groups/
+                  - text: to filter traffic on server ports. Without security groups, traffic will not be allowed. If there is no block,
+                  - link "port security" [ref=e654] [cursor=pointer]:
+                    - /url: /en/cloud-servers/cloud-networks/about-networks/#traffic-filtering-port-security
+                  - text: is disabled on the server network . With traffic filtering disabled, all traffic will be allowed.
+                - heading "Access" [level=3] [ref=e655] [cursor=pointer]:
+                  - generic [ref=e656]:
+                    - text: Access
+                    - button [ref=e657]:
+                      - img [ref=e658]
+                - list [ref=e662]:
+                  - listitem [ref=e663]:
+                    - paragraph [ref=e664]:
+                      - text: Place an
+                      - link "SSH key for the project" [ref=e665] [cursor=pointer]:
+                        - /url: /en/cloud-servers/manage/create-and-place-ssh-key/#place-public-ssh-key
+                      - text: "on the server for secure connection:"
+                    - paragraph [ref=e666]:
+                      - text: 1.1 If the SSH key for the project is not added to the cloud platform, click
+                      - strong [ref=e667]: Add SSH
+                      - text: Key, enter the key name, insert the public key in OpenSSH format, and click
+                      - strong [ref=e668]: Add
+                      - text: .
+                    - paragraph [ref=e669]:
+                      - text: 1.2 If an SSH key for the project is added to the cloud platform, select an existing key in the
+                      - strong [ref=e670]: SSH
+                      - text: key field. The SSH key is available only in the pool in which it is hosted.
+                  - listitem [ref=e671]:
+                    - paragraph [ref=e672]:
+                      - text: "Optional: in the"
+                      - strong [ref=e673]: Password
+                      - text: field
+                      - strong [ref=e674]: for "root"
+                      - text: ":"
+                    - paragraph [ref=e675]:
+                      - text: 2.1 Copy the password of the
+                      - code [ref=e676]: root
+                      - text: user - a user with unlimited rights to all actions on the system.
+                    - paragraph [ref=e677]: 2.2 Save the password in a safe place and do not transmit it in public.
+                - 'heading "Optional: additional settings" [level=3] [ref=e678] [cursor=pointer]':
+                  - text: "Optional: additional"
+                  - generic [ref=e679]:
+                    - text: settings
+                    - button [ref=e680]:
+                      - img [ref=e681]
+                - list [ref=e685]:
+                  - listitem [ref=e686]:
+                    - paragraph [ref=e687]:
+                      - text: To create an
+                      - link "interruptible server" [ref=e688] [cursor=pointer]:
+                        - /url: /en/cloud-servers/about/preemptible-servers/
+                      - text: ", check the"
+                      - strong [ref=e689]: Interruptible Server
+                      - text: checkbox.
+                  - listitem [ref=e690]:
+                    - paragraph [ref=e691]:
+                      - text: If you plan to create multiple servers and want to increase the fault tolerance of your infrastructure, add the server to a
+                      - link "placement group" [ref=e692] [cursor=pointer]:
+                        - /url: /en/cloud-servers/placement-groups/about-placement-groups/
+                      - text: ":"
+                    - paragraph [ref=e693]:
+                      - text: 2.1 To create a new group, in the
+                      - strong [ref=e694]: Hosting Group
+                      - text: field, select
+                      - strong [ref=e695]: New Group
+                      - text: ", enter a group name, and select a policy for hosting on different hosts:"
+                    - list [ref=e696]:
+                      - listitem [ref=e697]: preferably soft-anti-affinity. The system will try to place servers on different hosts. If there is no suitable host when creating a server, it will be created on the same host;
+                      - listitem [ref=e698]: anti-affinity is mandatory. Servers in a group must be located on different hosts. If there is no suitable host when creating a server, the server will not be created.
+                    - paragraph [ref=e699]:
+                      - text: 2.4 If a group has been created, select the
+                      - strong [ref=e700]: placement
+                      - text: group in the
+                      - strong [ref=e701]: Placement Group
+                      - text: field.
+                  - listitem [ref=e702]:
+                    - paragraph [ref=e703]:
+                      - text: To add additional information or filter servers in the list, add server
+                      - link "tags" [ref=e704] [cursor=pointer]:
+                        - /url: /en/cloud-servers/manage/tags/
+                      - text: . Operating system and configuration tags are automatically added. To add a new tag, enter a tag in the
+                      - strong [ref=e705]: Tags
+                      - text: field.
+                  - listitem [ref=e706]:
+                    - paragraph [ref=e707]:
+                      - text: To add a script that will be executed by the
+                      - link "cloud-init" [ref=e708] [cursor=pointer]:
+                        - /url: https://cloud-init.io/
+                      - text: agent when the operating system first starts up, in the
+                      - strong [ref=e709]: Automation
+                      - text: block in the
+                      - strong [ref=e710]: User data
+                      - text: "field:"
+                    - list [ref=e711]:
+                      - listitem [ref=e712]:
+                        - text: open the
+                        - strong [ref=e713]: Text
+                        - text: tab and paste the script with text;
+                      - listitem [ref=e714]:
+                        - text: or open the
+                        - strong [ref=e715]: File
+                        - text: tab and upload a file with the script.
+                    - paragraph [ref=e716]:
+                      - text: Examples of scripts and supported formats can be found in the
+                      - link "User data" [ref=e717] [cursor=pointer]:
+                        - /url: /en/cloud-servers/manage/user-data/
+                      - text: instructions.
+            - iframe [ref=e719]:
+              
+        - text: « »

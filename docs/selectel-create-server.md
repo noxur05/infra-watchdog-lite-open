@@ -1,0 +1,96 @@
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - img "Selectel" [ref=e9]
+        - generic [ref=e11]:
+          - link "Documentation" [ref=e12] [cursor=pointer]:
+            - /url: /en/
+          - link "API" [ref=e13] [cursor=pointer]:
+            - /url: /en/api/
+          - link "Terraform" [ref=e14] [cursor=pointer]:
+            - /url: /en/terraform/
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - link "Control panel" [ref=e114] [cursor=pointer]:
+            - /url: https://my.selectel.ru/
+          - button [ref=e22]:
+            - img [ref=e23]
+        - button "Search..." [ref=e29]:
+          - generic [ref=e30]: Search...
+          - img [ref=e32]
+  - main [ref=e36]:
+    - text: ∕ ∕ ∕
+    - generic [ref=e38]:
+      - navigation "Breadcrumb of the current page" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "Documentation" [ref=e43] [cursor=pointer]:
+              - /url: /en/
+            - text: ∕
+          - listitem [ref=e44]:
+            - generic [ref=e45]: Compute
+            - text: ∕
+          - listitem [ref=e46]:
+            - link "Cloud Servers" [ref=e47] [cursor=pointer]:
+              - /url: /en/cloud-servers/
+            - text: ∕
+          - listitem [ref=e48]:
+            - generic [ref=e49]: Create a cloud server
+      - generic [ref=e52]:
+        - article [ref=e53]:
+          - generic [ref=e54]:
+            - heading "Create a cloud server" [level=1] [ref=e56]
+            - generic [ref=e57]:
+              - article [ref=e58]:
+                - link "Configurations Description of fixed and custom cloud server configurations" [ref=e59] [cursor=pointer]:
+                  - /url: /en/cloud-servers/create/configurations/
+                  - heading "Configurations" [level=5] [ref=e60]
+                  - paragraph [ref=e61]: Description of fixed and custom cloud server configurations
+                  - img [ref=e63]
+              - article [ref=e65]:
+                - link "Graphics Processing Units (GPUs) Description of GPUs that are available for building cloud servers" [ref=e66] [cursor=pointer]:
+                  - /url: /en/cloud-servers/create/gpus/
+                  - heading "Graphics Processing Units (GPUs)" [level=5] [ref=e67]
+                  - paragraph [ref=e68]: Description of GPUs that are available for building cloud servers
+                  - img [ref=e70]
+              - article [ref=e72]:
+                - link "Create a Flavor How to create a Flavor to create a cloud server of custom configuration" [ref=e73] [cursor=pointer]:
+                  - /url: /en/cloud-servers/create/create-flavor/
+                  - heading "Create a Flavor" [level=5] [ref=e74]
+                  - paragraph [ref=e75]: How to create a Flavor to create a cloud server of custom configuration
+                  - img [ref=e77]
+              - article [ref=e79]:
+                - link "Create a server How to create a cloud server" [ref=e80] [cursor=pointer]:
+                  - /url: /en/cloud-servers/create/create-server/
+                  - heading "Create a server" [level=5] [ref=e81]
+                  - paragraph [ref=e82]: How to create a cloud server
+                  - img [ref=e84]
+              - article [ref=e86]:
+                - link "Create an preemptible server How to create an preemptible cloud server" [ref=e87] [cursor=pointer]:
+                  - /url: /en/cloud-servers/create/create-preemptible-server/
+                  - heading "Create an preemptible server" [level=5] [ref=e88]
+                  - paragraph [ref=e89]: How to create an preemptible cloud server
+                  - img [ref=e91]
+              - article [ref=e93]:
+                - link "Create a server from your own Windows image How to prepare your own Windows ISO image and create a cloud server from it" [ref=e94] [cursor=pointer]:
+                  - /url: /en/cloud-servers/create/create-server-from-custom-windows-image/
+                  - heading "Create a server from your own Windows image" [level=5] [ref=e95]
+                  - paragraph [ref=e96]: How to prepare your own Windows ISO image and create a cloud server from it
+                  - img [ref=e98]
+              - article [ref=e100]:
+                - link "Create a server with USB drive How to create a cloud server with emulated USB drive" [ref=e101] [cursor=pointer]:
+                  - /url: /en/cloud-servers/create/create-server-with-usb-device/
+                  - heading "Create a server with USB drive" [level=5] [ref=e102]
+                  - paragraph [ref=e103]: How to create a cloud server with emulated USB drive
+                  - img [ref=e105]
+              - article [ref=e107]:
+                - link "Migrate a server from Servers.ru How to Migrate a Cloud Server from Servers.ru to Selectel" [ref=e108] [cursor=pointer]:
+                  - /url: /en/cloud-servers/create/migrate-from-servers-ru/
+                  - heading "Migrate a server from Servers.ru" [level=5] [ref=e109]
+                  - paragraph [ref=e110]: How to Migrate a Cloud Server from Servers.ru to Selectel
+                  - img [ref=e112]
+        - text: « »

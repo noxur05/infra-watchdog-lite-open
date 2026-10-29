@@ -1,0 +1,18 @@
+/target
+.env
+watchdog.db
+watchdog.db-shm
+watchdog.db-wal
+*.tmp
+
+# Provider token dumps / scratch (never commit — contain secrets)
+hosman.json
+*.token.json
+openrc.sh
+*openrc*.sh
+SecretKey.csv
+*.csv
+
+# Claude Code debug artifacts
+.playwright-mcp/
+.claude/
